@@ -70,6 +70,7 @@ public class FetchData extends AsyncTask<Void, Void, Void> {
             stream.write(stockInfoData.getBytes());
             stream.write("\n".getBytes());
             stream.close();
+
         } catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
         }
