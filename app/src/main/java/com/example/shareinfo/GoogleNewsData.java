@@ -1,4 +1,2 @@
-package com.example.shareinfo;
-
-public class GoogleNewsData {
+package com.example.shareinfo;public class GoogleNewsData {
 }
