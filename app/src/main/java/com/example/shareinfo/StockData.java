@@ -1,4 +1,2 @@
-package com.example.shareinfo;
-
-public class StockData {
+package com.example.shareinfo;public class StockData {
 }

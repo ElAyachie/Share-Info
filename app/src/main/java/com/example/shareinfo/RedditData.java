@@ -1,4 +1,2 @@
-package com.example.shareinfo;
-
-public class Reddit {
+package com.example.shareinfo;public class RedditData {
 }
