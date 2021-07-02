@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -58,7 +59,7 @@ public class StockData {
                 // Save the JSON information to the file storage
                 try {
                     // Saving Stock information data in a JSON file
-                    String filePath = context.getFilesDir().getAbsolutePath();
+                    String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information";
                     String stockInfoJSONFileName = "StockTrendingData.json";
                     File stockTrendingInfoDatafile = new File(filePath, stockInfoJSONFileName);
                     FileOutputStream stream = new FileOutputStream(stockTrendingInfoDatafile);
@@ -119,7 +120,7 @@ public class StockData {
                 // Save the JSON information to the file storage
                 try {
                     // Saving Stock information data in a JSON file
-                    String filePath = context.getFilesDir().getAbsolutePath();
+                    String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information";
                     String stockInfoJSONFileName = "StockData_" + stockSymbol + ".json";
                     File stockTrendingInfoDatafile = new File(filePath, stockInfoJSONFileName);
                     FileOutputStream stream = new FileOutputStream(stockTrendingInfoDatafile);
@@ -152,7 +153,8 @@ public class StockData {
         // Function will store the trending stocks names(short name and acronym for each stock) from the stock trending json file.
         try {
             // Creating the stock trending json object from the json file.
-            InputStream configFile = context.openFileInput("StockTrendingData.json");
+            String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information/StockTrendingData.json";
+            FileInputStream configFile = new FileInputStream(filePath);
             int configFileSize = configFile.available();
             byte[] rawData = new byte[configFileSize];
             configFile.read(rawData);
@@ -169,7 +171,7 @@ public class StockData {
                 JSONObject jsonObject = stockTrendingJsonArray.getJSONObject(i);
                 String longName = jsonObject.getString("longName");
                 String symbol = jsonObject.getString("symbol");
-                stockTrendingNamesSB.append(longName).append(",").append(symbol);
+                stockTrendingNamesSB.append(longName);
                 stockTrendingSymbolsSB.append(symbol);
                 // If there is another value after this add a comma.
                 if (i + 1 < stockTrendingJsonArray.length()) {
@@ -177,12 +179,19 @@ public class StockData {
                     stockTrendingSymbolsSB.append(",");
                 }
             }
+            // Need to remove inconsistent names.
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(", Inc.",""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" Inc.",""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" Ltd.",""));
+
             // SharedPreferences can not be stored as arrays, instead i am storing them in a StringBuilder which I will turn into an array.
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString("stockTrendingNames", String.valueOf(stockTrendingNamesSB));
             editor.putString("stockTrendingSymbols", String.valueOf(stockTrendingSymbolsSB));
             editor.apply();
+            System.out.println(stockTrendingSymbolsSB);
+            System.out.println(stockTrendingNamesSB);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
