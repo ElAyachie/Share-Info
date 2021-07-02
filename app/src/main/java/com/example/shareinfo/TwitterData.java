@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class TwitterData {
-        public static void GetTwitterDataForStock(Context context, String searchString) {
+        public static void GetTwitterDataForStock(Context context, String stockSymbol, String stockName) {
             ExecutorService executor = Executors.newSingleThreadExecutor();
             Handler handler = new Handler(Looper.getMainLooper());
 
@@ -21,11 +21,12 @@ public class TwitterData {
                 @Override
                 public void run() {
                     StringBuilder twitterSearchData = null;
+                    StringBuilder twitterSearchData2 = null;
                     String socialTrendingInfoData;
                     try {
-                        // GET Twitter News information from API
+                        // GET Twitter News information from API using the stock symobol.
                         String rules = "&max_results=10&tweet.fields=author_id,created_at,lang,referenced_tweets,public_metrics&expansions=author_id";
-                        String url = "https://api.twitter.com/2/tweets/search/recent?query=" + searchString + rules;
+                        String url = "https://api.twitter.com/2/tweets/search/recent?query=" + stockSymbol + rules;
                         URL twitterStreamsUrl = new URL(url);
                         HttpURLConnection twitterSearchConnection = (HttpURLConnection) twitterStreamsUrl.openConnection();
                         String twitterToken = "AAAAAAAAAAAAAAAAAAAAANDdQgEAAAAAEZxD1p%2BpxRdfzYQBYAFnCfxgPhU%3D9uWLk6CFLfuZuFYXm4Bdzbd0IbOKFLclXueGwTEPPyT9N520iE";
@@ -38,6 +39,28 @@ public class TwitterData {
                                 System.out.println(output);
                                 twitterSearchData.append(output);
                             }
+
+
+                        } catch (Exception e) {
+                            //throw new RuntimeException(e);
+                        }
+
+                        // GET Twitter News information from API using the stock name.
+                        String url2 = "https://api.twitter.com/2/tweets/search/recent?query=" + stockSymbol + rules;
+                        URL twitterStreamsUrl2 = new URL(url2);
+                        HttpURLConnection twitterSearchConnection2 = (HttpURLConnection) twitterStreamsUrl2.openConnection();
+                        twitterSearchConnection2.setRequestProperty("Authorization", "Bearer " + twitterToken);
+                        twitterSearchConnection2.setRequestMethod("GET");
+                        twitterSearchData2 = new StringBuilder();
+                        try (BufferedReader in = new BufferedReader(new InputStreamReader(twitterSearchConnection2.getInputStream()))) {
+                            String output;
+                            while ((output = in.readLine()) != null) {
+                                System.out.println(output);
+                                twitterSearchData2.append(output);
+                            }
+                        twitterSearchConnection.disconnect();
+                        twitterSearchConnection2.disconnect();
+
                         } catch (Exception e) {
                             //throw new RuntimeException(e);
                         }
@@ -64,13 +87,21 @@ public class TwitterData {
 
                     // Save the JSON information to the file storage for specifc stock.
                     try {
-                        // Saving Google News data in a JSON file
-                        String filePath = context.getFilesDir().getAbsolutePath();
-                        String twitterJSONFileName = "TwitterSearchData_" + searchString + ".json";
+                        // Saving Twitter data in a JSON file.
+                        String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information";
+                        String twitterJSONFileName = "TwitterSearchData_" + stockSymbol + ".json";
                         File twitterSearchDataFile = new File(filePath, twitterJSONFileName);
                         FileOutputStream stream = new FileOutputStream(twitterSearchDataFile);
                         assert twitterSearchData != null;
                         stream.write(twitterSearchData.toString().getBytes());
+                        stream.write("\n".getBytes());
+                        stream.close();
+                        // Saving Twitter data in a JSON file.
+                        String twitterJSONFileName2 = "TwitterSearchData_" + stockSymbol + "2.json";
+                        twitterSearchDataFile = new File(filePath, twitterJSONFileName2);
+                        stream = new FileOutputStream(twitterSearchDataFile);
+                        assert twitterSearchData2 != null;
+                        stream.write(twitterSearchData2.toString().getBytes());
                         stream.write("\n".getBytes());
                         stream.close();
 

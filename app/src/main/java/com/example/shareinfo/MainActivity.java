@@ -15,16 +15,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Context context = getBaseContext();
         Button getInfoButton = findViewById(R.id.getInfoButton);
+        Setup.CreateFolders(context);
 
 
         getInfoButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String stockSymbol = "TSLA";
+                String stockName = "Tesla";
                 StockData.GetGeneralStockData(context);
                 StockData.GetStockData(context, stockSymbol);
-                GoogleNewsData.GetGoogleNewsDataForStock(context, stockSymbol);
-                TwitterData.GetTwitterDataForStock(context, stockSymbol);
-                RedditData.GetRedditDataForStock(context, stockSymbol);
+                GoogleNewsData.GetGoogleNewsDataForStock(context, stockSymbol, stockName);
+                TwitterData.GetTwitterDataForStock(context, stockSymbol, stockName);
+                RedditData.GetRedditDataForStock(context, stockSymbol, stockName);
             }
         });
     }
