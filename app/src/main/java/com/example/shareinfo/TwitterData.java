@@ -3,6 +3,7 @@ package com.example.shareinfo;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -25,7 +26,7 @@ public class TwitterData {
                     String socialTrendingInfoData;
                     try {
                         // GET Twitter News information from API using the stock symobol.
-                        String rules = "&max_results=10&tweet.fields=author_id,created_at,lang,referenced_tweets,public_metrics&expansions=author_id";
+                        String rules = "&max_results=20&tweet.fields=author_id,created_at,lang,referenced_tweets,public_metrics&expansions=author_id";
                         String url = "https://api.twitter.com/2/tweets/search/recent?query=" + stockSymbol + rules;
                         URL twitterStreamsUrl = new URL(url);
                         HttpURLConnection twitterSearchConnection = (HttpURLConnection) twitterStreamsUrl.openConnection();
@@ -36,7 +37,6 @@ public class TwitterData {
                         try (BufferedReader in = new BufferedReader(new InputStreamReader(twitterSearchConnection.getInputStream()))) {
                             String output;
                             while ((output = in.readLine()) != null) {
-                                System.out.println(output);
                                 twitterSearchData.append(output);
                             }
 
@@ -46,7 +46,7 @@ public class TwitterData {
                         }
 
                         // GET Twitter News information from API using the stock name.
-                        String url2 = "https://api.twitter.com/2/tweets/search/recent?query=" + stockSymbol + rules;
+                        String url2 = "https://api.twitter.com/2/tweets/search/recent?query=" + stockName + rules;
                         URL twitterStreamsUrl2 = new URL(url2);
                         HttpURLConnection twitterSearchConnection2 = (HttpURLConnection) twitterStreamsUrl2.openConnection();
                         twitterSearchConnection2.setRequestProperty("Authorization", "Bearer " + twitterToken);
@@ -55,12 +55,11 @@ public class TwitterData {
                         try (BufferedReader in = new BufferedReader(new InputStreamReader(twitterSearchConnection2.getInputStream()))) {
                             String output;
                             while ((output = in.readLine()) != null) {
-                                System.out.println(output);
                                 twitterSearchData2.append(output);
                             }
                         twitterSearchConnection.disconnect();
                         twitterSearchConnection2.disconnect();
-
+                            Log.d("Twitter Data", "Twitter data received.");
                         } catch (Exception e) {
                             //throw new RuntimeException(e);
                         }
@@ -104,6 +103,7 @@ public class TwitterData {
                         stream.write(twitterSearchData2.toString().getBytes());
                         stream.write("\n".getBytes());
                         stream.close();
+                        Log.d("Twitter Data", "Twitter data saved.");
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
