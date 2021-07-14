@@ -20,7 +20,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class GoogleNewsData {
-    public static void GetGoogleNewsDataForStock(Context context, String searchString) {
+    public static void GetGoogleNewsDataForStock(Context context, String stockSymbol, String stockName) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
 
@@ -28,10 +28,11 @@ public class GoogleNewsData {
             @Override
             public void run() {
                 String googleNewsData = "";
+                String googleNewsData2 = "";
                 try {
-                    // GET Google News information from API
+                    // GET Google News information from API using the stock symbol.
                     String rules = "&country=US&lang=en";
-                    String url = "https://google-news1.p.rapidapi.com/search?q=" + searchString + rules;
+                    String url = "https://google-news1.p.rapidapi.com/search?q=" + stockSymbol + rules;
                     URL googleNewsUrl = new URL(url);
                     HttpURLConnection googleNewsConnection = (HttpURLConnection) googleNewsUrl.openConnection();
                     googleNewsConnection.setRequestProperty("x-rapidapi-host", "google-news1.p.rapidapi.com");
@@ -40,7 +41,20 @@ public class GoogleNewsData {
                     InputStream inputStream = googleNewsConnection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                     googleNewsData = bufferedReader.readLine();
-                    Log.d("Google News JSON Data", googleNewsData);
+
+                    // GET Google News information from API using the stock name.
+                    String url2 = "https://google-news1.p.rapidapi.com/search?q=" + stockName + rules;
+                    URL googleNewsUrl2 = new URL(url2);
+                    HttpURLConnection googleNewsConnection2 = (HttpURLConnection) googleNewsUrl2.openConnection();
+                    googleNewsConnection2.setRequestProperty("x-rapidapi-host", "google-news1.p.rapidapi.com");
+                    googleNewsConnection2.setRequestProperty("x-rapidapi-key", "132a0cb470mshf7b87dbc92557f1p1cf34bjsna1ca8152da1a");
+                    googleNewsConnection2.setRequestMethod("GET");
+                    inputStream = googleNewsConnection2.getInputStream();
+                    bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                    googleNewsData2 = bufferedReader.readLine();
+                    googleNewsConnection2.disconnect();
+                    inputStream.close();
+                    Log.d("Google News Data", "Google news data received.");
 
                 } catch (ProtocolException e) {
                     e.printStackTrace();
@@ -50,16 +64,25 @@ public class GoogleNewsData {
                     e.printStackTrace();
                 }
 
-                // Save the JSON information to the file storage
+                // Save the JSON information to the file storage.
                 try {
-                    // Saving Google News data in a JSON file
-                    String filePath = context.getFilesDir().getAbsolutePath();
-                    String googleNewsJSONFileName = "GoogleNewsData_" + searchString + ".json";
+                    // Saving Google News data in a JSON file for stock symbol query.
+                    String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information";
+                    String googleNewsJSONFileName = "GoogleNewsData_" + stockSymbol + ".json";
                     File googleNewsDataFile = new File(filePath, googleNewsJSONFileName);
                     FileOutputStream stream = new FileOutputStream(googleNewsDataFile);
                     stream.write(googleNewsData.getBytes());
                     stream.write("\n".getBytes());
                     stream.close();
+
+                    // Saving Google News data in a JSON file for stock name query.
+                    String googleNewsJSONFileName2 = "GoogleNewsData_" + stockSymbol + "2.json";
+                    File googleNewsDataFile2 = new File(filePath, googleNewsJSONFileName2);
+                    stream = new FileOutputStream(googleNewsDataFile2);
+                    stream.write(googleNewsData2.getBytes());
+                    stream.write("\n".getBytes());
+                    stream.close();
+                    Log.d("Google News Data", "Google news data saved.");
 
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
