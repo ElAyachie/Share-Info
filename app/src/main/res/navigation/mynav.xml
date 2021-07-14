@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynav"
+    app:startDestination="@id/trending">
+    <fragment
+        android:id="@+id/trending"
+        android:name="com.example.shareinfo.Trending"
+        android:label="fragment_trending"
+        tools:layout="@layout/fragment_trending" />
+    <fragment
+        android:id="@+id/personalized"
+        android:name="com.example.shareinfo.Personalized"
+        android:label="fragment_personalized"
+        tools:layout="@layout/fragment_personalized" />
+    <fragment
+        android:id="@+id/search"
+        android:name="com.example.shareinfo.Search"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.shareinfo.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
