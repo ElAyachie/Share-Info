@@ -1,5 +1,7 @@
 package com.example.shareinfo;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -38,27 +40,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-                    switch (item.getItemId()) {
-                        case R.id.trending:
-                            selectedFragment = new Trending();
-                            break;
-                        case R.id.personalized:
-                            selectedFragment = new Personalized();
-                            break;
-                        case R.id.search:
-                            selectedFragment = new Search();
-                            break;
-                        case R.id.profile:
-                            selectedFragment = new Profile();
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
-                            selectedFragment).commit();
-                    return true;
+            item -> {
+                Fragment selectedFragment = null;
+                switch (item.getItemId()) {
+                    case R.id.trending:
+                        selectedFragment = new Trending();
+                        break;
+                    case R.id.personalized:
+                        selectedFragment = new Personalized();
+                        break;
+                    case R.id.search:
+                        selectedFragment = new Search();
+                        break;
+                    case R.id.profile:
+                        selectedFragment = new Profile();
                 }
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
+                        selectedFragment).commit();
+                return true;
             };
-
 }
