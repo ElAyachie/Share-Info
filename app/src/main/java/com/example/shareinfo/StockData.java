@@ -38,7 +38,8 @@ public class StockData {
                 String stockTrendingInfoData = "";
                 try {
                     // GET Stock information from API
-                    URL stockTrendingInfoUrl = new URL("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers?region=US");
+                    String url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers?region=US";
+                    URL stockTrendingInfoUrl = new URL(url);
                     HttpURLConnection stockTrendingInfoConnection = (HttpURLConnection) stockTrendingInfoUrl.openConnection();
                     stockTrendingInfoConnection.setRequestProperty("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com");
                     stockTrendingInfoConnection.setRequestProperty("x-rapidapi-key", "132a0cb470mshf7b87dbc92557f1p1cf34bjsna1ca8152da1a");
@@ -169,9 +170,15 @@ public class StockData {
             // Another array will store solely the trending stock's symbols(acronym).
             for (int i = 0; i < stockTrendingJsonArray.length(); i++) {
                 JSONObject jsonObject = stockTrendingJsonArray.getJSONObject(i);
-                String longName = jsonObject.getString("longName");
                 String symbol = jsonObject.getString("symbol");
-                stockTrendingNamesSB.append(longName);
+                String otherName = "";
+                if (jsonObject.has("shortName")) {
+                     otherName = jsonObject.getString("shortName");
+                }
+                else {
+                    otherName = jsonObject.getString("longName");
+                }
+                stockTrendingNamesSB.append(otherName);
                 stockTrendingSymbolsSB.append(symbol);
                 // If there is another value after this add a comma.
                 if (i + 1 < stockTrendingJsonArray.length()) {
@@ -179,10 +186,21 @@ public class StockData {
                     stockTrendingSymbolsSB.append(",");
                 }
             }
-            // Need to remove inconsistent names.
-            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(", Inc.",""));
-            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" Inc.",""));
-            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" Ltd.",""));
+            // Remove some inconsistencies.
+            stockTrendingSymbolsSB = new StringBuilder(stockTrendingSymbolsSB.toString().replaceAll("\\^",""));
+            stockTrendingSymbolsSB = new StringBuilder(stockTrendingSymbolsSB.toString().replaceAll("-USD",""));
+            stockTrendingSymbolsSB = new StringBuilder(stockTrendingSymbolsSB.toString().replaceAll("-CAD",""));
+            // Make all of the names uppercase for simplicity.
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().toUpperCase());
+            // Need to remove inconsistent names with the help of regex.
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(", INC\\.",""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" INC\\.",""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" LTD\\.",""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" LTD",""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(", IN",""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" USD",""));
+
+
 
             // SharedPreferences can not be stored as arrays, instead i am storing them in a StringBuilder which I will turn into an array.
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);

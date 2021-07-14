@@ -41,7 +41,6 @@ public class GoogleNewsData {
                     InputStream inputStream = googleNewsConnection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                     googleNewsData = bufferedReader.readLine();
-                    Log.d("Google News JSON Data", googleNewsData);
 
                     // GET Google News information from API using the stock name.
                     String url2 = "https://google-news1.p.rapidapi.com/search?q=" + stockName + rules;
@@ -53,7 +52,9 @@ public class GoogleNewsData {
                     inputStream = googleNewsConnection2.getInputStream();
                     bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                     googleNewsData2 = bufferedReader.readLine();
+                    googleNewsConnection2.disconnect();
                     inputStream.close();
+                    Log.d("Google News Data", "Google news data received.");
 
                 } catch (ProtocolException e) {
                     e.printStackTrace();
@@ -81,6 +82,7 @@ public class GoogleNewsData {
                     stream.write(googleNewsData2.getBytes());
                     stream.write("\n".getBytes());
                     stream.close();
+                    Log.d("Google News Data", "Google news data saved.");
 
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();

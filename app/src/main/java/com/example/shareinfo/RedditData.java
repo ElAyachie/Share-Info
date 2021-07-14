@@ -27,27 +27,30 @@ import java.util.concurrent.Executors;
                     try {
                         // GET Reddit information from API using stock symbol.
                         String subReddit = "wallstreetbets";
-                        String url = "https://socialgrep.p.rapidapi.com/search/posts?query=" + stockSymbol +"%2C%2Fr%2F" + subReddit;
-                        URL stockTrendingInfoUrl = new URL(url);
-                        HttpURLConnection stockTrendingInfoConnection = (HttpURLConnection) stockTrendingInfoUrl.openConnection();
-                        stockTrendingInfoConnection.setRequestProperty("x-rapidapi-host", "socialgrep.p.rapidapi.com");
-                        stockTrendingInfoConnection.setRequestProperty("x-rapidapi-key", "132a0cb470mshf7b87dbc92557f1p1cf34bjsna1ca8152da1a");
-                        stockTrendingInfoConnection.setRequestMethod("GET");
-                        InputStream inputStream = stockTrendingInfoConnection.getInputStream();
+                        String afterDate = "2020-07-09";
+                        String score = "4";
+                        //"
+                        String url = "https://socialgrep.p.rapidapi.com/search/comments?query=%2Fr%2F"+ subReddit + "%2C"+ stockSymbol + "%2Cscore%3A"+ score + "%2Cafter%3A" + afterDate;
+                        URL redditSearchUrl = new URL(url);
+                        HttpURLConnection redditSearchConnection = (HttpURLConnection) redditSearchUrl.openConnection();
+                        redditSearchConnection.setRequestProperty("x-rapidapi-host", "socialgrep.p.rapidapi.com");
+                        redditSearchConnection.setRequestProperty("x-rapidapi-key", "132a0cb470mshf7b87dbc92557f1p1cf34bjsna1ca8152da1a");
+                        redditSearchConnection.setRequestMethod("GET");
+                        InputStream inputStream = redditSearchConnection.getInputStream();
                         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                         redditSearchData = bufferedReader.readLine();
 
                         // GET Reddit information from API using stock name.
-                        String url2 = "https://socialgrep.p.rapidapi.com/search/posts?query=" + stockName +"%2C%2Fr%2F" + subReddit;
-                        URL stockTrendingInfoUrl2 = new URL(url2);
-                        HttpURLConnection stockTrendingInfoConnection2 = (HttpURLConnection) stockTrendingInfoUrl2.openConnection();
-                        stockTrendingInfoConnection2.setRequestProperty("x-rapidapi-host", "socialgrep.p.rapidapi.com");
-                        stockTrendingInfoConnection2.setRequestProperty("x-rapidapi-key", "132a0cb470mshf7b87dbc92557f1p1cf34bjsna1ca8152da1a");
-                        stockTrendingInfoConnection2.setRequestMethod("GET");
-                        inputStream = stockTrendingInfoConnection2.getInputStream();
+                        String url2 = "https://socialgrep.p.rapidapi.com/search/posts?query=%2Fr%2F"+ subReddit +"%2C"+ stockName +"%2Cscore%3A8%2Cafter%3A" + afterDate;
+                        URL redditSearchUrl2 = new URL(url2);
+                        HttpURLConnection redditSearchConnection2 = (HttpURLConnection) redditSearchUrl2.openConnection();
+                        redditSearchConnection2.setRequestProperty("x-rapidapi-host", "socialgrep.p.rapidapi.com");
+                        redditSearchConnection2.setRequestProperty("x-rapidapi-key", "132a0cb470mshf7b87dbc92557f1p1cf34bjsna1ca8152da1a");
+                        redditSearchConnection2.setRequestMethod("GET");
+                        inputStream = redditSearchConnection2.getInputStream();
                         bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                         redditSearchData2 = bufferedReader.readLine();
-                        Log.d("Reddit JSON Data", redditSearchData2);
+                        Log.d("Reddit Data", "Reddit data received.");
 
                     } catch (ProtocolException e) {
                         e.printStackTrace();
@@ -75,12 +78,14 @@ import java.util.concurrent.Executors;
                         stream.write(redditSearchData2.getBytes());
                         stream.write("\n".getBytes());
                         stream.close();
+                        Log.d("Reddit Data", "Reddit data saved.");
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
                     handler.post(new Runnable() {
                         @Override
                         public void run() {

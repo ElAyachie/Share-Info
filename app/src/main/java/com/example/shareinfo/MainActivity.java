@@ -22,11 +22,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String stockSymbol = "TSLA";
                 String stockName = "Tesla";
-                StockData.GetGeneralStockData(context);
-                StockData.GetStockData(context, stockSymbol);
-                GoogleNewsData.GetGoogleNewsDataForStock(context, stockSymbol, stockName);
-                TwitterData.GetTwitterDataForStock(context, stockSymbol, stockName);
-                RedditData.GetRedditDataForStock(context, stockSymbol, stockName);
+                //StockData.GetGeneralStockData(context);
+                //StockData.GetStockData(context, stockSymbol);
+                //GoogleNewsData.GetGoogleNewsDataForStock(context, stockSymbol, stockName);
+                //StockData.StoreTrendingStocks(context);
+                //TwitterData.GetTwitterDataForStock(context, stockSymbol, stockName);
+                //RedditData.GetRedditDataForStock(context, stockSymbol, stockName);
+                CombineData.CombineAndSaveData(context, stockSymbol);
             }
         });
     }
