@@ -33,39 +33,23 @@ public class CombineData {
             twitterFile2.close();
             JSONObject twitterJSONData2 = new JSONObject(new String(twitterRawData2, "UTF-8"));
 
-            // Creating the google news json object from the json file.
-            String googleNewsFilePath1 = context.getFilesDir().getAbsolutePath() + "/stock_information/GoogleNewsData_"+ stockSymbol +".json";
-            FileInputStream googleNewsFile1 = new FileInputStream(googleNewsFilePath1);
-            int googleNewsFileSize1 = googleNewsFile1.available();
-            byte[] googleNewsRawData1 = new byte[googleNewsFileSize1];
-            result = googleNewsFile1.read(googleNewsRawData1);
-            googleNewsFile1.close();
-            JSONObject googleNewsJSONData1 = new JSONObject(new String(googleNewsRawData1, "UTF-8"));
-            // Creating the google news json object from the json file.
-            String googleNewsFilePath2 = context.getFilesDir().getAbsolutePath() + "/stock_information/GoogleNewsData_"+ stockSymbol +"2.json";
-            FileInputStream googleNewsFile2 = new FileInputStream(googleNewsFilePath2);
-            int googleNewsFileSize2 = googleNewsFile2.available();
-            byte[] googleNewsRawData2 = new byte[googleNewsFileSize2];
-            result = googleNewsFile2.read(googleNewsRawData2);
-            googleNewsFile2.close();
-            JSONObject googleNewsJSONData2 = new JSONObject(new String(googleNewsRawData2, "UTF-8"));
+            // Creating the news json object from the json file.
+            String newsFilePath = context.getFilesDir().getAbsolutePath() + "/stock_information/NewsData_"+ stockSymbol +".json";
+            FileInputStream newsFile = new FileInputStream(newsFilePath);
+            int newsFileSize = newsFile.available();
+            byte[] newsRawData = new byte[newsFileSize];
+            result = newsFile.read(newsRawData);
+            newsFile.close();
+            JSONObject newsJSONData = new JSONObject(new String(newsRawData, "UTF-8"));
 
             // Creating the reddit json object from the json file.
-            String redditFilePath1 = context.getFilesDir().getAbsolutePath() + "/stock_information/RedditSearchData_"+ stockSymbol +".json";
-            FileInputStream redditSearchFile1 = new FileInputStream(redditFilePath1);
-            int redditSearchFileSize1 = redditSearchFile1.available();
-            byte[] redditSearchRawData1 = new byte[redditSearchFileSize1];
-            result = redditSearchFile1.read(redditSearchRawData1);
-            redditSearchFile1.close();
-            JSONObject redditSearchJSONData1 = new JSONObject(new String(redditSearchRawData1, "UTF-8"));
-            // Creating the reddit json object from the json file.
-            String redditFilePath2 = context.getFilesDir().getAbsolutePath() + "/stock_information/RedditSearchData_"+ stockSymbol +"2.json";
-            FileInputStream redditSearchFile2 = new FileInputStream(redditFilePath2);
-            int redditSearchFileSize2 = redditSearchFile2.available();
-            byte[] redditSearchRawData2 = new byte[redditSearchFileSize2];
-            result = redditSearchFile2.read(redditSearchRawData2);
-            redditSearchFile2.close();
-            JSONObject redditSearchJSONData2 = new JSONObject(new String(redditSearchRawData2, "UTF-8"));
+            String redditFilePath = context.getFilesDir().getAbsolutePath() + "/stock_information/RedditSearchData_"+ stockSymbol +".json";
+            FileInputStream redditSearchFile = new FileInputStream(redditFilePath);
+            int redditSearchFileSize = redditSearchFile.available();
+            byte[] redditSearchRawData = new byte[redditSearchFileSize];
+            result = redditSearchFile.read(redditSearchRawData);
+            redditSearchFile.close();
+            JSONObject redditSearchJSONData = new JSONObject(new String(redditSearchRawData, "UTF-8"));
 
             // Creating the json object for combined news and social media.
             JSONObject combinedStockData = new JSONObject();
@@ -116,11 +100,11 @@ public class CombineData {
             }
 
             // Add all the Reddit information to the combined json array.
-            JSONArray redditJSONDataArray1 = redditSearchJSONData1.getJSONArray("data");
+            JSONArray redditJSONDataArray = redditSearchJSONData.getJSONArray("data");
 
-            for (int i = 0; i < redditJSONDataArray1.length(); i++) {
+            for (int i = 0; i < redditJSONDataArray.length(); i++) {
                 JSONObject data = new JSONObject();
-                JSONObject jsonObject = redditJSONDataArray1.getJSONObject(i);
+                JSONObject jsonObject = redditJSONDataArray.getJSONObject(i);
                 // Make sure that the comment has some interactions
                 if (jsonObject.has("sentiment") && !(jsonObject.getDouble("sentiment") == 0)) {
                     data.put("id", id);
@@ -135,65 +119,25 @@ public class CombineData {
                 }
             }
 
-            // Add all the Reddit information to the combined json array.
-            JSONArray redditJSONDataArray2 = redditSearchJSONData2.getJSONArray("data");
-
-            for (int i = 0; i < redditJSONDataArray2.length(); i++) {
-                JSONObject data = new JSONObject();
-                JSONObject jsonObject = redditJSONDataArray2.getJSONObject(i);
-                // Make sure that the comment has some interactions
-                if (jsonObject.has("sentiment") && !(jsonObject.getDouble("sentiment") == 0)) {
-                    data.put("id", id);
-                    data.put("media_source", "reddit");
-                    data.put("user_or_network", jsonObject.getString("id"));
-                    data.put("content", jsonObject.getString("body"));
-                    data.put("interactions", jsonObject.getDouble("sentiment"));
-                    data.put("date_created", jsonObject.getString("created_utc"));
-                    data.put("link", "permalink");
-                    stockDataArray.put(data);
-                    id += 1;
-                }
-            }
-
-
             // Add all the Google News information to the combined json file.
-            JSONArray googleNewsJSONDataArray1 = googleNewsJSONData1.getJSONArray("articles");
+            JSONArray newsJSONDataArray = newsJSONData.getJSONArray("data");
 
-            for (int i = 0; i < googleNewsJSONDataArray1.length(); i++) {
+            for (int i = 0; i < newsJSONDataArray.length(); i++) {
                 JSONObject data = new JSONObject();
-                JSONObject jsonObject = googleNewsJSONDataArray1.getJSONObject(i);
-                JSONObject sourceJSON = jsonObject.getJSONObject("source");
+                JSONObject jsonObject = newsJSONDataArray.getJSONObject(i);
                 data.put("id", id);
-                data.put("media_source", "Google News");
-                data.put("user_or_network", sourceJSON.getString("title"));
-                data.put("content", jsonObject.getString("title"));
+                data.put("media_source", "General News - " + jsonObject.getString("source"));
+                data.put("user_or_network", jsonObject.getString("title"));
+                data.put("content", jsonObject.getString("description"));
                 data.put("interactions", "NA");
-                data.put("date_created", jsonObject.getString("published_date"));
-                data.put("link", jsonObject.getString("link"));
-                stockDataArray.put(data);
-                id += 1;
-            }
-
-            // Add all the Google News information to the combined json file.
-            JSONArray googleNewsJSONDataArray2 = googleNewsJSONData2.getJSONArray("articles");
-
-            for (int i = 0; i < googleNewsJSONDataArray2.length(); i++) {
-                JSONObject data = new JSONObject();
-                JSONObject jsonObject = googleNewsJSONDataArray2.getJSONObject(i);
-                JSONObject sourceJSON = jsonObject.getJSONObject("source");
-                data.put("id", id);
-                data.put("media_source", "Google News");
-                data.put("user_or_network", sourceJSON.getString("title"));
-                data.put("content", jsonObject.getString("title"));
-                data.put("interactions", "NA");
-                data.put("date_created", jsonObject.getString("published_date"));
-                data.put("link", jsonObject.getString("link"));
+                data.put("date_created", jsonObject.getString("published_at"));
+                data.put("link", jsonObject.getString("url"));
                 stockDataArray.put(data);
                 id += 1;
             }
 
             combinedStockData.put("data", stockDataArray);
-            String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information";
+            String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information" + stockSymbol;
             String combinedDataFileName = "CombinedData_"+ stockSymbol +".json";
             File combinedDataFile = new File(filePath, combinedDataFileName);
             FileOutputStream stream = new FileOutputStream(combinedDataFile);
@@ -209,7 +153,5 @@ public class CombineData {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
 }

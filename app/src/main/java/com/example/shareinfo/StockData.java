@@ -47,7 +47,8 @@ public class StockData {
                     InputStream inputStream = stockTrendingInfoConnection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                     stockTrendingInfoData = bufferedReader.readLine();
-                    Log.d("Stock JSON Data", stockTrendingInfoData);
+                    inputStream.close();
+                    stockTrendingInfoConnection.disconnect();
 
                 } catch (ProtocolException e) {
                     e.printStackTrace();
@@ -108,7 +109,8 @@ public class StockData {
                     InputStream inputStream = stockInfoConnection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                     stockInfoData = bufferedReader.readLine();
-                    Log.d("Stock JSON Data", stockInfoData);
+                    inputStream.close();
+                    stockInfoConnection.disconnect();
 
                 } catch (ProtocolException e) {
                     e.printStackTrace();
@@ -121,7 +123,7 @@ public class StockData {
                 // Save the JSON information to the file storage
                 try {
                     // Saving Stock information data in a JSON file
-                    String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information";
+                    String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information/" + stockSymbol;
                     String stockInfoJSONFileName = "StockData_" + stockSymbol + ".json";
                     File stockTrendingInfoDatafile = new File(filePath, stockInfoJSONFileName);
                     FileOutputStream stream = new FileOutputStream(stockTrendingInfoDatafile);
@@ -168,7 +170,7 @@ public class StockData {
             StringBuilder stockTrendingSymbolsSB = new StringBuilder();
             // Loop through the json array and store each trend stock's short name and symbol(acronym).
             // Another array will store solely the trending stock's symbols(acronym).
-            for (int i = 0; i < stockTrendingJsonArray.length(); i++) {
+            for (int i = 0; i < 5; i++) {
                 JSONObject jsonObject = stockTrendingJsonArray.getJSONObject(i);
                 String symbol = jsonObject.getString("symbol");
                 String otherName = "";
@@ -181,7 +183,7 @@ public class StockData {
                 stockTrendingNamesSB.append(otherName);
                 stockTrendingSymbolsSB.append(symbol);
                 // If there is another value after this add a comma.
-                if (i + 1 < stockTrendingJsonArray.length()) {
+                if (i + 1 < 5) {
                     stockTrendingNamesSB.append(",");
                     stockTrendingSymbolsSB.append(",");
                 }
@@ -201,15 +203,13 @@ public class StockData {
             stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" USD",""));
 
 
-
             // SharedPreferences can not be stored as arrays, instead i am storing them in a StringBuilder which I will turn into an array.
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString("stockTrendingNames", String.valueOf(stockTrendingNamesSB));
             editor.putString("stockTrendingSymbols", String.valueOf(stockTrendingSymbolsSB));
             editor.apply();
-            System.out.println(stockTrendingSymbolsSB);
-            System.out.println(stockTrendingNamesSB);
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {

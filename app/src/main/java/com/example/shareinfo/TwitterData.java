@@ -23,10 +23,9 @@ public class TwitterData {
                 public void run() {
                     StringBuilder twitterSearchData = null;
                     StringBuilder twitterSearchData2 = null;
-                    String socialTrendingInfoData;
                     try {
                         // GET Twitter News information from API using the stock symobol.
-                        String rules = "&max_results=20&tweet.fields=author_id,created_at,lang,referenced_tweets,public_metrics&expansions=author_id";
+                        String rules = "&max_results=100&tweet.fields=author_id,created_at,lang,referenced_tweets,public_metrics&expansions=author_id";
                         String url = "https://api.twitter.com/2/tweets/search/recent?query=" + stockSymbol + rules;
                         URL twitterStreamsUrl = new URL(url);
                         HttpURLConnection twitterSearchConnection = (HttpURLConnection) twitterStreamsUrl.openConnection();
@@ -39,6 +38,7 @@ public class TwitterData {
                             while ((output = in.readLine()) != null) {
                                 twitterSearchData.append(output);
                             }
+                         twitterSearchConnection.disconnect();
 
 
                         } catch (Exception e) {
@@ -59,23 +59,9 @@ public class TwitterData {
                             }
                         twitterSearchConnection.disconnect();
                         twitterSearchConnection2.disconnect();
-                            Log.d("Twitter Data", "Twitter data received.");
                         } catch (Exception e) {
                             //throw new RuntimeException(e);
                         }
-
-                    /*
-                    // Trying alternative
-                    URL socialTrendingInfoUrl = new URL("https://socialsentiment-io.p.rapidapi.com/stocks/" + searchString + "/posts/");
-                    HttpURLConnection socialTrendingInfoConnection = (HttpURLConnection) socialTrendingInfoUrl.openConnection();
-                    socialTrendingInfoConnection.setRequestProperty("x-rapidapi-host", "socialsentiment-io.p.rapidapi.com");
-                    socialTrendingInfoConnection.setRequestProperty("x-rapidapi-key", "132a0cb470mshf7b87dbc92557f1p1cf34bjsna1ca8152da1a");
-                    socialTrendingInfoConnection.setRequestMethod("GET");
-                    InputStream inputStream = socialTrendingInfoConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    socialTrendingInfoData = bufferedReader.readLine();
-                    Log.d("Social Stock JSON Data", socialTrendingInfoData);
-                    */
                     } catch (ProtocolException e) {
                         e.printStackTrace();
                     } catch (MalformedURLException e) {
@@ -87,7 +73,7 @@ public class TwitterData {
                     // Save the JSON information to the file storage for specifc stock.
                     try {
                         // Saving Twitter data in a JSON file.
-                        String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information";
+                        String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information/" + stockSymbol;
                         String twitterJSONFileName = "TwitterSearchData_" + stockSymbol + ".json";
                         File twitterSearchDataFile = new File(filePath, twitterJSONFileName);
                         FileOutputStream stream = new FileOutputStream(twitterSearchDataFile);
@@ -103,7 +89,6 @@ public class TwitterData {
                         stream.write(twitterSearchData2.toString().getBytes());
                         stream.write("\n".getBytes());
                         stream.close();
-                        Log.d("Twitter Data", "Twitter data saved.");
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
