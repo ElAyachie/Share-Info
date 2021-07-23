@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.robinhood.spark.SparkView;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Personalized#newInstance} factory method to
@@ -59,6 +61,12 @@ public class Personalized extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_personalized, container, false);
+        View v=  inflater.inflate(R.layout.fragment_personalized, container, false);
+        SparkView sparkView = (SparkView) v.findViewById(R.id.sparkview);
+
+        RandomizedAdapter adapter = new RandomizedAdapter();
+        sparkView.setAdapter(adapter);
+
+        return v;
     }
 }
