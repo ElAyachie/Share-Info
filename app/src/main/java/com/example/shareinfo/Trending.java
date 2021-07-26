@@ -18,6 +18,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -37,6 +38,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
+import android.widget.Button;
+
+import com.robinhood.spark.SparkView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,6 +53,8 @@ public class Trending extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -96,6 +102,7 @@ public class Trending extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         setRetainInstance(true);
         // Inflate the layout for this fragment
+
         View mainView = inflater.inflate(R.layout.fragment_trending_new, container, false);
         Context context = getContext();
         //Setup.GetAllStockData(context);
@@ -261,5 +268,13 @@ public class Trending extends Fragment {
                 return compare;
             }
         });
+
+        View v = inflater.inflate(R.layout.fragment_trending, container, false);
+        SparkView sparkView = (SparkView) v.findViewById(R.id.sparkview);
+
+        RandomizedAdapter adapter = new RandomizedAdapter();
+        sparkView.setAdapter(adapter);
+
+        return v;
     }
 }

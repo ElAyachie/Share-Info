@@ -24,6 +24,8 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/StockInfo"
+                android:onClick="stockData"
                 android:layout_width="77dp"
                 android:layout_height="35dp"
                 android:layout_marginLeft="20dp"
