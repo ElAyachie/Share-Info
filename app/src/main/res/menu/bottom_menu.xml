@@ -8,7 +8,7 @@
     <item
         android:id="@+id/personalized"
         android:icon="@drawable/ic_baseline_star"
-        android:title="Personalized" />
+        android:title="Favorites" />
     <item
         android:id="@+id/search"
         android:icon="@drawable/ic_baseline_search"
