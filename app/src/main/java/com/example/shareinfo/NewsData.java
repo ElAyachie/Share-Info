@@ -16,11 +16,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class NewsData {
-    public static void GetNewsDataForStock(Context context, String stockSymbol, String stockName) {
+    public static void GetNewsDataForStock(Context context, String stockSymbol, String stockName, String folderPath) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
 
@@ -30,8 +34,13 @@ public class NewsData {
                 String newsData = "";
                 try {
                     // GET News information from API using the stock symbol.
-                    String newsAPIKey = "73cbab5c6c58002b78c8ec6dd2c4c688";
-                    String newsURL = "http://api.mediastack.com/v1/news?access_key=" + newsAPIKey + "&keywords=" + stockName + "&languages=en&limit=50";
+                    // Remove spaces in the name of the stock so that the api works.
+                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                    Date date = new Date();
+                    String dateString = formatter.format(date);
+                    String urlStockName = stockName.replaceAll(" ", "+");
+                    String newsAPIKey = "0c2e1e9d0c9fabaa36b80de7b59d84c5";
+                    String newsURL = "http://api.mediastack.com/v1/news?access_key=" + newsAPIKey + "&keywords=" + urlStockName + "&languages=en&date=" + dateString + "&limit=50";
                     URL newsDataStreamsUrl = new URL(newsURL);
                     HttpURLConnection newsDataConnection = (HttpURLConnection) newsDataStreamsUrl.openConnection();
                     newsDataConnection.setRequestMethod("GET");
@@ -50,26 +59,13 @@ public class NewsData {
                 }
 
                 // Save the JSON information to the file storage.
-                try {
                     // Path to were to save the data file.
-                    String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information/" + stockSymbol;
+                    String extendedFilePath = folderPath + "/" + stockSymbol + "/NewsData_" + stockSymbol + ".json";
                     // Check if their is information from the API.
-                    assert newsData != null;
-                    if (!newsData.toString().equals("")) {
-                        // Saving Google News data in a JSON file for stock symbol query.
-                        String newsJSONFileName = "NewsData_" + stockSymbol + ".json";
-                        File newsDataFile = new File(filePath, newsJSONFileName);
-                        FileOutputStream stream = new FileOutputStream(newsDataFile);
-                        stream.write(newsData.toString().getBytes());
-                        stream.write("\n".getBytes());
-                        stream.close();
+                    if (!newsData.equals("")) {
+                        FileFunctions.CreateFile(context, extendedFilePath, newsData);
                     }
 
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
                 handler.post(new Runnable() {
                     @Override
                     public void run() {

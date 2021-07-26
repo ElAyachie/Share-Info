@@ -59,22 +59,10 @@ public class StockData {
                 }
 
                 // Save the JSON information to the file storage
-                try {
                     // Saving Stock information data in a JSON file
-                    String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information";
-                    String stockInfoJSONFileName = "StockTrendingData.json";
-                    File stockTrendingInfoDatafile = new File(filePath, stockInfoJSONFileName);
-                    FileOutputStream stream = new FileOutputStream(stockTrendingInfoDatafile);
-                    stream.write(stockTrendingInfoData.getBytes());
-                    stream.write("\n".getBytes());
-                    stream.close();
-
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                StoreTrendingStocks(context);
+                    String extendedFilePath = "/stock_information/StockTrendingData.json";
+                    FileFunctions.CreateFile(context, extendedFilePath, stockTrendingInfoData);
+                    StoreTrendingStocks(context);
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -89,7 +77,7 @@ public class StockData {
 
     // Function requires context to load the stock information.
     // The function saves the specific stock information to a file.
-    public static void GetStockData(Context context, String stockSymbol) {
+    public static void GetStockData(Context context, String stockSymbol, String folderPath) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
 
@@ -104,7 +92,7 @@ public class StockData {
                     URL stockInfoUrl = new URL(url);
                     HttpURLConnection stockInfoConnection = (HttpURLConnection) stockInfoUrl.openConnection();
                     stockInfoConnection.setRequestProperty("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com");
-                    stockInfoConnection.setRequestProperty("x-rapidapi-key", "132a0cb470mshf7b87dbc92557f1p1cf34bjsna1ca8152da1a");
+                    stockInfoConnection.setRequestProperty("x-rapidapi-key", "91f85ba2dbmshbedc59d84b0c219p128439jsn00cb38d3b676");
                     stockInfoConnection.setRequestMethod("GET");
                     InputStream inputStream = stockInfoConnection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -123,7 +111,7 @@ public class StockData {
                 // Save the JSON information to the file storage
                 try {
                     // Saving Stock information data in a JSON file
-                    String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information/" + stockSymbol;
+                    String filePath = context.getFilesDir().getAbsolutePath() + folderPath + "/" + stockSymbol;
                     String stockInfoJSONFileName = "StockData_" + stockSymbol + ".json";
                     File stockTrendingInfoDatafile = new File(filePath, stockInfoJSONFileName);
                     FileOutputStream stream = new FileOutputStream(stockTrendingInfoDatafile);
@@ -156,13 +144,8 @@ public class StockData {
         // Function will store the trending stocks names(short name and acronym for each stock) from the stock trending json file.
         try {
             // Creating the stock trending json object from the json file.
-            String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information/StockTrendingData.json";
-            FileInputStream configFile = new FileInputStream(filePath);
-            int configFileSize = configFile.available();
-            byte[] rawData = new byte[configFileSize];
-            configFile.read(rawData);
-            configFile.close();
-            JSONObject stockTrendingJson = new JSONObject(new String(rawData, "UTF-8"));
+            String extendedFilePath = "/stock_information/StockTrendingData.json";
+            JSONObject stockTrendingJson = FileFunctions.LoadJSONFile(context, extendedFilePath);
             // The stock trending file has an array that has 20 trending stocks, it is under the name "quotes".
             JSONArray stockTrendingJsonArray = stockTrendingJson.getJSONObject("finance").getJSONArray("result").getJSONObject(0).getJSONArray("quotes");
             // In order to store the stock trending names, shared preferences requires us to use a StringBuilder.
@@ -170,38 +153,41 @@ public class StockData {
             StringBuilder stockTrendingSymbolsSB = new StringBuilder();
             // Loop through the json array and store each trend stock's short name and symbol(acronym).
             // Another array will store solely the trending stock's symbols(acronym).
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < stockTrendingJsonArray.length(); i++) {
                 JSONObject jsonObject = stockTrendingJsonArray.getJSONObject(i);
                 String symbol = jsonObject.getString("symbol");
                 String otherName = "";
                 if (jsonObject.has("shortName")) {
-                     otherName = jsonObject.getString("shortName");
-                }
-                else {
+                    otherName = jsonObject.getString("shortName");
+                } else {
                     otherName = jsonObject.getString("longName");
                 }
                 stockTrendingNamesSB.append(otherName);
                 stockTrendingSymbolsSB.append(symbol);
                 // If there is another value after this add a comma.
-                if (i + 1 < 5) {
+                if (i + 1 < stockTrendingJsonArray.length()) {
                     stockTrendingNamesSB.append(",");
                     stockTrendingSymbolsSB.append(",");
                 }
             }
             // Remove some inconsistencies.
-            stockTrendingSymbolsSB = new StringBuilder(stockTrendingSymbolsSB.toString().replaceAll("\\^",""));
-            stockTrendingSymbolsSB = new StringBuilder(stockTrendingSymbolsSB.toString().replaceAll("-USD",""));
-            stockTrendingSymbolsSB = new StringBuilder(stockTrendingSymbolsSB.toString().replaceAll("-CAD",""));
+            stockTrendingSymbolsSB = new StringBuilder(stockTrendingSymbolsSB.toString().replaceAll("\\^", ""));
+            stockTrendingSymbolsSB = new StringBuilder(stockTrendingSymbolsSB.toString().replaceAll("-USD", ""));
+            stockTrendingSymbolsSB = new StringBuilder(stockTrendingSymbolsSB.toString().replaceAll("-CAD", ""));
             // Make all of the names uppercase for simplicity.
             stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().toUpperCase());
             // Need to remove inconsistent names with the help of regex.
-            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(", INC\\.",""));
-            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" INC\\.",""));
-            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" LTD\\.",""));
-            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" LTD",""));
-            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(", IN",""));
-            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" USD",""));
-
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(", ", ""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll("\\.", ""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll("INC", ""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" INC\\.", ""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" LTD\\.", ""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" LTD", ""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(", IN", ""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" USD", ""));
+            stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" CAD", ""));
+            System.out.println(stockTrendingNamesSB.toString());
+            System.out.println(stockTrendingSymbolsSB.toString());
 
             // SharedPreferences can not be stored as arrays, instead i am storing them in a StringBuilder which I will turn into an array.
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -210,12 +196,6 @@ public class StockData {
             editor.putString("stockTrendingSymbols", String.valueOf(stockTrendingSymbolsSB));
             editor.apply();
 
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
