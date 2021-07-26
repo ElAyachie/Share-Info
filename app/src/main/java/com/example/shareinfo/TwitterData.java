@@ -3,7 +3,10 @@ package com.example.shareinfo;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -14,7 +17,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class TwitterData {
-        public static void GetTwitterDataForStock(Context context, String stockSymbol, String stockName) {
+        public static void GetTwitterDataForStock(Context context, String stockSymbol, String stockName, String filePath) {
             ExecutorService executor = Executors.newSingleThreadExecutor();
             Handler handler = new Handler(Looper.getMainLooper());
 
@@ -24,7 +27,8 @@ public class TwitterData {
                     StringBuilder twitterSearchData = null;
                     StringBuilder twitterSearchData2 = null;
                     try {
-                        // GET Twitter News information from API using the stock symobol.
+                        // GET Twitter News information from API using the stock symbol.
+                        String urlStockName = stockName.replaceAll(" ", "+");
                         String rules = "&max_results=100&tweet.fields=author_id,created_at,lang,referenced_tweets,public_metrics&expansions=author_id";
                         String url = "https://api.twitter.com/2/tweets/search/recent?query=" + stockSymbol + rules;
                         URL twitterStreamsUrl = new URL(url);
@@ -46,7 +50,7 @@ public class TwitterData {
                         }
 
                         // GET Twitter News information from API using the stock name.
-                        String url2 = "https://api.twitter.com/2/tweets/search/recent?query=" + stockName + rules;
+                        String url2 = "https://api.twitter.com/2/tweets/search/recent?query=" + urlStockName + rules;
                         URL twitterStreamsUrl2 = new URL(url2);
                         HttpURLConnection twitterSearchConnection2 = (HttpURLConnection) twitterStreamsUrl2.openConnection();
                         twitterSearchConnection2.setRequestProperty("Authorization", "Bearer " + twitterToken);
@@ -70,31 +74,16 @@ public class TwitterData {
                         e.printStackTrace();
                     }
 
-                    // Save the JSON information to the file storage for specifc stock.
-                    try {
+                    // Save the JSON information to the file storage for specific stock.
                         // Saving Twitter data in a JSON file.
-                        String filePath = context.getFilesDir().getAbsolutePath() + "/stock_information/" + stockSymbol;
-                        String twitterJSONFileName = "TwitterSearchData_" + stockSymbol + ".json";
-                        File twitterSearchDataFile = new File(filePath, twitterJSONFileName);
-                        FileOutputStream stream = new FileOutputStream(twitterSearchDataFile);
+                        String extendedFilePath = filePath + "/" + stockSymbol + "/TwitterSearchData_" + stockSymbol + ".json";
                         assert twitterSearchData != null;
-                        stream.write(twitterSearchData.toString().getBytes());
-                        stream.write("\n".getBytes());
-                        stream.close();
+                        FileFunctions.CreateFile(context, extendedFilePath, twitterSearchData.toString());
                         // Saving Twitter data in a JSON file.
-                        String twitterJSONFileName2 = "TwitterSearchData_" + stockSymbol + "2.json";
-                        twitterSearchDataFile = new File(filePath, twitterJSONFileName2);
-                        stream = new FileOutputStream(twitterSearchDataFile);
+                        String extendedFilePath2 = filePath + "/" + stockSymbol + "/TwitterSearchData_" + stockSymbol + "2.json";
                         assert twitterSearchData2 != null;
-                        stream.write(twitterSearchData2.toString().getBytes());
-                        stream.write("\n".getBytes());
-                        stream.close();
+                        FileFunctions.CreateFile(context, extendedFilePath2, twitterSearchData2.toString());
 
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -105,4 +94,21 @@ public class TwitterData {
                 }
             });
         }
+
+    // Will help us identify what author id is linked with which author name.
+    public static String GetTwitterUsername(String id, JSONArray userJSONObject) {
+        String username = "";
+        for (int i = 0; i < userJSONObject.length(); i++) {
+            try {
+                String thisID = userJSONObject.getJSONObject(i).getString("id");
+                if (thisID.equals(id)){
+                    username = userJSONObject.getJSONObject(i).getString("username");
+                    return username;
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return username;
     }
+}

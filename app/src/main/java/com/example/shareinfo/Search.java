@@ -1,12 +1,22 @@
 package com.example.shareinfo;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.Spinner;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +29,10 @@ public class Search extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    Spinner stockSymbolsSpin;
+    ArrayAdapter<String> stockSymbolsListAdapter;
+    ListView stockTrendingView;
+    AddStockCustomAdapter addStockAdapter;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -58,7 +72,22 @@ public class Search extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View mainView = inflater.inflate(R.layout.fragment_search, container, false);
+        Context context = getContext();
+
+        // Set up the stock symbol spinner.
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String trendingSymbols = preferences.getString("stockTrendingSymbols", "");
+        String trendingNames = preferences.getString("stockTrendingNames", "");
+        stockTrendingView = mainView.findViewById(R.id.stockFavoritesView);
+        List<String> trendingSymbolsList = Arrays.asList(trendingSymbols.split(","));
+        List<String> trendingNamesList = Arrays.asList(trendingNames.split(","));
+        // Set the adapters.
+        addStockAdapter = new AddStockCustomAdapter(context, trendingSymbolsList, trendingNamesList);
+        stockTrendingView.setAdapter(addStockAdapter);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+        return mainView;
     }
 }
