@@ -3,6 +3,7 @@ package com.example.shareinfo;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -57,7 +58,7 @@ public class Personalized extends Fragment {
     ArrayAdapter<String> stockSymbolsListAdapter;
     ListView stockMediaInformationView;
     MediaInformationCustomAdapter stockMediaInformationAdapter;
-    int time;
+    int waitTime;
 
 
     public Personalized() {
@@ -105,125 +106,250 @@ public class Personalized extends Fragment {
         String favoriteStocksSymbols = preferences.getString("favoriteStocksSymbols", "");
         String favoriteStocksNames = preferences.getString("favoriteStocksNames", "");
 
+        // Length of time to wait for API to get information.
+        waitTime = 9500;
+
         // Checking if the fragment was already made (this is a work around).
-        // Checking if the fragment was already made (this is a work around).
-        if (preferences.getBoolean("personalizedExists", false)) {
-            time = 0;
+        // Checks if the fragment has been already made.
+        // If the fragment has not been made we have to wait for the information to come in from the API, store it to local storage, then show it to the user.
+        // Else the fragment has already been made we don't need to wait for the new data we can just get the information from local storage.
+        if (!preferences.getBoolean("personalizedExists", false)) {
+            mainView.findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
+            Setup.GetAllStockDataForFavorites(context);
+            // Wait for all the information from the API to be saved and then combine all the values into one json file.
+            final Handler handler = new Handler(Looper.getMainLooper());
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    stockMediaInformationView = mainView.findViewById(R.id.mediaListView);
+                    // A way to count the amount of stock symbols in the list.
+                    int numberOfElements = (favoriteStocksSymbols.length() - favoriteStocksSymbols.replace(",", "").length()) + 1;
+                    List<String> favoriteStocksSymbolsList = Arrays.asList(favoriteStocksSymbols.split(",")).subList(0, numberOfElements);
+                    List<String> favoriteStocksNamesList = Arrays.asList(favoriteStocksNames.split(",")).subList(0, numberOfElements);
+                    stockSymbolsSpin = mainView.findViewById(R.id.stockSpinner);
+                    stockSymbolsList = new ArrayList<>(favoriteStocksSymbolsList);
+                    stockSymbolsListAdapter = new ArrayAdapter<>(context, R.layout.support_simple_spinner_dropdown_item, favoriteStocksNamesList);
+                    stockSymbolsSpin = mainView.findViewById(R.id.stockSpinner);
+                    stockSymbolsSpin.setAdapter(stockSymbolsListAdapter);
+                    stockSymbolsSpin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                            assert context != null;
+                            ArrayList<String> media = new ArrayList<>();
+                            ArrayList<String> userOrNetwork = new ArrayList<>();
+                            ArrayList<String> content = new ArrayList<>();
+                            ArrayList<Integer> interactions = new ArrayList<>();
+                            ArrayList<String> date = new ArrayList<>();
+                            ArrayList<String> url = new ArrayList<>();
+                            ArrayList<Double> sentiments = new ArrayList<>();
+
+
+                            JSONObject stockMediaJson = CombineData.GetMediaInformationForStockFavorites(context, favoriteStocksSymbolsList.get(position));
+                            try {
+                                JSONArray dataObjectArray = stockMediaJson.getJSONArray("data");
+                                List<JSONObject> jsonArrayAsList = new ArrayList<JSONObject>();
+                                for (int i = 0; i < dataObjectArray.length(); i++)
+                                    jsonArrayAsList.add(dataObjectArray.getJSONObject(i));
+
+                                // Sort the json objects by interactions.
+                                sortByInteractions(jsonArrayAsList);
+                                Collections.reverse(jsonArrayAsList);
+
+                                for (int i = 0; i < jsonArrayAsList.size(); i++) {
+                                    JSONObject dataObject = jsonArrayAsList.get(i);
+                                    media.add(dataObject.getString("media_source"));
+                                    userOrNetwork.add(dataObject.getString("user_or_network"));
+                                    content.add(dataObject.getString("content"));
+                                    interactions.add(dataObject.getInt("interactions"));
+                                    sentiments.add(dataObject.getDouble("sentiment"));
+                                    date.add(dataObject.getString("date_created"));
+                                    url.add(dataObject.getString("link"));
+                                }
+                                // Set the adapters.
+                                stockMediaInformationAdapter = new MediaInformationCustomAdapter(context, media, content, interactions, sentiments, userOrNetwork, date, url);
+                                stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parentView) {
+                        }
+
+                    });
+
+
+                    stockMediaInformationView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            TextView textView = view.findViewById(R.id.mediaContentText);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                            View alertView = View.inflate(context, R.layout.content_popup, null);
+                            final TextView mediaContentTextView = alertView.findViewById(R.id.mediaContentTextView);
+                            String contentText = textView.getText().toString();
+                            mediaContentTextView.setText(contentText);
+                            mediaContentTextView.setMovementMethod(new ScrollingMovementMethod());
+                            builder.setView(alertView);
+                            final AlertDialog optionDialog = builder.show();
+                        }
+                    });
+
+                    stockMediaInformationView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                        @Override
+                        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                            TextView textView = view.findViewById(R.id.urlText);
+                            String urlString = textView.getText().toString();
+                            urlString = urlString.replace("Link: ", "");
+                            if (!urlString.equals("NA")) {
+                                Intent httpIntent = new Intent(Intent.ACTION_VIEW);
+                                httpIntent.setData(Uri.parse(urlString));
+
+                                startActivity(httpIntent);
+                            }
+                            return true;
+                        }
+                    });
+                    final SwipeRefreshLayout pullToRefresh = mainView.findViewById(R.id.pullToRefresh);
+
+                    // Setup the scroll down on screen to refresh the information.
+                    pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                        @Override
+                        public void onRefresh() {
+                            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+                            SharedPreferences.Editor prefEditor = preferences.edit();
+                            prefEditor.putBoolean("personalizedExists", false);
+                            prefEditor.apply();
+                            mainView.findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
+                            MainActivity.RefreshPersonalized(getParentFragmentManager());
+                            pullToRefresh.setRefreshing(false);
+                        }
+                    });
+
+                    // Removing the loading icon from the screen.
+                    mainView.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+
+                    // Setup the graph.
+                    SparkView sparkView = mainView.findViewById(R.id.sparkview);
+                    RandomizedAdapter adapter = new RandomizedAdapter();
+                    sparkView.setAdapter(adapter);
+                    sparkView.setLineColor(Color.GREEN);
+                }
+            }, waitTime);
         }
         else {
-            time = 9000;
+            stockMediaInformationView = mainView.findViewById(R.id.mediaListView);
+            // A way to count the amount of stock symbols in the list.
+            int numberOfElements = (favoriteStocksSymbols.length() - favoriteStocksSymbols.replace(",", "").length()) + 1;
+            List<String> favoriteStocksSymbolsList = Arrays.asList(favoriteStocksSymbols.split(",")).subList(0, numberOfElements);
+            List<String> favoriteStocksNamesList = Arrays.asList(favoriteStocksNames.split(",")).subList(0, numberOfElements);
+            stockSymbolsSpin = mainView.findViewById(R.id.stockSpinner);
+            stockSymbolsList = new ArrayList<>(favoriteStocksSymbolsList);
+            stockSymbolsListAdapter = new ArrayAdapter<>(context, R.layout.support_simple_spinner_dropdown_item, favoriteStocksNamesList);
+            stockSymbolsSpin = mainView.findViewById(R.id.stockSpinner);
+            stockSymbolsSpin.setAdapter(stockSymbolsListAdapter);
+            stockSymbolsSpin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                    assert context != null;
+                    ArrayList<String> media = new ArrayList<>();
+                    ArrayList<String> userOrNetwork = new ArrayList<>();
+                    ArrayList<String> content = new ArrayList<>();
+                    ArrayList<Integer> interactions = new ArrayList<>();
+                    ArrayList<String> date = new ArrayList<>();
+                    ArrayList<String> url = new ArrayList<>();
+                    ArrayList<Double> sentiments = new ArrayList<>();
+
+
+                    JSONObject stockMediaJson = CombineData.GetMediaInformationForStockFavorites(context, favoriteStocksSymbolsList.get(position));
+                    try {
+                        JSONArray dataObjectArray = stockMediaJson.getJSONArray("data");
+                        List<JSONObject> jsonArrayAsList = new ArrayList<JSONObject>();
+                        for (int i = 0; i < dataObjectArray.length(); i++)
+                            jsonArrayAsList.add(dataObjectArray.getJSONObject(i));
+
+                        // Sort the json objects by interactions.
+                        sortByInteractions(jsonArrayAsList);
+                        Collections.reverse(jsonArrayAsList);
+
+                        for (int i = 0; i < jsonArrayAsList.size(); i++) {
+                            JSONObject dataObject = jsonArrayAsList.get(i);
+                            media.add(dataObject.getString("media_source"));
+                            userOrNetwork.add(dataObject.getString("user_or_network"));
+                            content.add(dataObject.getString("content"));
+                            interactions.add(dataObject.getInt("interactions"));
+                            sentiments.add(dataObject.getDouble("sentiment"));
+                            date.add(dataObject.getString("date_created"));
+                            url.add(dataObject.getString("link"));
+                        }
+                        // Set the adapters.
+                        stockMediaInformationAdapter = new MediaInformationCustomAdapter(context, media, content, interactions, sentiments, userOrNetwork, date, url);
+                        stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView) {
+                }
+
+            });
+
+
+            stockMediaInformationView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    TextView textView = view.findViewById(R.id.mediaContentText);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                    View alertView = View.inflate(context, R.layout.content_popup, null);
+                    final TextView mediaContentTextView = alertView.findViewById(R.id.mediaContentTextView);
+                    String contentText = textView.getText().toString();
+                    mediaContentTextView.setText(contentText);
+                    mediaContentTextView.setMovementMethod(new ScrollingMovementMethod());
+                    builder.setView(alertView);
+                    final AlertDialog optionDialog = builder.show();
+                }
+            });
+
+            stockMediaInformationView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                    TextView textView = view.findViewById(R.id.urlText);
+                    String urlString = textView.getText().toString();
+                    urlString = urlString.replace("Link: ", "");
+                    if (!urlString.equals("NA")) {
+                        Intent httpIntent = new Intent(Intent.ACTION_VIEW);
+                        httpIntent.setData(Uri.parse(urlString));
+
+                        startActivity(httpIntent);
+                    }
+                    return true;
+                }
+            });
+
+            // Setup the scroll down on screen to refresh the information.
+            final SwipeRefreshLayout pullToRefresh = mainView.findViewById(R.id.pullToRefresh);
+
+                    pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                        @Override
+                        public void onRefresh() {
+                            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+                            SharedPreferences.Editor prefEditor = preferences.edit();
+                            prefEditor.putBoolean("personalizedExists", false);
+                            prefEditor.apply();
+                            MainActivity.RefreshPersonalized(getParentFragmentManager());
+                            pullToRefresh.setRefreshing(false);
+                        }
+                    });
+            // Remove the loading icon.
+            mainView.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+            // Setup the graph.
+            SparkView sparkView = mainView.findViewById(R.id.sparkview);
+            RandomizedAdapter adapter = new RandomizedAdapter();
+            sparkView.setAdapter(adapter);
+            sparkView.setLineColor(Color.GREEN);
         }
-
-        // Wait for all the information from the API to be saved and then combine all the values into one json file.
-        final Handler handler = new Handler(Looper.getMainLooper());
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                stockMediaInformationView = mainView.findViewById(R.id.mediaListView);
-                // A way to count the amount of stock symbols in the list.
-                int numberOfElements = (favoriteStocksSymbols.length() - favoriteStocksSymbols.replace(",", "").length()) + 1;
-                List<String> favoriteStocksSymbolsList = Arrays.asList(favoriteStocksSymbols.split(",")).subList(0, numberOfElements);
-                List <String> favoriteStocksNamesList = Arrays.asList(favoriteStocksNames.split(",")).subList(0, numberOfElements);
-                stockSymbolsSpin = mainView.findViewById(R.id.stockSpinner);
-                stockSymbolsList = new ArrayList<>(favoriteStocksSymbolsList);
-                stockSymbolsListAdapter = new ArrayAdapter<>(context, R.layout.support_simple_spinner_dropdown_item, favoriteStocksNamesList);
-                stockSymbolsSpin = mainView.findViewById(R.id.stockSpinner);
-                stockSymbolsSpin.setAdapter(stockSymbolsListAdapter);
-                stockSymbolsSpin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                        assert context != null;
-                        ArrayList<String> media = new ArrayList<>();
-                        ArrayList<String> userOrNetwork = new ArrayList<>();
-                        ArrayList<String> content = new ArrayList<>();
-                        ArrayList<Integer> interactions = new ArrayList<>();
-                        ArrayList<String> date = new ArrayList<>();
-                        ArrayList<String> url = new ArrayList<>();
-                        ArrayList<Double> sentiments = new ArrayList<>();
-
-
-                        JSONObject stockMediaJson = CombineData.GetMediaInformationForStockFavorites(context, favoriteStocksSymbolsList.get(position));
-                        try {
-                            JSONArray dataObjectArray = stockMediaJson.getJSONArray("data");
-                            List<JSONObject> jsonArrayAsList = new ArrayList<JSONObject>();
-                            for (int i = 0; i < dataObjectArray.length(); i++)
-                                jsonArrayAsList.add(dataObjectArray.getJSONObject(i));
-
-                            // Sort the json objects by interactions.
-                            sortByInteractions(jsonArrayAsList);
-                            Collections.reverse(jsonArrayAsList);
-
-                            for (int i = 0; i < jsonArrayAsList.size(); i++) {
-                                JSONObject dataObject = jsonArrayAsList.get(i);
-                                media.add(dataObject.getString("media_source"));
-                                userOrNetwork.add(dataObject.getString("user_or_network"));
-                                content.add(dataObject.getString("content"));
-                                interactions.add(dataObject.getInt("interactions"));
-                                sentiments.add(dataObject.getDouble("sentiment"));
-                                date.add(dataObject.getString("date_created"));
-                                url.add(dataObject.getString("link"));
-                            }
-                            // Set the adapters.
-                            stockMediaInformationAdapter = new MediaInformationCustomAdapter(context, media, content, interactions, sentiments, userOrNetwork, date, url);
-                            stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parentView) {
-                    }
-
-                });
-
-
-                stockMediaInformationView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        TextView textView = view.findViewById(R.id.mediaContentText);
-                        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                        View alertView = View.inflate(context, R.layout.content_popup, null);
-                        final TextView mediaContentTextView = alertView.findViewById(R.id.mediaContentTextView);
-                        String contentText = textView.getText().toString();
-                        mediaContentTextView.setText(contentText);
-                        mediaContentTextView.setMovementMethod(new ScrollingMovementMethod());
-                        builder.setView(alertView);
-                        final AlertDialog optionDialog = builder.show();
-                    }
-                });
-
-                stockMediaInformationView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-                    @Override
-                    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                        TextView textView = view.findViewById(R.id.urlText);
-                        String urlString = textView.getText().toString();
-                        urlString = urlString.replace("Link: ", "");
-                        if (!urlString.equals("NA")) {
-                            Intent httpIntent = new Intent(Intent.ACTION_VIEW);
-                            httpIntent.setData(Uri.parse(urlString));
-
-                            startActivity(httpIntent);
-                        }
-                        return true;
-                    }
-                });
-                final SwipeRefreshLayout pullToRefresh = mainView.findViewById(R.id.pullToRefresh);
-                /*
-                pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                    @Override
-                    public void onRefresh() {
-                        time = 9000;
-                        Setup.GetAllStockDataForFavorites(context);
-                        mainView.findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
-                        MainActivity.RefreshPersonalized(getParentFragmentManager());
-                        pullToRefresh.setRefreshing(false);
-                    }
-                });
-                mainView.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
-                */
-            }
-        }, time);
         return mainView;
     }
 
@@ -265,14 +391,5 @@ public class Personalized extends Fragment {
             }
          
         });
-
-        View v =  inflater.inflate(R.layout.fragment_personalized, container, false);
-        SparkView sparkView = (SparkView) v.findViewById(R.id.sparkview);
-
-        RandomizedAdapter adapter = new RandomizedAdapter();
-        sparkView.setAdapter(adapter);
-
-        return v;
-
     }
 }
