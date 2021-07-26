@@ -2,8 +2,6 @@ package com.example.shareinfo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -20,12 +18,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.os.Bundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.robinhood.spark.SparkView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -33,15 +31,17 @@ import java.util.logging.Logger;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Context context = getBaseContext();
+
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         // Make sure to leave this commented out unless you want to use up API calls (which are limited).
-        Setup.CreateFavoritesFolder(context);
+        //Setup.CreateFavoritesFolder(context);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor prefEditor = preferences.edit();

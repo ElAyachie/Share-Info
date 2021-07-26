@@ -35,6 +35,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
+import com.robinhood.spark.SparkView;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Personalized#newInstance} factory method to
@@ -93,6 +95,7 @@ public class Personalized extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         setRetainInstance(true);
         // Inflate the layout for this fragment
+
         View mainView = inflater.inflate(R.layout.fragment_personalized_new, container, false);
         Context context = getContext();
         mainView.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
@@ -260,6 +263,16 @@ public class Personalized extends Fragment {
                 }
                 return compare;
             }
+         
         });
+
+        View v =  inflater.inflate(R.layout.fragment_personalized, container, false);
+        SparkView sparkView = (SparkView) v.findViewById(R.id.sparkview);
+
+        RandomizedAdapter adapter = new RandomizedAdapter();
+        sparkView.setAdapter(adapter);
+
+        return v;
+
     }
 }
