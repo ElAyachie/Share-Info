@@ -5,22 +5,18 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 
-import com.example.shareinfo.R;
-
-import java.util.ArrayList;
 import java.util.List;
 
-public class StockTrendingCustomAdapter extends BaseAdapter {
+public class AddStockCustomAdapter extends BaseAdapter {
     private Context context;
     private List<String> stockSymbolsList;
     private List<String> stockNamesList;
 
-    StockTrendingCustomAdapter(Context context, List<String> stockSymbols, List<String> stockNames) {
+    AddStockCustomAdapter(Context context, List<String> stockSymbols, List<String> stockNames) {
         this.context = context;
         this.stockSymbolsList = stockSymbols;
         this.stockNamesList = stockNames;
@@ -43,7 +39,7 @@ public class StockTrendingCustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        @SuppressLint("ViewHolder") View view = View.inflate(this.context, R.layout.add_stock_list_view, null);
+        @SuppressLint("ViewHolder") View view = View.inflate(this.context, R.layout.follow_stock_list_view, null);
         TextView stockSymbolText = view.findViewById(R.id.stockSymbolText);
         TextView stockNameText = view.findViewById(R.id.stockNameText);
 
@@ -60,5 +56,4 @@ public class StockTrendingCustomAdapter extends BaseAdapter {
         });
         return view;
     }
-
 }
