@@ -20,7 +20,7 @@ List all the functions with their sub functions of your application.
     - Add stock
     - Remove stock
 
-#### Deployment
+### Deployment
 [https://developer.android.com/studio/run](https://developer.android.com/studio/run)
 
 ## Demo video
