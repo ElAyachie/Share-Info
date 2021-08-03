@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     new Trending(), "trending").commit();
         }
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             item -> {
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());

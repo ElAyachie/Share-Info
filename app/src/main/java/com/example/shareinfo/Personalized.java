@@ -101,13 +101,11 @@ public class Personalized extends Fragment {
         Context context = getContext();
         mainView.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 
-        // Set up the stock symbol spinner.
+        // Set up the preferences object.
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String favoriteStocksSymbols = preferences.getString("favoriteStocksSymbols", "");
-        String favoriteStocksNames = preferences.getString("favoriteStocksNames", "");
 
         // Length of time to wait for API to get information.
-        waitTime = 9500;
+        waitTime = 7000;
 
         // Checking if the fragment was already made (this is a work around).
         // Checks if the fragment has been already made.
@@ -115,13 +113,15 @@ public class Personalized extends Fragment {
         // Else the fragment has already been made we don't need to wait for the new data we can just get the information from local storage.
         if (!preferences.getBoolean("personalizedExists", false)) {
             mainView.findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
-            Setup.GetAllStockDataForFavorites(context);
+            //Setup.GetAllStockDataForFavorites(context);
             // Wait for all the information from the API to be saved and then combine all the values into one json file.
             final Handler handler = new Handler(Looper.getMainLooper());
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     stockMediaInformationView = mainView.findViewById(R.id.mediaListView);
+                    String favoriteStocksSymbols = preferences.getString("favoriteStocksSymbols", "");
+                    String favoriteStocksNames = preferences.getString("favoriteStocksNames", "");
                     // A way to count the amount of stock symbols in the list.
                     int numberOfElements = (favoriteStocksSymbols.length() - favoriteStocksSymbols.replace(",", "").length()) + 1;
                     List<String> favoriteStocksSymbolsList = Arrays.asList(favoriteStocksSymbols.split(",")).subList(0, numberOfElements);
@@ -134,7 +134,6 @@ public class Personalized extends Fragment {
                     stockSymbolsSpin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                            assert context != null;
                             ArrayList<String> media = new ArrayList<>();
                             ArrayList<String> userOrNetwork = new ArrayList<>();
                             ArrayList<String> content = new ArrayList<>();
@@ -143,33 +142,39 @@ public class Personalized extends Fragment {
                             ArrayList<String> url = new ArrayList<>();
                             ArrayList<Double> sentiments = new ArrayList<>();
 
+                            if ((stockSymbolsList.size() > 0)) {
+                                JSONObject stockMediaJson = CombineData.GetMediaInformationForStockFavorites(context, favoriteStocksSymbolsList.get(position));
+                                try {
+                                    JSONArray dataObjectArray = stockMediaJson.getJSONArray("data");
+                                    List<JSONObject> jsonArrayAsList = new ArrayList<JSONObject>();
+                                    for (int i = 0; i < dataObjectArray.length(); i++)
+                                        jsonArrayAsList.add(dataObjectArray.getJSONObject(i));
 
-                            JSONObject stockMediaJson = CombineData.GetMediaInformationForStockFavorites(context, favoriteStocksSymbolsList.get(position));
-                            try {
-                                JSONArray dataObjectArray = stockMediaJson.getJSONArray("data");
-                                List<JSONObject> jsonArrayAsList = new ArrayList<JSONObject>();
-                                for (int i = 0; i < dataObjectArray.length(); i++)
-                                    jsonArrayAsList.add(dataObjectArray.getJSONObject(i));
+                                    // Sort the json objects by interactions.
+                                    sortByInteractions(jsonArrayAsList);
+                                    Collections.reverse(jsonArrayAsList);
 
-                                // Sort the json objects by interactions.
-                                sortByInteractions(jsonArrayAsList);
-                                Collections.reverse(jsonArrayAsList);
+                                    for (int i = 0; i < jsonArrayAsList.size(); i++) {
+                                        JSONObject dataObject = jsonArrayAsList.get(i);
+                                        media.add(dataObject.getString("media_source"));
+                                        userOrNetwork.add(dataObject.getString("user_or_network"));
+                                        content.add(dataObject.getString("content"));
+                                        interactions.add(dataObject.getInt("interactions"));
+                                        sentiments.add(dataObject.getDouble("sentiment"));
+                                        date.add(dataObject.getString("date_created"));
+                                        url.add(dataObject.getString("link"));
+                                    }
+                                    // Set the adapters.
+                                    stockMediaInformationAdapter = new MediaInformationCustomAdapter(context, media, content, interactions, sentiments, userOrNetwork, date, url);
+                                    stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
+                                    SparkView sparkView = mainView.findViewById(R.id.sparkview);
 
-                                for (int i = 0; i < jsonArrayAsList.size(); i++) {
-                                    JSONObject dataObject = jsonArrayAsList.get(i);
-                                    media.add(dataObject.getString("media_source"));
-                                    userOrNetwork.add(dataObject.getString("user_or_network"));
-                                    content.add(dataObject.getString("content"));
-                                    interactions.add(dataObject.getInt("interactions"));
-                                    sentiments.add(dataObject.getDouble("sentiment"));
-                                    date.add(dataObject.getString("date_created"));
-                                    url.add(dataObject.getString("link"));
+                                    RandomizedAdapter adapter = new RandomizedAdapter();
+                                    sparkView.setAdapter(adapter);
+                                    sparkView.setLineColor(Color.GREEN);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
-                                // Set the adapters.
-                                stockMediaInformationAdapter = new MediaInformationCustomAdapter(context, media, content, interactions, sentiments, userOrNetwork, date, url);
-                                stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
                             }
                         }
 
@@ -239,6 +244,8 @@ public class Personalized extends Fragment {
         }
         else {
             stockMediaInformationView = mainView.findViewById(R.id.mediaListView);
+            String favoriteStocksSymbols = preferences.getString("favoriteStocksSymbols", "");
+            String favoriteStocksNames = preferences.getString("favoriteStocksNames", "");
             // A way to count the amount of stock symbols in the list.
             int numberOfElements = (favoriteStocksSymbols.length() - favoriteStocksSymbols.replace(",", "").length()) + 1;
             List<String> favoriteStocksSymbolsList = Arrays.asList(favoriteStocksSymbols.split(",")).subList(0, numberOfElements);
@@ -260,33 +267,39 @@ public class Personalized extends Fragment {
                     ArrayList<String> url = new ArrayList<>();
                     ArrayList<Double> sentiments = new ArrayList<>();
 
+                    if (stockSymbolsList.size() > 1) {
+                        JSONObject stockMediaJson = CombineData.GetMediaInformationForStockFavorites(context, favoriteStocksSymbolsList.get(position));
+                        try {
+                            JSONArray dataObjectArray = stockMediaJson.getJSONArray("data");
+                            List<JSONObject> jsonArrayAsList = new ArrayList<JSONObject>();
+                            for (int i = 0; i < dataObjectArray.length(); i++)
+                                jsonArrayAsList.add(dataObjectArray.getJSONObject(i));
 
-                    JSONObject stockMediaJson = CombineData.GetMediaInformationForStockFavorites(context, favoriteStocksSymbolsList.get(position));
-                    try {
-                        JSONArray dataObjectArray = stockMediaJson.getJSONArray("data");
-                        List<JSONObject> jsonArrayAsList = new ArrayList<JSONObject>();
-                        for (int i = 0; i < dataObjectArray.length(); i++)
-                            jsonArrayAsList.add(dataObjectArray.getJSONObject(i));
+                            // Sort the json objects by interactions.
+                            sortByInteractions(jsonArrayAsList);
+                            Collections.reverse(jsonArrayAsList);
 
-                        // Sort the json objects by interactions.
-                        sortByInteractions(jsonArrayAsList);
-                        Collections.reverse(jsonArrayAsList);
+                            for (int i = 0; i < jsonArrayAsList.size(); i++) {
+                                JSONObject dataObject = jsonArrayAsList.get(i);
+                                media.add(dataObject.getString("media_source"));
+                                userOrNetwork.add(dataObject.getString("user_or_network"));
+                                content.add(dataObject.getString("content"));
+                                interactions.add(dataObject.getInt("interactions"));
+                                sentiments.add(dataObject.getDouble("sentiment"));
+                                date.add(dataObject.getString("date_created"));
+                                url.add(dataObject.getString("link"));
+                            }
+                            // Set the adapters.
+                            stockMediaInformationAdapter = new MediaInformationCustomAdapter(context, media, content, interactions, sentiments, userOrNetwork, date, url);
+                            stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
+                            SparkView sparkView = mainView.findViewById(R.id.sparkview);
 
-                        for (int i = 0; i < jsonArrayAsList.size(); i++) {
-                            JSONObject dataObject = jsonArrayAsList.get(i);
-                            media.add(dataObject.getString("media_source"));
-                            userOrNetwork.add(dataObject.getString("user_or_network"));
-                            content.add(dataObject.getString("content"));
-                            interactions.add(dataObject.getInt("interactions"));
-                            sentiments.add(dataObject.getDouble("sentiment"));
-                            date.add(dataObject.getString("date_created"));
-                            url.add(dataObject.getString("link"));
+                            RandomizedAdapter adapter = new RandomizedAdapter();
+                            sparkView.setAdapter(adapter);
+                            sparkView.setLineColor(Color.GREEN);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                        // Set the adapters.
-                        stockMediaInformationAdapter = new MediaInformationCustomAdapter(context, media, content, interactions, sentiments, userOrNetwork, date, url);
-                        stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
                     }
                 }
 
