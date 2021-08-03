@@ -168,7 +168,7 @@ public class CombineData {
     }
 
     public static JSONObject GetMediaInformationForStockFavorites(Context context, String stockSymbol) {
-        String extendedFilePath = "/favorites_stock_information/"+ stockSymbol +"/CombinedData_" + stockSymbol + ".json";
+        String extendedFilePath = "/favorites_stock_information/" + stockSymbol +"/CombinedData_" + stockSymbol + ".json";
         return FileFunctions.LoadJSONFile(context, extendedFilePath);
     }
 

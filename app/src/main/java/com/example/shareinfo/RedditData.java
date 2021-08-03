@@ -36,7 +36,7 @@ import java.util.concurrent.Executors;
                         URL redditSearchUrl = new URL(url);
                         HttpURLConnection redditSearchConnection = (HttpURLConnection) redditSearchUrl.openConnection();
                         redditSearchConnection.setRequestProperty("x-rapidapi-host", "socialgrep.p.rapidapi.com");
-                        redditSearchConnection.setRequestProperty("x-rapidapi-key", "91f85ba2dbmshbedc59d84b0c219p128439jsn00cb38d3b676");
+                        redditSearchConnection.setRequestProperty("x-rapidapi-key", "881aff6e0emsh3abb12509b21cabp16e33cjsn518f9f8df2b2");
                         redditSearchConnection.setRequestMethod("GET");
                         InputStream inputStream = redditSearchConnection.getInputStream();
                         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
