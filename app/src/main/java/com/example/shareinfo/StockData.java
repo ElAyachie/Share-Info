@@ -33,16 +33,17 @@ public class StockData {
         Handler handler = new Handler(Looper.getMainLooper());
 
         executor.execute(new Runnable() {
+            String stockTrendingInfoData = "";
             @Override
             public void run() {
-                String stockTrendingInfoData = "";
+
                 try {
                     // GET Stock information from API
                     String url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers?region=US";
                     URL stockTrendingInfoUrl = new URL(url);
                     HttpURLConnection stockTrendingInfoConnection = (HttpURLConnection) stockTrendingInfoUrl.openConnection();
                     stockTrendingInfoConnection.setRequestProperty("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com");
-                    stockTrendingInfoConnection.setRequestProperty("x-rapidapi-key", "132a0cb470mshf7b87dbc92557f1p1cf34bjsna1ca8152da1a");
+                    stockTrendingInfoConnection.setRequestProperty("x-rapidapi-key", "881aff6e0emsh3abb12509b21cabp16e33cjsn518f9f8df2b2");
                     stockTrendingInfoConnection.setRequestMethod("GET");
                     InputStream inputStream = stockTrendingInfoConnection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -58,17 +59,20 @@ public class StockData {
                     e.printStackTrace();
                 }
 
-                // Save the JSON information to the file storage
-                    // Saving Stock information data in a JSON file
-                    String extendedFilePath = "/stock_information/StockTrendingData.json";
-                    FileFunctions.CreateFile(context, extendedFilePath, stockTrendingInfoData);
-                    StoreTrendingStocks(context);
+
+
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
                         // UI Thread work here
                         // Update the UI to know show the Symbols at the top.
                         // Update the UI to show the graph on the home page.
+                        // Save the JSON information to the file storage
+                        // Saving Stock information data in a JSON file
+                        String extendedFilePath = "/stock_information/StockTrendingData.json";
+                        FileFunctions.CreateFile(context, extendedFilePath, stockTrendingInfoData);
+                        StoreTrendingStocks(context);
+                        Setup.CreateStockFolderLocations(context);
                     }
                 });
             }
@@ -92,7 +96,7 @@ public class StockData {
                     URL stockInfoUrl = new URL(url);
                     HttpURLConnection stockInfoConnection = (HttpURLConnection) stockInfoUrl.openConnection();
                     stockInfoConnection.setRequestProperty("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com");
-                    stockInfoConnection.setRequestProperty("x-rapidapi-key", "91f85ba2dbmshbedc59d84b0c219p128439jsn00cb38d3b676");
+                    stockInfoConnection.setRequestProperty("x-rapidapi-key", "881aff6e0emsh3abb12509b21cabp16e33cjsn518f9f8df2b2");
                     stockInfoConnection.setRequestMethod("GET");
                     InputStream inputStream = stockInfoConnection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -166,7 +170,9 @@ public class StockData {
                 stockTrendingSymbolsSB.append(symbol);
                 // If there is another value after this add a comma.
                 if (i + 1 < stockTrendingJsonArray.length()) {
-                    stockTrendingNamesSB.append(",");
+                    if (stockTrendingNamesSB.charAt(stockTrendingNamesSB.length() - 1) != ',') {
+                        stockTrendingNamesSB.append(",");
+                    }
                     stockTrendingSymbolsSB.append(",");
                 }
             }
@@ -186,8 +192,6 @@ public class StockData {
             stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(", IN", ""));
             stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" USD", ""));
             stockTrendingNamesSB = new StringBuilder(stockTrendingNamesSB.toString().replaceAll(" CAD", ""));
-            System.out.println(stockTrendingNamesSB.toString());
-            System.out.println(stockTrendingSymbolsSB.toString());
 
             // SharedPreferences can not be stored as arrays, instead i am storing them in a StringBuilder which I will turn into an array.
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);

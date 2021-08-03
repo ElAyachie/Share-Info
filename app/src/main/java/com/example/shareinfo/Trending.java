@@ -108,25 +108,26 @@ public class Trending extends Fragment {
         Context context = getContext();
 
         // Length of time to wait for API information.
-        waitTime = 9500;
+        waitTime = 7000;
 
-        // Set up the stock symbol spinner.
+        // Set up the preferences object.
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String trendingSymbols = preferences.getString("stockTrendingSymbols", "");
-        String trendingNames = preferences.getString("stockTrendingNames", "");
 
         // Checking if the fragment was already made (this is a work around).
         // Checks if the fragment has been already made.
         // If the fragment has not been made we have to wait for the information to come in from the API, store it to local storage, then show it to the user.
         // Else the fragment has already been made we don't need to wait for the new data we can just get the information from local storage.
         if (!preferences.getBoolean("trendingExists", false)) {
-            // Setup.GetAllStockData(context);
+            //Setup.GetAllStockData(context);
+            //Setup.GetAllStockDataForFavorites(context);
             // Wait for all the information from the API to be saved and then combine all the values into one json file.
             final Handler handler = new Handler(Looper.getMainLooper());
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     stockMediaInformationView = mainView.findViewById(R.id.mediaListView);
+                    String trendingSymbols = preferences.getString("stockTrendingSymbols", "");
+                    String trendingNames = preferences.getString("stockTrendingNames", "");
                     List<String> trendingSymbolsList = Arrays.asList(trendingSymbols.split(",")).subList(0, 5);
                     List<String> trendingNamesList = Arrays.asList(trendingNames.split(",")).subList(0, 5);
                     stockSymbolsSpin = mainView.findViewById(R.id.stockSpinner);
@@ -137,7 +138,6 @@ public class Trending extends Fragment {
                     stockSymbolsSpin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                            assert context != null;
                             ArrayList<String> media = new ArrayList<>();
                             ArrayList<String> userOrNetwork = new ArrayList<>();
                             ArrayList<String> content = new ArrayList<>();
@@ -171,6 +171,11 @@ public class Trending extends Fragment {
                                 // Set the adapters.
                                 stockMediaInformationAdapter = new MediaInformationCustomAdapter(context, media, content, interactions, sentiments, userOrNetwork, date, url);
                                 stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
+                                SparkView sparkView = mainView.findViewById(R.id.sparkview);
+
+                                RandomizedAdapter adapter = new RandomizedAdapter();
+                                sparkView.setAdapter(adapter);
+                                sparkView.setLineColor(Color.GREEN);
                                 // Remove the loading icon.
                                 mainView.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
                             } catch (JSONException e) {
@@ -229,18 +234,13 @@ public class Trending extends Fragment {
                             pullToRefresh.setRefreshing(false);
                         }
                     });
-
-
-                    SparkView sparkView = mainView.findViewById(R.id.sparkview);
-
-                    RandomizedAdapter adapter = new RandomizedAdapter();
-                    sparkView.setAdapter(adapter);
-                    sparkView.setLineColor(Color.GREEN);
                 }
             }, waitTime);
         }
         else {
             stockMediaInformationView = mainView.findViewById(R.id.mediaListView);
+            String trendingSymbols = preferences.getString("stockTrendingSymbols", "");
+            String trendingNames = preferences.getString("stockTrendingNames", "");
             List<String> trendingSymbolsList = Arrays.asList(trendingSymbols.split(",")).subList(0, 5);
             List<String> trendingNamesList = Arrays.asList(trendingNames.split(",")).subList(0, 5);
             stockSymbolsSpin = mainView.findViewById(R.id.stockSpinner);
@@ -285,6 +285,11 @@ public class Trending extends Fragment {
                         // Set the adapters.
                         stockMediaInformationAdapter = new MediaInformationCustomAdapter(context, media, content, interactions, sentiments, userOrNetwork, date, url);
                         stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
+                        SparkView sparkView = mainView.findViewById(R.id.sparkview);
+
+                        RandomizedAdapter adapter = new RandomizedAdapter();
+                        sparkView.setAdapter(adapter);
+                        sparkView.setLineColor(Color.GREEN);
                         // Remove the loading icon.
                         mainView.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
                     } catch (JSONException e) {
