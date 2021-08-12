@@ -28,13 +28,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Random;
 
 import com.robinhood.spark.SparkView;
 
@@ -97,7 +95,7 @@ public class Personalized extends Fragment {
         setRetainInstance(true);
         // Inflate the layout for this fragment
 
-        View mainView = inflater.inflate(R.layout.fragment_personalized_new, container, false);
+        View mainView = inflater.inflate(R.layout.fragment_personalized, container, false);
         Context context = getContext();
         mainView.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 
@@ -169,7 +167,7 @@ public class Personalized extends Fragment {
                                     stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
                                     SparkView sparkView = mainView.findViewById(R.id.sparkview);
 
-                                    RandomizedAdapter adapter = new RandomizedAdapter();
+                                    DataAdapter adapter = new DataAdapter();
                                     sparkView.setAdapter(adapter);
                                     sparkView.setLineColor(Color.GREEN);
                                 } catch (JSONException e) {
@@ -236,7 +234,7 @@ public class Personalized extends Fragment {
 
                     // Setup the graph.
                     SparkView sparkView = mainView.findViewById(R.id.sparkview);
-                    RandomizedAdapter adapter = new RandomizedAdapter();
+                    DataAdapter adapter = new DataAdapter();
                     sparkView.setAdapter(adapter);
                     sparkView.setLineColor(Color.GREEN);
                 }
@@ -294,7 +292,7 @@ public class Personalized extends Fragment {
                             stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
                             SparkView sparkView = mainView.findViewById(R.id.sparkview);
 
-                            RandomizedAdapter adapter = new RandomizedAdapter();
+                            DataAdapter adapter = new DataAdapter();
                             sparkView.setAdapter(adapter);
                             sparkView.setLineColor(Color.GREEN);
                         } catch (JSONException e) {
@@ -359,7 +357,7 @@ public class Personalized extends Fragment {
             mainView.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
             // Setup the graph.
             SparkView sparkView = mainView.findViewById(R.id.sparkview);
-            RandomizedAdapter adapter = new RandomizedAdapter();
+            DataAdapter adapter = new DataAdapter();
             sparkView.setAdapter(adapter);
             sparkView.setLineColor(Color.GREEN);
         }

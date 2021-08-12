@@ -1,160 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context=".Personalized">
 
-
-    <LinearLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pullToRefresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <HorizontalScrollView
+        android:layout_height="wrap_content">
+        <ListView
+            android:id="@+id/listView"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#f00"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:indeterminate="true" />
+    </RelativeLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+    <com.robinhood.spark.SparkView
+        android:id="@+id/sparkview"
+        android:layout_width="358dp"
+        android:layout_height="148dp"
+        android:layout_below="@+id/stockSpinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        app:spark_scrubEnabled="true" />
 
-                <Button
-                    android:layout_width="77dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="#808080"
-                    android:text="TSLA"
-                    android:textColor="#000000" />
+    <ListView
+        android:id="@+id/mediaListView"
+        android:layout_width="wrap_content"
+        android:layout_height="373dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="343dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:divider="@android:color/black"
+        android:dividerHeight="5.0sp"
+        android:textColor="@color/black" />
 
-                <Button
-                    android:layout_width="77dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="#808080"
-                    android:text="TSLA"
-                    android:textColor="#000000" />
-
-                <Button
-                    android:layout_width="77dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="#808080"
-                    android:text="TSLA"
-                    android:textColor="#000000" />
-
-                <Button
-                    android:layout_width="77dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="#808080"
-                    android:text="TSLA"
-                    android:textColor="#000000" />
-
-                <Button
-                    android:layout_width="77dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="#808080"
-                    android:text="TSLA"
-                    android:textColor="#000000" />
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <com.robinhood.spark.SparkView
-            android:id="@+id/sparkview"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:spark_scrubEnabled="true"/>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="510dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="Personalized Page"
-                    android:textSize="24sp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="Personalized Page"
-                    android:textSize="24sp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="Personalized Page"
-                    android:textSize="24sp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="Personalized Page"
-                    android:textSize="24sp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="Personalized Page"
-                    android:textSize="24sp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="Personalized Page"
-                    android:textSize="24sp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="Personalized Page"
-                    android:textSize="24sp" />
+    <Spinner
+        android:id="@+id/stockSpinner"
+        android:layout_width="383dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="108dp" />
 
 
-            </LinearLayout>
-
-        </ScrollView>
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

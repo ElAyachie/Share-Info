@@ -4,12 +4,12 @@ import androidx.annotation.NonNull;
 import com.robinhood.spark.SparkAdapter;
 import java.util.Random;
 
-public class RandomizedAdapter extends SparkAdapter {
+public class DataAdapter extends SparkAdapter {
 
     private final float[] yData;
     private final Random random;
 
-    public RandomizedAdapter() {
+    public DataAdapter() {
         random = new Random();
         yData = new float[50];
         randomize();
