@@ -9,7 +9,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Handler;
@@ -22,24 +21,19 @@ import android.view.ViewGroup;
 
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Random;
-import android.widget.Button;
 
 import com.robinhood.spark.SparkView;
 
@@ -104,7 +98,7 @@ public class Trending extends Fragment {
         setRetainInstance(true);
         // Inflate the layout for this fragment
 
-        View mainView = inflater.inflate(R.layout.fragment_trending_new, container, false);
+        View mainView = inflater.inflate(R.layout.fragment_trending, container, false);
         Context context = getContext();
 
         // Length of time to wait for API information.
@@ -173,7 +167,7 @@ public class Trending extends Fragment {
                                 stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
                                 SparkView sparkView = mainView.findViewById(R.id.sparkview);
 
-                                RandomizedAdapter adapter = new RandomizedAdapter();
+                                DataAdapter adapter = new DataAdapter();
                                 sparkView.setAdapter(adapter);
                                 sparkView.setLineColor(Color.GREEN);
                                 // Remove the loading icon.
@@ -287,7 +281,7 @@ public class Trending extends Fragment {
                         stockMediaInformationView.setAdapter(stockMediaInformationAdapter);
                         SparkView sparkView = mainView.findViewById(R.id.sparkview);
 
-                        RandomizedAdapter adapter = new RandomizedAdapter();
+                        DataAdapter adapter = new DataAdapter();
                         sparkView.setAdapter(adapter);
                         sparkView.setLineColor(Color.GREEN);
                         // Remove the loading icon.
@@ -352,7 +346,7 @@ public class Trending extends Fragment {
 
             SparkView sparkView = mainView.findViewById(R.id.sparkview);
 
-            RandomizedAdapter adapter = new RandomizedAdapter();
+            DataAdapter adapter = new DataAdapter();
             sparkView.setAdapter(adapter);
             sparkView.setLineColor(Color.GREEN);
         }
