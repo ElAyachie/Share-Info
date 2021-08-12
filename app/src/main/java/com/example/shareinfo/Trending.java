@@ -118,7 +118,7 @@ public class Trending extends Fragment {
         // If the fragment has not been made we have to wait for the information to come in from the API, store it to local storage, then show it to the user.
         // Else the fragment has already been made we don't need to wait for the new data we can just get the information from local storage.
         if (!preferences.getBoolean("trendingExists", false)) {
-            //Setup.GetAllStockData(context);
+            Setup.GetAllStockData(context);
             //Setup.GetAllStockDataForFavorites(context);
             // Wait for all the information from the API to be saved and then combine all the values into one json file.
             final Handler handler = new Handler(Looper.getMainLooper());
