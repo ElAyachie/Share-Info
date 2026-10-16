@@ -1,0 +1,576 @@
+[
+{
+"text": "VADER is smart, handsome, and funny.",
+"neg": 0.0,
+"neu": 0.254,
+"pos": 0.746,
+"compound": 0.8316
+},
+{
+"text": "VADER is smart, handsome, and funny!",
+"neg": 0.0,
+"neu": 0.248,
+"pos": 0.752,
+"compound": 0.8439
+},
+{
+"text": "VADER is very smart, handsome, and funny.",
+"neg": 0.0,
+"neu": 0.299,
+"pos": 0.701,
+"compound": 0.8545
+},
+{
+"text": "VADER is VERY SMART, handsome, and FUNNY.",
+"neg": 0.0,
+"neu": 0.246,
+"pos": 0.754,
+"compound": 0.9227
+},
+{
+"text": "VADER is VERY SMART, handsome, and FUNNY!!!",
+"neg": 0.0,
+"neu": 0.233,
+"pos": 0.767,
+"compound": 0.9342
+},
+{
+"text": "VADER is VERY SMART, uber handsome, and FRIGGIN FUNNY!!!",
+"neg": 0.0,
+"neu": 0.294,
+"pos": 0.706,
+"compound": 0.9469
+},
+{
+"text": "VADER is not smart, handsome, nor funny.",
+"neg": 0.646,
+"neu": 0.354,
+"pos": 0.0,
+"compound": -0.7424
+},
+{
+"text": "The book was good.",
+"neg": 0.0,
+"neu": 0.508,
+"pos": 0.492,
+"compound": 0.4404
+},
+{
+"text": "At least it isn't a horrible book.",
+"neg": 0.0,
+"neu": 0.678,
+"pos": 0.322,
+"compound": 0.431
+},
+{
+"text": "The book was only kind of good.",
+"neg": 0.0,
+"neu": 0.697,
+"pos": 0.303,
+"compound": 0.3832
+},
+{
+"text": "The plot was good, but the characters are uncompelling and the dialog is not great.",
+"neg": 0.327,
+"neu": 0.579,
+"pos": 0.094,
+"compound": -0.7042
+},
+{
+"text": "Today SUX!",
+"neg": 0.779,
+"neu": 0.221,
+"pos": 0.0,
+"compound": -0.5461
+},
+{
+"text": "Today only kinda sux! But I'll get by, lol",
+"neg": 0.127,
+"neu": 0.556,
+"pos": 0.317,
+"compound": 0.5249
+},
+{
+"text": "Make sure you :) or :D today!",
+"neg": 0.0,
+"neu": 0.294,
+"pos": 0.706,
+"compound": 0.8633
+},
+{
+"text": "Not bad at all",
+"neg": 0.0,
+"neu": 0.513,
+"pos": 0.487,
+"compound": 0.431
+},
+{
+"text": "This is never so good",
+"neg": 0.0,
+"neu": 0.475,
+"pos": 0.525,
+"compound": 0.6626
+},
+{
+"text": "Without a doubt the best",
+"neg": 0.0,
+"neu": 0.322,
+"pos": 0.678,
+"compound": 0.7438
+},
+{
+"text": "There is no good news here",
+"neg": 0.325,
+"neu": 0.675,
+"pos": 0.0,
+"compound": -0.3412
+},
+{
+"text": "no love or hate",
+"neg": 0.403,
+"neu": 0.239,
+"pos": 0.358,
+"compound": -0.0951
+},
+{
+"text": "It was the least bad option",
+"neg": 0.0,
+"neu": 0.637,
+"pos": 0.363,
+"compound": 0.431
+},
+{
+"text": "I am very least happy",
+"neg": 0.0,
+"neu": 0.501,
+"pos": 0.499,
+"compound": 0.6096
+},
+{
+"text": "What??? Really???",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "Is it good??",
+"neg": 0.0,
+"neu": 0.38,
+"pos": 0.62,
+"compound": 0.504
+},
+{
+"text": "The earnings were sort of okay",
+"neg": 0.0,
+"neu": 0.757,
+"pos": 0.243,
+"compound": 0.1548
+},
+{
+"text": "kind of awful",
+"neg": 0.6,
+"neu": 0.4,
+"pos": 0.0,
+"compound": -0.4588
+},
+{
+"text": "It was the bomb",
+"neg": 0.0,
+"neu": 0.429,
+"pos": 0.571,
+"compound": 0.6124
+},
+{
+"text": "yeah right, great call",
+"neg": 0.0,
+"neu": 0.241,
+"pos": 0.759,
+"compound": 0.743
+},
+{
+"text": "",
+"neg": 0.0,
+"neu": 0.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "   ",
+"neg": 0.0,
+"neu": 0.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "!!!",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "GREAT",
+"neg": 0.0,
+"neu": 0.0,
+"pos": 1.0,
+"compound": 0.6249
+},
+{
+"text": "great GREAT",
+"neg": 0.0,
+"neu": 0.0,
+"pos": 1.0,
+"compound": 0.873
+},
+{
+"text": "This is not not good",
+"neg": 0.0,
+"neu": 0.662,
+"pos": 0.338,
+"compound": 0.2594
+},
+{
+"text": "I can't say it's bad",
+"neg": 0.0,
+"neu": 0.584,
+"pos": 0.416,
+"compound": 0.431
+},
+{
+"text": "$AAPL open the store now in person to give people the iPhone DUO\nbefore people change they mind &  have #BuyersRemorse   People have no patience is Apple Stupid make ppl wait this long they going regret buying it or else they make this long so 90 days go buy and then you can’t dispute the charge",
+"neg": 0.176,
+"neu": 0.824,
+"pos": 0.0,
+"compound": -0.8779
+},
+{
+"text": "@zuby34 @itsphd @simon58 @judgeyoung2 @ZY786 @EBE_day @ribbey @TraderRapp @Wagonwheels tap to pay rivals, Apple needs to open the tap $PYPL $AAPL",
+"neg": 0.065,
+"neu": 0.935,
+"pos": 0.0,
+"compound": -0.1027
+},
+{
+"text": "$AAPL rejected at $348 for the third time this week - womp womp.",
+"neg": 0.216,
+"neu": 0.784,
+"pos": 0.0,
+"compound": -0.5106
+},
+{
+"text": "$AAPL the most overvalued MAG 7 that is most exposed to the consumer",
+"neg": 0.117,
+"neu": 0.883,
+"pos": 0.0,
+"compound": -0.1513
+},
+{
+"text": "$AAPL why is this crap always propped up",
+"neg": 0.3,
+"neu": 0.7,
+"pos": 0.0,
+"compound": -0.4588
+},
+{
+"text": "$AAPL  The sentiment \"extremely bearish\" is hilarious.  Poor bears are wearing out their keyboards trying to hold onto their penny puts.  LMAO.",
+"neg": 0.104,
+"neu": 0.64,
+"pos": 0.256,
+"compound": 0.6701
+},
+{
+"text": "$AAPL YUM. 3FIDDY",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "$AAPL Bull Case is $260",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "$AAPL 350  next  week  remember lock out  is  there  too",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "$SPY total control to pin in tight range with $NVDA and $AAPL",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "$AAPL People!!! stop talking about the 18 pro.. 18 pro customers are going to buy the DUO !!! Watch and see, if there was no DUO it would be breaking records just like the phones before it.....RELAX, I think apple will be around next year,😉Do not sell!!!!",
+"neg": 0.107,
+"neu": 0.845,
+"pos": 0.048,
+"compound": -0.471
+},
+{
+"text": "$AAPL ANALYST TARGET (1Y) \n$334.91",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "Dan Ives says $NVDA recent dip is a buying chance, not a warning. He keeps a $300 target and expects ~70% growth as AI expands beyond chips. notreload.xyz/wall-street-...",
+"neg": 0.0,
+"neu": 0.749,
+"pos": 0.251,
+"compound": 0.7215
+},
+{
+"text": "The voice here is provided by NVDA, of course!",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "Our scanner has NVDA at top-decile momentum (score 1.0) with a 105.9% revenue growth read, and we're long it in the paper book from $228.31. The moat story and the tape agree for once. The risk is everyone already knows it.",
+"neg": 0.046,
+"neu": 0.841,
+"pos": 0.113,
+"compound": 0.4588
+},
+{
+"text": "Semis opened down over 2% with 57 of 60 stocks falling: Micron -3%, Intel -2%, AMD -1.8%, Nvidia flat. A flat leader on no news reads as a crowded long being cut, not a demand verdict.\n\n$SOXX $MU $INTC $AMD $NVDA\n\nhttps://canopyatlas.substack.com/p/market-sweep-semiconductors-extend",
+"neg": 0.161,
+"neu": 0.809,
+"pos": 0.03,
+"compound": -0.609
+},
+{
+"text": "$NVDA 217.5C 10/16 1.10 entry",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "The Kobeissi Letter argues that a “stealth” bear market is developing beneath the S&P 500’s near-record level, calling it “one of the most significant opportunities in today's market.” \n\n#SPX #NVDA #SP500 #TheKobeissiLetter #StockMarke",
+"neg": 0.069,
+"neu": 0.798,
+"pos": 0.132,
+"compound": 0.3338
+},
+{
+"text": "Nvidia trading smack dab in the middle of its late July low and last week’s ATH $NVDA",
+"neg": 0.116,
+"neu": 0.884,
+"pos": 0.0,
+"compound": -0.2732
+},
+{
+"text": "In 2016, NVIDIA made most of its money from gaming GPUs. Data centers were just a side business.\n\n$10K then is worth $1.34M today.\n\nYear after year, that side business quietly kept growing.\n\nToday it’s ~90% of revenue.\n\nYou’re one idea away...\n\n$NVDA",
+"neg": 0.0,
+"neu": 0.919,
+"pos": 0.081,
+"compound": 0.3818
+},
+{
+"text": "feels like the buy program is doing its job today in $NVDA",
+"neg": 0.0,
+"neu": 0.815,
+"pos": 0.185,
+"compound": 0.3612
+},
+{
+"text": "#Nvidia ($NVDA) and #SpaceX ($SPCX) are building a server for space. Musk targets volume production next year",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "🚨 Dark Pool Alert: $NVDA\n\n• Quantity: 1.51M shares\n\n• Price: $216.74\n\n• Total: $326.26M\n\nLarge institutional order detected away from public markets.\n\nTrack more: stocknear.com/dark-pool-flow",
+"neg": 0.0,
+"neu": 0.845,
+"pos": 0.155,
+"compound": 0.5267
+},
+{
+"text": "+71.8% upside? That’s the kind of move that gets traders’ attention 🚀  \nAnalysts rate $NVDA a Strong Buy with an average target of $380.12 📈  \nAt $221.3 today, the gap looks wide open for the next leg up 💡\n\nFollow for daily picks 📌\n#investing #stocks #StockMarket #finance #ETF",
+"neg": 0.0,
+"neu": 0.936,
+"pos": 0.064,
+"compound": 0.5106
+},
+{
+"text": "#Lemurslist\n\n$SPY at right under 8d treat as res\n$QQQ fading pm\n\n$TSLA fading pm, watch 371 8d\n\nSemis fading, \n$$NVDA $AMD $INTC give it 945-10 see if it holds\nMemories similar",
+"neg": 0.0,
+"neu": 0.734,
+"pos": 0.266,
+"compound": 0.8885
+},
+{
+"text": "Taiwan plans up to $4 billion Texas park for suppliers to #Nvidia ($NVDA) and #TSMC ($TSM)",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "Markets are returning to their green colour, and Tickerade's list is already here!\n\nEveryone is talking about $GME, $SPY, $NVDA, and $IREN, which took the top positions, but these are followed by other interesting caps.\n\nCheck the full list at www.tickereade.com and don't miss your next gainer.",
+"neg": 0.0,
+"neu": 0.864,
+"pos": 0.136,
+"compound": 0.7103
+},
+{
+"text": "Nvidia leads chip stocks lower as AI trade takes - Yahoo Finance",
+"neg": 0.167,
+"neu": 0.833,
+"pos": 0.0,
+"compound": -0.296
+},
+{
+"text": "Nvidia CEO Huang Says CoreWeave Improving, No Backstop Needed - Bloomberg.com",
+"neg": 0.157,
+"neu": 0.643,
+"pos": 0.2,
+"compound": 0.1531
+},
+{
+"text": "Nvidia Falls Back From Record High. Its Stock Chart Offers a Warning. - Barron's",
+"neg": 0.156,
+"neu": 0.844,
+"pos": 0.0,
+"compound": -0.34
+},
+{
+"text": "Nvidia, AMD, Dell sink in global tech rout on AI funding worries - CNBC",
+"neg": 0.177,
+"neu": 0.823,
+"pos": 0.0,
+"compound": -0.4215
+},
+{
+"text": "History Says Nvidia Stock Usually Rises in the Fourth Quarter -- It Has in 20 of the Last 27 - The Motley Fool",
+"neg": 0.116,
+"neu": 0.884,
+"pos": 0.0,
+"compound": -0.4404
+},
+{
+"text": "Nvidia-Backed CoreWeave’s Stock Plunges Amid Worries About AI Debt - Investopedia",
+"neg": 0.371,
+"neu": 0.629,
+"pos": 0.0,
+"compound": -0.6486
+},
+{
+"text": "Nvidia Has Already Made Investors Rich. Here’s Where the Stock Could Be Headed Next - 24/7 Wall St.",
+"neg": 0.0,
+"neu": 0.825,
+"pos": 0.175,
+"compound": 0.5574
+},
+{
+"text": "Why is NVIDIA stock sliding today? - Investing.com",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "LSEG taps Nvidia for faster historical market data processing - Reuters",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "Nvidia leads chip stocks lower as AI trade takes - Yahoo Finance",
+"neg": 0.167,
+"neu": 0.833,
+"pos": 0.0,
+"compound": -0.296
+},
+{
+"text": "reddit.com: search results - NVDA",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "nvda",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "NVIDIA STOCK",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "NVDA_Stock_Talk",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "The checks I run on every backtest an LLM writes for me, after my AI agents \"beat\" a simulated market for the wrong reasons",
+"neg": 0.119,
+"neu": 0.881,
+"pos": 0.0,
+"compound": -0.4767
+},
+{
+"text": "The AI Selloff Just Put Some Big Names on Sale. Which Stock Is Actually a Bargain?",
+"neg": 0.0,
+"neu": 0.893,
+"pos": 0.107,
+"compound": 0.2023
+},
+{
+"text": "I’d like to see what’s moving in the market",
+"neg": 0.0,
+"neu": 0.762,
+"pos": 0.238,
+"compound": 0.3612
+},
+{
+"text": "Value dystopia picks?",
+"neg": 0.0,
+"neu": 0.455,
+"pos": 0.545,
+"compound": 0.34
+},
+{
+"text": "Oct/16/2026: Top Stock Pick",
+"neg": 0.0,
+"neu": 0.625,
+"pos": 0.375,
+"compound": 0.2023
+},
+{
+"text": "It's Friday Already?",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+},
+{
+"text": "What are you trading today?",
+"neg": 0.0,
+"neu": 1.0,
+"pos": 0.0,
+"compound": 0.0
+}
+]

@@ -1,0 +1,1704 @@
+{
+ "symbol": {
+  "id": 686,
+  "symbol": "AAPL",
+  "symbol_mic": "AAPL.XNAS",
+  "symbol_display": "AAPL",
+  "exchange": "NASDAQ",
+  "region": "US",
+  "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+  "title": "Apple Inc",
+  "aliases": [],
+  "deeplink": "symbol/AAPL",
+  "external_id": null,
+  "is_following": false,
+  "watchlist_count": 997571,
+  "has_pricing": true,
+  "instrument_class": "Stock",
+  "live_event": false,
+  "earnings_cta": "res_earn_tab",
+  "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+  "trade_status": "FRACTIONAL"
+ },
+ "cursor": {
+  "more": true,
+  "since": 666699632,
+  "max": 666696331
+ },
+ "regions": [],
+ "filters": [],
+ "messages": [
+  {
+   "id": 666699632,
+   "body": "$AAPL open the store now in person to give people the iPhone DUO\nbefore people change they mind &amp;  have #BuyersRemorse   People have no patience is Apple Stupid make ppl wait this long they going regret buying it or else they make this long so 90 days go buy and then you can’t dispute the charge",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " open the store now in person to give people the iPhone DUO\nbefore people change they mind &  have "
+     }
+    },
+    {
+     "type": "hashTag",
+     "data": {
+      "text": "#buyersremorse",
+      "deeplink": "/topic/buyersremorse"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": "   People have no patience is Apple Stupid make ppl wait this long they going regret buying it or else they make this long so 90 days go buy and then you can’t dispute the charge"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:25:24Z",
+   "discussion": false,
+   "source": {
+    "id": 1149,
+    "title": "StockTwits for iOS",
+    "url": "http://www.stocktwits.com/mobile"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "345.91"
+    }
+   ],
+   "mentioned_users": [],
+   "entities": {
+    "media": [
+     {
+      "id": 15114363,
+      "type": "gif",
+      "thumb": null,
+      "medium": null,
+      "large": null,
+      "original": null,
+      "url": null,
+      "height": 387,
+      "width": 387,
+      "ratio": 1.0,
+      "provider": "giphy",
+      "provider_id": "ezNTsAUy7UruQWhpap"
+     }
+    ],
+    "giphy": {
+     "id": "ezNTsAUy7UruQWhpap"
+    },
+    "sentiment": {
+     "basic": "Bearish"
+    },
+    "discussable": null
+   },
+   "user": {
+    "id": 395026,
+    "username": "R0yalTEA",
+    "name": "CrabClaw",
+    "avatar_url": "https://avatars.stocktwits.com/production/395026/thumb-1762355642.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/production/395026/thumb-1762355642.png",
+    "join_date": "2014-09-03",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "search_regions": [],
+    "followers": 3948,
+    "following": 41,
+    "ideas": 39012,
+    "watchlist_stocks_count": 18,
+    "like_count": 24133,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666699588,
+   "body": "@zuby34 @itsphd @simon58 @judgeyoung2 @ZY786 @EBE_day @ribbey @TraderRapp @Wagonwheels tap to pay rivals, Apple needs to open the tap $PYPL $AAPL",
+   "tokenized_body": [
+    {
+     "type": "mention",
+     "data": {
+      "text": "@zuby34",
+      "user_id": 1367630,
+      "username": "zuby34",
+      "deeplink": "/zuby34"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " "
+     }
+    },
+    {
+     "type": "mention",
+     "data": {
+      "text": "@itsphd",
+      "user_id": 5823136,
+      "username": "itsphd",
+      "deeplink": "/itsphd"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " "
+     }
+    },
+    {
+     "type": "mention",
+     "data": {
+      "text": "@simon58",
+      "user_id": 606104,
+      "username": "simon58",
+      "deeplink": "/simon58"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " "
+     }
+    },
+    {
+     "type": "mention",
+     "data": {
+      "text": "@judgeyoung2",
+      "user_id": 9392128,
+      "username": "judgeyoung2",
+      "deeplink": "/judgeyoung2"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " "
+     }
+    },
+    {
+     "type": "mention",
+     "data": {
+      "text": "@ZY786",
+      "user_id": 3257136,
+      "username": "ZY786",
+      "deeplink": "/ZY786"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " "
+     }
+    },
+    {
+     "type": "mention",
+     "data": {
+      "text": "@EBE_day",
+      "user_id": 446622,
+      "username": "EBE_day",
+      "deeplink": "/EBE_day"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " "
+     }
+    },
+    {
+     "type": "mention",
+     "data": {
+      "text": "@ribbey",
+      "user_id": 5644871,
+      "username": "ribbey",
+      "deeplink": "/ribbey"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " "
+     }
+    },
+    {
+     "type": "mention",
+     "data": {
+      "text": "@TraderRapp",
+      "user_id": 6101291,
+      "username": "TraderRapp",
+      "deeplink": "/TraderRapp"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " "
+     }
+    },
+    {
+     "type": "mention",
+     "data": {
+      "text": "@Wagonwheels",
+      "user_id": 1624871,
+      "username": "Wagonwheels",
+      "deeplink": "/Wagonwheels"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " tap to pay rivals, Apple needs to open the tap "
+     }
+    },
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$PYPL",
+      "symbol": "PYPL",
+      "symbol_display": "PYPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/PYPL.png",
+      "deeplink": "symbol/PYPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " "
+     }
+    },
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:25:10Z",
+   "discussion": false,
+   "source": {
+    "id": 1149,
+    "title": "StockTwits for iOS",
+    "url": "http://www.stocktwits.com/mobile"
+   },
+   "prices": [
+    {
+     "id": 12608,
+     "symbol": "PYPL",
+     "symbol_mic": "PYPL.XNAS",
+     "price": "57.57"
+    },
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "346.06"
+    }
+   ],
+   "conversation": {
+    "parent_message_id": 658940483,
+    "in_reply_to_message_id": 666699258,
+    "parent": false,
+    "replies": 0
+   },
+   "mentioned_users": [
+    "@zuby34",
+    "@itsphd",
+    "@simon58",
+    "@judgeyoung2",
+    "@ZY786",
+    "@EBE_day",
+    "@ribbey",
+    "@TraderRapp",
+    "@Wagonwheels"
+   ],
+   "entities": {
+    "media": [],
+    "sentiment": null,
+    "discussable": null
+   },
+   "user": {
+    "id": 768204,
+    "username": "jenbunn",
+    "name": "JenBunn",
+    "avatar_url": "https://avatars.stocktwits.com/production/768204/thumb-1720828504.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/production/768204/thumb-1720828504.png",
+    "join_date": "2016-06-07",
+    "official": false,
+    "identity": "User",
+    "classification": [
+     "plus"
+    ],
+    "badges": [],
+    "home_country": "US",
+    "search_regions": [],
+    "followers": 162,
+    "following": 28,
+    "ideas": 35099,
+    "watchlist_stocks_count": 257,
+    "like_count": 17199,
+    "plus_tier": "year",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "likes": {
+    "total": 1,
+    "user_ids": [
+     1367630
+    ]
+   },
+   "symbols": [
+    {
+     "id": 12608,
+     "symbol": "PYPL",
+     "symbol_mic": "PYPL.XNAS",
+     "symbol_display": "PYPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/PYPL.png",
+     "title": "PayPal Holdings Inc",
+     "aliases": [],
+     "deeplink": "symbol/PYPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 166322,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "up_earn_tab",
+     "earnings_id": "ddc1e041-a617-4561-a1c4-9c147d5f5304",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": 2.2,
+     "volume_change": 29.33
+    },
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666699539,
+   "body": "$AAPL rejected at $348 for the third time this week - womp womp.",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " rejected at $348 for the third time this week - womp womp."
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:24:51Z",
+   "discussion": false,
+   "source": {
+    "id": 2269,
+    "title": "StockTwits Web",
+    "url": "https://stocktwits.com"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "345.86"
+    }
+   ],
+   "mentioned_users": [],
+   "entities": {
+    "media": [],
+    "sentiment": null,
+    "discussable": null
+   },
+   "user": {
+    "id": 8532,
+    "username": "tripplett",
+    "name": "J T",
+    "avatar_url": "https://avatars.stocktwits.com/production/8532/thumb-1692796335.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/production/8532/thumb-1692796335.png",
+    "join_date": "2010-02-11",
+    "official": false,
+    "identity": "User",
+    "classification": [
+     "premium",
+     "premium_edge"
+    ],
+    "badges": [],
+    "home_country": "US",
+    "search_regions": [],
+    "followers": 340,
+    "following": 145,
+    "ideas": 16366,
+    "watchlist_stocks_count": 59,
+    "like_count": 12309,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666699513,
+   "body": "$AAPL the most overvalued MAG 7 that is most exposed to the consumer",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " the most overvalued MAG 7 that is most exposed to the consumer"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:24:40Z",
+   "discussion": false,
+   "source": {
+    "id": 2269,
+    "title": "StockTwits Web",
+    "url": "https://stocktwits.com"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "345.92"
+    }
+   ],
+   "mentioned_users": [],
+   "entities": {
+    "media": [],
+    "sentiment": null,
+    "discussable": null
+   },
+   "user": {
+    "id": 7068827,
+    "username": "HankHedgeHogFund",
+    "name": "Henry",
+    "avatar_url": "http://avatars.stocktwits.com/images/default_avatar_4_thumb.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/images/default_avatar_4_thumb.png",
+    "join_date": "2022-12-07",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "home_country": "US",
+    "search_regions": [],
+    "followers": 181,
+    "following": 1,
+    "ideas": 21342,
+    "watchlist_stocks_count": 3,
+    "like_count": 1933,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666699354,
+   "body": "$AAPL why is this crap always propped up",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " why is this crap always propped up"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:23:48Z",
+   "discussion": false,
+   "source": {
+    "id": 1149,
+    "title": "StockTwits for iOS",
+    "url": "http://www.stocktwits.com/mobile"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "345.77"
+    }
+   ],
+   "mentioned_users": [],
+   "entities": {
+    "media": [],
+    "sentiment": null,
+    "discussable": null
+   },
+   "user": {
+    "id": 6689417,
+    "username": "TraderDude69",
+    "name": "My Dude",
+    "avatar_url": "https://avatars.stocktwits.com/production/6689417/thumb-1654909495.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/production/6689417/thumb-1654909495.png",
+    "join_date": "2022-06-10",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "home_country": "US",
+    "search_regions": [],
+    "followers": 183,
+    "following": 7,
+    "ideas": 12787,
+    "watchlist_stocks_count": 76,
+    "like_count": 40776,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666699337,
+   "body": "$AAPL  The sentiment &quot;extremely bearish&quot; is hilarious.  Poor bears are wearing out their keyboards trying to hold onto their penny puts.  LMAO.",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": "  The sentiment \"extremely bearish\" is hilarious.  Poor bears are wearing out their keyboards trying to hold onto their penny puts.  LMAO."
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:23:43Z",
+   "discussion": false,
+   "source": {
+    "id": 2269,
+    "title": "StockTwits Web",
+    "url": "https://stocktwits.com"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "345.77"
+    }
+   ],
+   "mentioned_users": [],
+   "entities": {
+    "media": [],
+    "sentiment": {
+     "basic": "Bullish"
+    },
+    "discussable": null
+   },
+   "user": {
+    "id": 406751,
+    "username": "marcellus10",
+    "name": "Marcellus",
+    "avatar_url": "https://avatars.stocktwits.com/production/406751/thumb-1535335966.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/production/406751/thumb-1535335966.png",
+    "join_date": "2014-10-01",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "home_country": "US",
+    "search_regions": [],
+    "followers": 57,
+    "following": 16,
+    "ideas": 8957,
+    "watchlist_stocks_count": 30,
+    "like_count": 3672,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666699207,
+   "body": "$AAPL YUM. 3FIDDY",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " YUM. 3FIDDY"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:23:02Z",
+   "discussion": false,
+   "source": {
+    "id": 2269,
+    "title": "StockTwits Web",
+    "url": "https://stocktwits.com"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "346.06"
+    }
+   ],
+   "reshare_message": {
+    "reshared_count": 1,
+    "reshared_deleted": false,
+    "reshared_user_deleted": false,
+    "parent_reshared_deleted": false,
+    "message": {
+     "id": 666698300,
+     "body": "$AAPL 1,908,000 calls just loaded @ 350.00",
+     "tokenized_body": [
+      {
+       "type": "cashTag",
+       "data": {
+        "text": "$AAPL",
+        "symbol": "AAPL",
+        "symbol_display": "AAPL",
+        "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+        "deeplink": "symbol/AAPL"
+       }
+      },
+      {
+       "type": "text",
+       "data": {
+        "text": " 1,908,000 calls just loaded @ 350.00"
+       }
+      }
+     ],
+     "created_at": "2026-10-16T15:17:19Z",
+     "discussion": false,
+     "user": {
+      "id": 9448598,
+      "username": "HighRewards",
+      "name": "HighRewards",
+      "avatar_url": "https://avatars.stocktwits.com/production/9448598/thumb-1753386650.png",
+      "avatar_url_ssl": "https://avatars.stocktwits.com/production/9448598/thumb-1753386650.png",
+      "join_date": "2024-09-18",
+      "official": false,
+      "identity": "User",
+      "classification": [],
+      "badges": [],
+      "home_country": "US",
+      "search_regions": [],
+      "followers": 261,
+      "following": 0,
+      "ideas": 6076,
+      "watchlist_stocks_count": 29,
+      "like_count": 1376,
+      "plus_tier": "",
+      "premium_room": "",
+      "trade_app": false,
+      "trade_status": "PENDING_MFA",
+      "subscribers_count": 60,
+      "subscribed_to_count": 0,
+      "following_stocks": 0,
+      "location": null,
+      "bio": null,
+      "website_url": null,
+      "trading_strategy": {
+       "assets_frequently_traded": [],
+       "approach": null,
+       "approaches": [],
+       "holding_period": null,
+       "holding_periods": [],
+       "experience": null,
+       "interests": []
+      },
+      "trading_profile": {
+       "industry": [],
+       "trading_experience": [],
+       "approach": [],
+       "risk_profile": [],
+       "holding_period": [],
+       "capitalization_bias": [],
+       "long_short": [],
+       "asset_classes_traded": [],
+       "interests": []
+      }
+     },
+     "source": {
+      "id": 2269,
+      "title": "StockTwits Web",
+      "url": "https://stocktwits.com"
+     },
+     "symbols": [
+      {
+       "id": 686,
+       "symbol": "AAPL",
+       "symbol_mic": "AAPL.XNAS",
+       "symbol_display": "AAPL",
+       "exchange": "NASDAQ",
+       "region": "US",
+       "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+       "title": "Apple Inc",
+       "aliases": [],
+       "deeplink": "symbol/AAPL",
+       "external_id": null,
+       "is_following": false,
+       "watchlist_count": 997571,
+       "has_pricing": true,
+       "instrument_class": "Stock",
+       "live_event": false,
+       "earnings_cta": "res_earn_tab",
+       "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+       "sector": "ElectronicTechnology",
+       "industry": "TelecommunicationsEquipment",
+       "trending": true,
+       "trending_score": 8.44478,
+       "trends": {
+        "all": 6,
+        "region": 6,
+        "exchange": 5,
+        "class_all": 6,
+        "class_equity": 6,
+        "summary": "The iPhone Duos rapid preorder sellout and extended delivery estimates are driving attention, with traders split over whether they signal strong demand or mainly reflect constrained launch inventory and manufacturing challenges. The stocks gains have also prompted profit-taking and skepticism about whether the new foldable can meaningfully boost sales.",
+        "summary_at": "2026-10-16T10:28:01-04:00"
+       },
+       "trade_status": "FRACTIONAL",
+       "features": {
+        "alerts_price": true,
+        "social_data": true,
+        "trending_messages": true,
+        "earnings": true
+       },
+       "cusip": "037833100",
+       "isin": "US0378331005",
+       "sentiment_change": -2.76,
+       "volume_change": -4.93,
+       "should_seo_index": true
+      }
+     ],
+     "prices": [
+      {
+       "id": 686,
+       "symbol": "AAPL",
+       "symbol_mic": "AAPL.XNAS",
+       "price": "345.72"
+      }
+     ],
+     "conversation": {
+      "parent_message_id": 666698300,
+      "in_reply_to_message_id": null,
+      "parent": true,
+      "replies": 1
+     },
+     "mentioned_users": [],
+     "entities": {
+      "media": [],
+      "sentiment": null,
+      "discussable": null
+     }
+    }
+   },
+   "mentioned_users": [],
+   "entities": {
+    "media": [
+     {
+      "id": 15114303,
+      "type": "image",
+      "thumb": "https://media.stocktwits-cdn.com/api/3/media/15114303/thumb.webp",
+      "medium": "https://media.stocktwits-cdn.com/api/3/media/15114303/medium.webp",
+      "large": "https://media.stocktwits-cdn.com/api/3/media/15114303/large.webp",
+      "original": "https://media.stocktwits-cdn.com/api/3/media/15114303/original.png",
+      "url": "https://media.stocktwits-cdn.com/api/3/media/15114303/default.webp",
+      "height": 554,
+      "width": 864,
+      "ratio": 1.55957,
+      "provider": null,
+      "provider_id": null
+     }
+    ],
+    "chart": {
+     "id": 15114303,
+     "type": "image",
+     "thumb": "https://media.stocktwits-cdn.com/api/3/media/15114303/thumb.webp",
+     "medium": "https://media.stocktwits-cdn.com/api/3/media/15114303/medium.webp",
+     "large": "https://media.stocktwits-cdn.com/api/3/media/15114303/large.webp",
+     "original": "https://media.stocktwits-cdn.com/api/3/media/15114303/original.png",
+     "url": "https://media.stocktwits-cdn.com/api/3/media/15114303/default.webp",
+     "height": 554,
+     "width": 864,
+     "ratio": 1.55957
+    },
+    "sentiment": {
+     "basic": "Bullish"
+    },
+    "discussable": null
+   },
+   "user": {
+    "id": 1634178,
+    "username": "ZOO_LANDER",
+    "name": "ZOOLANDER",
+    "avatar_url": "https://avatars.stocktwits.com/production/1634178/thumb-1752199009.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/production/1634178/thumb-1752199009.png",
+    "join_date": "2018-09-29",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "home_country": "US",
+    "search_regions": [],
+    "followers": 189,
+    "following": 520,
+    "ideas": 4640,
+    "watchlist_stocks_count": 276,
+    "like_count": 7996,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666698990,
+   "body": "$AAPL Bull Case is $260",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " Bull Case is $260"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:21:42Z",
+   "discussion": false,
+   "source": {
+    "id": 2269,
+    "title": "StockTwits Web",
+    "url": "https://stocktwits.com"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "346.46"
+    }
+   ],
+   "mentioned_users": [],
+   "entities": {
+    "media": [
+     {
+      "id": 15114268,
+      "type": "image",
+      "thumb": "https://media.stocktwits-cdn.com/api/3/media/15114268/thumb.webp",
+      "medium": "https://media.stocktwits-cdn.com/api/3/media/15114268/medium.webp",
+      "large": "https://media.stocktwits-cdn.com/api/3/media/15114268/large.webp",
+      "original": "https://media.stocktwits-cdn.com/api/3/media/15114268/original.png",
+      "url": "https://media.stocktwits-cdn.com/api/3/media/15114268/default.webp",
+      "height": 255,
+      "width": 503,
+      "ratio": 1.97255,
+      "provider": null,
+      "provider_id": null
+     }
+    ],
+    "chart": {
+     "id": 15114268,
+     "type": "image",
+     "thumb": "https://media.stocktwits-cdn.com/api/3/media/15114268/thumb.webp",
+     "medium": "https://media.stocktwits-cdn.com/api/3/media/15114268/medium.webp",
+     "large": "https://media.stocktwits-cdn.com/api/3/media/15114268/large.webp",
+     "original": "https://media.stocktwits-cdn.com/api/3/media/15114268/original.png",
+     "url": "https://media.stocktwits-cdn.com/api/3/media/15114268/default.webp",
+     "height": 255,
+     "width": 503,
+     "ratio": 1.97255
+    },
+    "sentiment": {
+     "basic": "Bearish"
+    },
+    "discussable": null
+   },
+   "user": {
+    "id": 7068827,
+    "username": "HankHedgeHogFund",
+    "name": "Henry",
+    "avatar_url": "http://avatars.stocktwits.com/images/default_avatar_4_thumb.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/images/default_avatar_4_thumb.png",
+    "join_date": "2022-12-07",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "home_country": "US",
+    "search_regions": [],
+    "followers": 181,
+    "following": 1,
+    "ideas": 21342,
+    "watchlist_stocks_count": 3,
+    "like_count": 1933,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666698884,
+   "body": "$AAPL 350  next  week  remember lock out  is  there  too",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " 350  next  week  remember lock out  is  there  too"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:21:07Z",
+   "discussion": false,
+   "source": {
+    "id": 2269,
+    "title": "StockTwits Web",
+    "url": "https://stocktwits.com"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "346.14"
+    }
+   ],
+   "mentioned_users": [],
+   "entities": {
+    "media": [],
+    "sentiment": {
+     "basic": "Bullish"
+    },
+    "discussable": null
+   },
+   "user": {
+    "id": 3486237,
+    "username": "DMTGods",
+    "name": "The One True Messenger",
+    "avatar_url": "https://avatars.stocktwits.com/production/3486237/thumb-1695959140.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/production/3486237/thumb-1695959140.png",
+    "join_date": "2020-05-20",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "search_regions": [],
+    "followers": 10,
+    "following": 4,
+    "ideas": 820,
+    "watchlist_stocks_count": 44,
+    "like_count": 204,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "likes": {
+    "total": 1,
+    "user_ids": [
+     1634178
+    ]
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666698606,
+   "body": "$SPY total control to pin in tight range with $NVDA and $AAPL",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$SPY",
+      "symbol": "SPY",
+      "symbol_display": "SPY",
+      "logo_url": "https://logos.stocktwits-cdn.com/SPY.png",
+      "deeplink": "symbol/SPY"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " total control to pin in tight range with "
+     }
+    },
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$NVDA",
+      "symbol": "NVDA",
+      "symbol_display": "NVDA",
+      "logo_url": "https://logos.stocktwits-cdn.com/NVDA.png",
+      "deeplink": "symbol/NVDA"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " and "
+     }
+    },
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:19:14Z",
+   "discussion": false,
+   "source": {
+    "id": 1149,
+    "title": "StockTwits for iOS",
+    "url": "http://www.stocktwits.com/mobile"
+   },
+   "prices": [
+    {
+     "id": 7271,
+     "symbol": "SPY",
+     "symbol_mic": "SPY.ARCX",
+     "price": "769.46"
+    },
+    {
+     "id": 2925,
+     "symbol": "NVDA",
+     "symbol_mic": "NVDA.XNAS",
+     "price": "216.36"
+    },
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "345.75"
+    }
+   ],
+   "mentioned_users": [],
+   "entities": {
+    "media": [
+     {
+      "id": 15114112,
+      "type": "gif",
+      "thumb": null,
+      "medium": null,
+      "large": null,
+      "original": null,
+      "url": null,
+      "height": 480,
+      "width": 480,
+      "ratio": 1.0,
+      "provider": "giphy",
+      "provider_id": "kbC7z6gl0bYk1mf0Ve"
+     }
+    ],
+    "giphy": {
+     "id": "kbC7z6gl0bYk1mf0Ve"
+    },
+    "sentiment": null,
+    "discussable": null
+   },
+   "user": {
+    "id": 10288332,
+    "username": "strader59",
+    "name": "Bhavesh Sheth",
+    "avatar_url": "https://avatars.stocktwits.com/production/10288332/thumb-1751994208.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/production/10288332/thumb-1751994208.png",
+    "join_date": "2025-07-08",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "home_country": "US",
+    "search_regions": [],
+    "followers": 4,
+    "following": 2,
+    "ideas": 456,
+    "watchlist_stocks_count": 35,
+    "like_count": 18,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 7271,
+     "symbol": "SPY",
+     "symbol_mic": "SPY.ARCX",
+     "symbol_display": "SPY",
+     "exchange": "NYSEArca",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/SPY.png",
+     "title": "SPDR S&P 500 ETF Trust",
+     "aliases": [],
+     "deeplink": "symbol/SPY",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 638721,
+     "has_pricing": true,
+     "instrument_class": "ExchangeTradedFund",
+     "live_event": false,
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": 0.53,
+     "volume_change": -4.32
+    },
+    {
+     "id": 2925,
+     "symbol": "NVDA",
+     "symbol_mic": "NVDA.XNAS",
+     "symbol_display": "NVDA",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/NVDA.png",
+     "title": "NVIDIA Corp",
+     "aliases": [],
+     "deeplink": "symbol/NVDA",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 671829,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": 3.43,
+     "volume_change": -2.85
+    },
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666698564,
+   "body": "$AAPL People!!! stop talking about the 18 pro.. 18 pro customers are going to buy the DUO !!! Watch and see, if there was no DUO it would be breaking records just like the phones before it.....RELAX, I think apple will be around next year,😉Do not sell!!!!",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " People!!! stop talking about the 18 pro.. 18 pro customers are going to buy the DUO !!! Watch and see, if there was no DUO it would be breaking records just like the phones before it.....RELAX, I think apple will be around next year,😉Do not sell!!!!"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:18:58Z",
+   "discussion": false,
+   "source": {
+    "id": 2269,
+    "title": "StockTwits Web",
+    "url": "https://stocktwits.com"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "345.86"
+    }
+   ],
+   "conversation": {
+    "parent_message_id": 666698564,
+    "in_reply_to_message_id": null,
+    "parent": true,
+    "replies": 1
+   },
+   "mentioned_users": [],
+   "entities": {
+    "media": [],
+    "sentiment": {
+     "basic": "Bullish"
+    },
+    "discussable": null
+   },
+   "user": {
+    "id": 1327361,
+    "username": "tartapple",
+    "name": "go apple!",
+    "avatar_url": "http://avatars.stocktwits.com/images/default_avatar_8_thumb.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/images/default_avatar_8_thumb.png",
+    "join_date": "2017-12-20",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "home_country": "US",
+    "search_regions": [],
+    "followers": 2,
+    "following": 0,
+    "ideas": 188,
+    "watchlist_stocks_count": 3,
+    "like_count": 111,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  },
+  {
+   "id": 666698516,
+   "body": "$AAPL ANALYST TARGET (1Y) \n$334.91",
+   "tokenized_body": [
+    {
+     "type": "cashTag",
+     "data": {
+      "text": "$AAPL",
+      "symbol": "AAPL",
+      "symbol_display": "AAPL",
+      "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+      "deeplink": "symbol/AAPL"
+     }
+    },
+    {
+     "type": "text",
+     "data": {
+      "text": " ANALYST TARGET (1Y) \n$334.91"
+     }
+    }
+   ],
+   "created_at": "2026-10-16T15:18:38Z",
+   "discussion": false,
+   "source": {
+    "id": 2269,
+    "title": "StockTwits Web",
+    "url": "https://stocktwits.com"
+   },
+   "prices": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "price": "345.92"
+    }
+   ],
+   "mentioned_users": [],
+   "entities": {
+    "media": [
+     {
+      "id": 15114182,
+      "type": "gif",
+      "thumb": null,
+      "medium": null,
+      "large": null,
+      "original": null,
+      "url": null,
+      "height": null,
+      "width": null,
+      "ratio": null,
+      "provider": "giphy",
+      "provider_id": "MEeF0LoWyiaJnqFXol"
+     }
+    ],
+    "giphy": {
+     "id": "MEeF0LoWyiaJnqFXol"
+    },
+    "sentiment": {
+     "basic": "Bearish"
+    },
+    "discussable": null
+   },
+   "user": {
+    "id": 8367702,
+    "username": "Jordan321",
+    "name": "Jordan Allen",
+    "avatar_url": "https://avatars.stocktwits.com/production/8367702/thumb-1792138437.png",
+    "avatar_url_ssl": "https://avatars.stocktwits.com/production/8367702/thumb-1792138437.png",
+    "join_date": "2023-10-03",
+    "official": false,
+    "identity": "User",
+    "classification": [],
+    "badges": [],
+    "home_country": "GB",
+    "search_regions": [],
+    "followers": 12,
+    "following": 17,
+    "ideas": 243,
+    "watchlist_stocks_count": 30,
+    "like_count": 507,
+    "plus_tier": "",
+    "premium_room": "",
+    "trade_app": false,
+    "trade_status": "PENDING_MFA"
+   },
+   "symbols": [
+    {
+     "id": 686,
+     "symbol": "AAPL",
+     "symbol_mic": "AAPL.XNAS",
+     "symbol_display": "AAPL",
+     "exchange": "NASDAQ",
+     "region": "US",
+     "logo_url": "https://logos.stocktwits-cdn.com/AAPL.png",
+     "title": "Apple Inc",
+     "aliases": [],
+     "deeplink": "symbol/AAPL",
+     "external_id": null,
+     "is_following": false,
+     "watchlist_count": 997571,
+     "has_pricing": true,
+     "instrument_class": "Stock",
+     "live_event": false,
+     "earnings_cta": "res_earn_tab",
+     "earnings_id": "be598968-cabd-46a8-9439-08cedb68702d",
+     "trade_status": "FRACTIONAL",
+     "sentiment_change": -2.76,
+     "volume_change": -4.93
+    }
+   ]
+  }
+ ],
+ "response": {
+  "status": 200
+ }
+}

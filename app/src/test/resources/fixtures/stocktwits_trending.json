@@ -1,0 +1,274 @@
+{
+ "symbols": [
+  {
+   "id": 11200,
+   "symbol": "SLS",
+   "title": "SELLAS Life Sciences Group Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 62372,
+   "trending_score": 21.8063
+  },
+  {
+   "id": 8660,
+   "symbol": "TSLA",
+   "title": "Tesla Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 1069405,
+   "trending_score": 18.6324
+  },
+  {
+   "id": 293090,
+   "symbol": "SKHY",
+   "title": "SK Hynix Inc - ADR",
+   "instrument_class": "DepositoryReceipt",
+   "exchange": "NASDAQ",
+   "watchlist_count": 16835,
+   "trending_score": 10.902
+  },
+  {
+   "id": 37307,
+   "symbol": "CRWV",
+   "title": "CoreWeave Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 51101,
+   "trending_score": 8.96835
+  },
+  {
+   "id": 7127,
+   "symbol": "S",
+   "title": "SentinelOne Inc",
+   "instrument_class": "Stock",
+   "exchange": "NYSE",
+   "watchlist_count": 32193,
+   "trending_score": 8.45918
+  },
+  {
+   "id": 686,
+   "symbol": "AAPL",
+   "title": "Apple Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 997571,
+   "trending_score": 8.44478
+  },
+  {
+   "id": 19352,
+   "symbol": "ZETA",
+   "title": "Zeta Global Holdings Corp",
+   "instrument_class": "Stock",
+   "exchange": "NYSE",
+   "watchlist_count": 15600,
+   "trending_score": 8.35262
+  },
+  {
+   "id": 8305,
+   "symbol": "SOXL",
+   "title": "Direxion Daily Semiconductor Bull 3X Shares",
+   "instrument_class": "ExchangeTradedFund",
+   "exchange": "NYSEArca",
+   "watchlist_count": 40853,
+   "trending_score": 7.87844
+  },
+  {
+   "id": 9581,
+   "symbol": "QQQ",
+   "title": "Invesco QQQ Trust Series 1",
+   "instrument_class": "ExchangeTradedFund",
+   "exchange": "NASDAQ",
+   "watchlist_count": 281063,
+   "trending_score": 7.72494
+  },
+  {
+   "id": 36182,
+   "symbol": "NBIS",
+   "title": "Nebius Group N.V. ",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 54052,
+   "trending_score": 7.59614
+  },
+  {
+   "id": 2924,
+   "symbol": "NVAX",
+   "title": "Novavax Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 108272,
+   "trending_score": 7.56239
+  },
+  {
+   "id": 2723,
+   "symbol": "MRNA",
+   "title": "Moderna Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 116918,
+   "trending_score": 7.07774
+  },
+  {
+   "id": 16401,
+   "symbol": "ABCL",
+   "title": "AbCellera Biologics Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 9696,
+   "trending_score": 7.01632
+  },
+  {
+   "id": 7018,
+   "symbol": "RGC",
+   "title": "Regencell Bioscience Holdings Ltd",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 8235,
+   "trending_score": 6.84798
+  },
+  {
+   "id": 2925,
+   "symbol": "NVDA",
+   "title": "NVIDIA Corp",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 671829,
+   "trending_score": 6.78727
+  },
+  {
+   "id": 7901,
+   "symbol": "AVGO",
+   "title": "Broadcom Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 75901,
+   "trending_score": 6.69715
+  },
+  {
+   "id": 253747,
+   "symbol": "XE",
+   "title": "X-Energy Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 3986,
+   "trending_score": 6.08795
+  },
+  {
+   "id": 35705,
+   "symbol": "CBRS",
+   "title": "Cerebras Systems Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 14812,
+   "trending_score": 5.89307
+  },
+  {
+   "id": 4001,
+   "symbol": "VICR",
+   "title": "Vicor Corp.",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 2194,
+   "trending_score": 5.70658
+  },
+  {
+   "id": 22741,
+   "symbol": "IREN",
+   "title": "IREN Limited",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 52675,
+   "trending_score": 5.70203
+  },
+  {
+   "id": 11268,
+   "symbol": "NOW",
+   "title": "ServiceNow Inc",
+   "instrument_class": "Stock",
+   "exchange": "NYSE",
+   "watchlist_count": 44480,
+   "trending_score": 5.68338
+  },
+  {
+   "id": 8233,
+   "symbol": "TQQQ",
+   "title": "ProShares UltraPro QQQ",
+   "instrument_class": "ExchangeTradedFund",
+   "exchange": "NASDAQ",
+   "watchlist_count": 44514,
+   "trending_score": 5.35958
+  },
+  {
+   "id": 4983,
+   "symbol": "DIS",
+   "title": "Walt Disney Co",
+   "instrument_class": "Stock",
+   "exchange": "NYSE",
+   "watchlist_count": 289903,
+   "trending_score": 5.22762
+  },
+  {
+   "id": 7164,
+   "symbol": "SE",
+   "title": "Sea Ltd - ADR",
+   "instrument_class": "DepositoryReceipt",
+   "exchange": "NYSE",
+   "watchlist_count": 28344,
+   "trending_score": 4.86342
+  },
+  {
+   "id": 670,
+   "symbol": "GBPUSD",
+   "title": "British Pound / US Dollar",
+   "instrument_class": "FX",
+   "exchange": "FX",
+   "watchlist_count": 14632,
+   "trending_score": 4.86098
+  },
+  {
+   "id": 278528,
+   "symbol": "QNT",
+   "title": "Quantinuum Inc.",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 4017,
+   "trending_score": 4.41286
+  },
+  {
+   "id": 13746,
+   "symbol": "AMP.X",
+   "title": "AMP Token",
+   "instrument_class": "CRYPTO",
+   "exchange": "CRYPTO",
+   "watchlist_count": 22128,
+   "trending_score": 4.2937
+  },
+  {
+   "id": 12896,
+   "symbol": "AXSM",
+   "title": "Axsome Therapeutics Inc",
+   "instrument_class": "Stock",
+   "exchange": "NASDAQ",
+   "watchlist_count": 11977,
+   "trending_score": 4.28319
+  },
+  {
+   "id": 11785,
+   "symbol": "SNOW",
+   "title": "Snowflake Inc",
+   "instrument_class": "Stock",
+   "exchange": "NYSE",
+   "watchlist_count": 58784,
+   "trending_score": 4.17129
+  },
+  {
+   "id": 32941,
+   "symbol": "W.X",
+   "title": "Wormhole",
+   "instrument_class": "CRYPTO",
+   "exchange": "CRYPTO",
+   "watchlist_count": 468,
+   "trending_score": 4.02333
+  }
+ ]
+}

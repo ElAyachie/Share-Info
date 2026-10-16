@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/trending">
+
+    <!-- Destination ids match the bottom navigation menu item ids. -->
+    <fragment
+        android:id="@+id/trending"
+        android:name="com.example.shareinfo.ui.TrendingFragment"
+        android:label="@string/tab_trending" />
+    <fragment
+        android:id="@+id/personalized"
+        android:name="com.example.shareinfo.ui.FavoritesFragment"
+        android:label="@string/tab_favorites" />
+    <fragment
+        android:id="@+id/search"
+        android:name="com.example.shareinfo.ui.SearchFragment"
+        android:label="@string/tab_search" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.shareinfo.ui.FollowingFragment"
+        android:label="@string/tab_following" />
+    <fragment
+        android:id="@+id/topic"
+        android:name="com.example.shareinfo.ui.TopicDetailFragment"
+        android:label="{title}">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="topic"
+            app:argType="string" />
+    </fragment>
+</navigation>

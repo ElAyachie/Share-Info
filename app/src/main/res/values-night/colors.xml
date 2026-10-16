@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dark palette: same roles as values/colors.xml with tones chosen for dark surfaces. -->
+<resources>
+    <color name="md_primary">#73DBA6</color>
+    <color name="md_on_primary">#003823</color>
+    <color name="md_primary_container">#005235</color>
+    <color name="md_on_primary_container">#9DF5C8</color>
+    <color name="md_secondary">#B4CCBC</color>
+    <color name="md_on_secondary">#20352A</color>
+    <color name="md_secondary_container">#2F4438</color>
+    <color name="md_on_secondary_container">#D0E8D8</color>
+    <color name="md_tertiary">#A4CDDD</color>
+    <color name="md_on_tertiary">#053542</color>
+    <color name="md_tertiary_container">#234C59</color>
+    <color name="md_on_tertiary_container">#C0E9FA</color>
+    <color name="md_error">#FFB4AB</color>
+    <color name="md_on_error">#690005</color>
+    <color name="md_error_container">#93000A</color>
+    <color name="md_on_error_container">#FFDAD6</color>
+    <color name="md_background">#0E1310</color>
+    <color name="md_on_background">#E1E7E2</color>
+    <color name="md_surface">#0E1310</color>
+    <color name="md_on_surface">#E1E7E2</color>
+    <color name="md_surface_variant">#404943</color>
+    <color name="md_on_surface_variant">#C3CCC5</color>
+    <color name="md_outline">#8D968F</color>
+    <color name="md_outline_variant">#333B36</color>
+    <color name="md_surface_container_lowest">#090D0B</color>
+    <color name="md_surface_container_low">#161C18</color>
+    <color name="md_surface_container">#1A201C</color>
+    <color name="md_surface_container_high">#242A26</color>
+    <color name="md_surface_container_highest">#2F3531</color>
+    <color name="md_inverse_surface">#E1E7E2</color>
+    <color name="md_inverse_on_surface">#2C322E</color>
+    <color name="md_inverse_primary">#006C47</color>
+
+    <color name="card_surface">#181E1A</color>
+
+    <color name="sentiment_positive">#6FDC9A</color>
+    <color name="sentiment_negative">#FF8A80</color>
+    <color name="sentiment_neutral">#A7B0AA</color>
+    <color name="sentiment_neutral_bar">#48514B</color>
+
+    <color name="source_stocktwits">#AAB6FF</color>
+    <color name="source_bluesky">#80BBFF</color>
+    <color name="source_reddit">#FF9E75</color>
+    <color name="source_news">#B8C2BC</color>
+</resources>
