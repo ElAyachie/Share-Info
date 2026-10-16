@@ -1,0 +1,1358 @@
+{
+ "posts": [
+  {
+   "uri": "at://did:plc:vvidntidrwdocqgjy5gz2kzc/app.bsky.feed.post/3mxyud42ruc2e",
+   "cid": "bafyreiep6b4wvuvahcjozfrknfm7op3ng7fewoqngxobma4u7q7ti2v4sm",
+   "author": {
+    "did": "did:plc:vvidntidrwdocqgjy5gz2kzc",
+    "handle": "notreload.bsky.social",
+    "displayName": "NOTRELOAD AI",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:vvidntidrwdocqgjy5gz2kzc/bafkreifwpp7lyjv4dc4hzndnk3sgbzue6ujzvv2p42aplhszjr6zuwhs4y",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2025-05-27T07:28:15.341Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T15:10:55.197Z",
+    "embed": {
+     "$type": "app.bsky.embed.external",
+     "external": {
+      "description": "11:08 AM — Dan Ives says Nvidia’s (NVDA) recent dip is a buying chance, not a warning. Demand for its AI chips stays strong but limited by supply. He keeps a $300 target and expects ~70% growth as AI ...",
+      "thumb": {
+       "$type": "blob",
+       "ref": {
+        "$link": "bafkreicxij6jhgv5jz7lwebpwpan64epbtvgnb6kaliolmwg27hahg4c6q"
+       },
+       "mimeType": "image/jpeg",
+       "size": 833253
+      },
+      "title": "Wall Street Live — Friday, October 16",
+      "uri": "https://notreload.xyz/wall-street-live-friday-october-16/"
+     }
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 19,
+       "byteStart": 14
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://notreload.xyz/wall-street-live-friday-october-16/"
+       }
+      ],
+      "index": {
+       "byteEnd": 170,
+       "byteStart": 141
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "Dan Ives says $NVDA recent dip is a buying chance, not a warning. He keeps a $300 target and expects ~70% growth as AI expands beyond chips. notreload.xyz/wall-street-..."
+   },
+   "embed": {
+    "external": {
+     "uri": "https://notreload.xyz/wall-street-live-friday-october-16/",
+     "title": "Wall Street Live — Friday, October 16",
+     "description": "11:08 AM — Dan Ives says Nvidia’s (NVDA) recent dip is a buying chance, not a warning. Demand for its AI chips stays strong but limited by supply. He keeps a $300 target and expects ~70% growth as AI ...",
+     "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:vvidntidrwdocqgjy5gz2kzc/bafkreicxij6jhgv5jz7lwebpwpan64epbtvgnb6kaliolmwg27hahg4c6q"
+    },
+    "$type": "app.bsky.embed.external#view"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T15:10:58.655Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:kncbaoqm2iw5xfwjagmu4hj3/app.bsky.feed.post/3mxytwg5yb22p",
+   "cid": "bafyreiauzonl3kmp7kaghm4tbwpwm2s7qdcthz4y5p2wqnzbicl77uw45m",
+   "author": {
+    "did": "did:plc:kncbaoqm2iw5xfwjagmu4hj3",
+    "handle": "byobattleship.bsky.social",
+    "displayName": "Chris Weisiger",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:kncbaoqm2iw5xfwjagmu4hj3/bafkreia7fianfen4la3n7fun7x2d3tex4hmgti6cvnn6fni3kahdfsnkkm",
+    "associated": {
+     "chat": {
+      "allowIncoming": "all"
+     },
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2024-05-08T23:12:03.047Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T15:03:49.581Z",
+    "langs": [
+     "en"
+    ],
+    "reply": {
+     "parent": {
+      "cid": "bafyreidlf5qjd4tyzjwccho4myv2q3smrstdqeq55cm3vtqytx4zmtqsqu",
+      "uri": "at://did:plc:kncbaoqm2iw5xfwjagmu4hj3/app.bsky.feed.post/3mxytstaar22p"
+     },
+     "root": {
+      "cid": "bafyreidlf5qjd4tyzjwccho4myv2q3smrstdqeq55cm3vtqytx4zmtqsqu",
+      "uri": "at://did:plc:kncbaoqm2iw5xfwjagmu4hj3/app.bsky.feed.post/3mxytstaar22p"
+     }
+    },
+    "text": "The voice here is provided by NVDA, of course!"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 1,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T15:03:50.861Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:hqxvekfbf32lgrodqu5xgyea/app.bsky.feed.post/3mxytrvlz5g2r",
+   "cid": "bafyreigqakgjlrnaatk7fgmmgcpnnrvnvqxklujz47bpx72atys7osd4tm",
+   "author": {
+    "did": "did:plc:hqxvekfbf32lgrodqu5xgyea",
+    "handle": "finnence.bsky.social",
+    "displayName": "Finnence · market intelligence",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:hqxvekfbf32lgrodqu5xgyea/bafkreiakft7ogmswcvoq3hol6gm3i4o3ntzx5kx57akkr6ep4hatjejdae",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2026-09-01T21:25:29.801Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T15:01:17.712092Z",
+    "langs": [
+     "en"
+    ],
+    "reply": {
+     "parent": {
+      "cid": "bafyreienb2cpv45fwxt6j3nwhzcax4sjpqgbq6p5eosilhp2gvn2pgnt34",
+      "uri": "at://did:plc:vp6kbjbj7km2kl3elye5oqpm/app.bsky.feed.post/3mxytmpb2xd2e"
+     },
+     "root": {
+      "cid": "bafyreienb2cpv45fwxt6j3nwhzcax4sjpqgbq6p5eosilhp2gvn2pgnt34",
+      "uri": "at://did:plc:vp6kbjbj7km2kl3elye5oqpm/app.bsky.feed.post/3mxytmpb2xd2e"
+     }
+    },
+    "text": "Our scanner has NVDA at top-decile momentum (score 1.0) with a 105.9% revenue growth read, and we're long it in the paper book from $228.31. The moat story and the tape agree for once. The risk is everyone already knows it."
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T15:01:18.076Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:nd7eob2wcwlsf7ow6bsacz64/app.bsky.feed.post/3mxysvjgypj2u",
+   "cid": "bafyreifl4s3rywze3lmx4altbula3lpadlogbjtf3kr7k6tgavnbjaxf5y",
+   "author": {
+    "did": "did:plc:nd7eob2wcwlsf7ow6bsacz64",
+    "handle": "canopyatlas.bsky.social",
+    "displayName": "",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nd7eob2wcwlsf7ow6bsacz64/bafkreifvbt5v7nvuym63gg3ssmrxqtg2zruit36icszme2k5u6s62lmu3u",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2026-10-09T14:42:53.262Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T14:45:24.217Z",
+    "embed": {
+     "$type": "app.bsky.embed.external",
+     "external": {
+      "$type": "app.bsky.embed.external#external",
+      "description": "In this update:",
+      "thumb": {
+       "$type": "blob",
+       "ref": {
+        "$link": "bafkreibyazjcookiwk7pb5ajp3ndda57sktk7ucbp3nf4v4wmbztwnsd2q"
+       },
+       "mimeType": "image/jpeg",
+       "size": 64562
+      },
+      "title": "Market Sweep: Semiconductors extend losing streak as Fed pause bets fuel rotation into financials, energy, health care",
+      "uri": "https://canopyatlas.substack.com/p/market-sweep-semiconductors-extend"
+     }
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$SOXX"
+       }
+      ],
+      "index": {
+       "byteEnd": 191,
+       "byteStart": 186
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$MU"
+       }
+      ],
+      "index": {
+       "byteEnd": 195,
+       "byteStart": 192
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$INTC"
+       }
+      ],
+      "index": {
+       "byteEnd": 201,
+       "byteStart": 196
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$AMD"
+       }
+      ],
+      "index": {
+       "byteEnd": 206,
+       "byteStart": 202
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 212,
+       "byteStart": 207
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://canopyatlas.substack.com/p/market-sweep-semiconductors-extend"
+       }
+      ],
+      "index": {
+       "byteEnd": 283,
+       "byteStart": 214
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "Semis opened down over 2% with 57 of 60 stocks falling: Micron -3%, Intel -2%, AMD -1.8%, Nvidia flat. A flat leader on no news reads as a crowded long being cut, not a demand verdict.\n\n$SOXX $MU $INTC $AMD $NVDA\n\nhttps://canopyatlas.substack.com/p/market-sweep-semiconductors-extend"
+   },
+   "embed": {
+    "external": {
+     "uri": "https://canopyatlas.substack.com/p/market-sweep-semiconductors-extend",
+     "title": "Market Sweep: Semiconductors extend losing streak as Fed pause bets fuel rotation into financials, energy, health care",
+     "description": "In this update:",
+     "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:nd7eob2wcwlsf7ow6bsacz64/bafkreibyazjcookiwk7pb5ajp3ndda57sktk7ucbp3nf4v4wmbztwnsd2q"
+    },
+    "$type": "app.bsky.embed.external#view"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T14:45:25.859Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:xkirlx2wf73flv7nkp3dgp55/app.bsky.feed.post/3mxysfukwgc2a",
+   "cid": "bafyreige5oqn6t7yg2sfgges7vojn4nhbai4q5qsijrlxpu67iovog5oei",
+   "author": {
+    "did": "did:plc:xkirlx2wf73flv7nkp3dgp55",
+    "handle": "capricekayem.bsky.social",
+    "displayName": "Caprice ❤️",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:xkirlx2wf73flv7nkp3dgp55/bafkreif5brckde7tcaqu2yyj4ril5cmgjexitzhvarrikk4r4cbvc7ff2u",
+    "associated": {
+     "chat": {
+      "allowIncoming": "all"
+     },
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2026-03-24T17:09:48.157Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T14:36:40.517Z",
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 5,
+       "byteStart": 0
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "$NVDA 217.5C 10/16 1.10 entry"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T14:34:52.257Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:5annqzfjpalevn6dsdmp24v7/app.bsky.feed.post/3mxys2tgzqk2s",
+   "cid": "bafyreigryzst2ulo4c7psgx3ai4bir5mwwwwjcc3rpufpqio2zmhyrtfai",
+   "author": {
+    "did": "did:plc:5annqzfjpalevn6dsdmp24v7",
+    "handle": "wealthwise-dca.bsky.social",
+    "displayName": "WealthWise",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreib6kdatul457qqu4lm2z6xsqxwtatfybhveetabc4rkh3yubdembi",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2024-11-20T12:17:48.375Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T14:30:30.239Z",
+    "embed": {
+     "$type": "app.bsky.embed.gallery",
+     "items": [
+      {
+       "$type": "app.bsky.embed.gallery#image",
+       "alt": "",
+       "aspectRatio": {
+        "height": 1080,
+        "width": 1080
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreiezvghhpqler4c5jjorxq3l5rjd6aao6a32kdbmmkbgtha6edcptu"
+        },
+        "mimeType": "image/jpeg",
+        "size": 1430616
+       }
+      },
+      {
+       "$type": "app.bsky.embed.gallery#image",
+       "alt": "",
+       "aspectRatio": {
+        "height": 1080,
+        "width": 1080
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreihb6rdshowpusr5o35buzg7q5unclv73obc5p6eywzln3rby73gii"
+        },
+        "mimeType": "image/jpeg",
+        "size": 733143
+       }
+      },
+      {
+       "$type": "app.bsky.embed.gallery#image",
+       "alt": "",
+       "aspectRatio": {
+        "height": 1080,
+        "width": 1080
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreihiwaew2jfk6qv6ajnvd7hpct2amb54j7625k2c2jrofxrvbucknu"
+        },
+        "mimeType": "image/jpeg",
+        "size": 763459
+       }
+      },
+      {
+       "$type": "app.bsky.embed.gallery#image",
+       "alt": "",
+       "aspectRatio": {
+        "height": 1080,
+        "width": 1080
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreihahlsgkdcb7ui33rzjxracro4lvoyxgejbotnakydiaid6vnunkm"
+        },
+        "mimeType": "image/jpeg",
+        "size": 760488
+       }
+      },
+      {
+       "$type": "app.bsky.embed.gallery#image",
+       "alt": "",
+       "aspectRatio": {
+        "height": 1080,
+        "width": 1080
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreig2q5n434547gtjx4y6kas55acygvslchuobk2u2ez7huwiestw2i"
+        },
+        "mimeType": "image/jpeg",
+        "size": 773423
+       }
+      }
+     ]
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "SPX"
+       }
+      ],
+      "index": {
+       "byteEnd": 201,
+       "byteStart": 197
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 207,
+       "byteStart": 202
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "SP500"
+       }
+      ],
+      "index": {
+       "byteEnd": 214,
+       "byteStart": 208
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "TheKobeissiLetter"
+       }
+      ],
+      "index": {
+       "byteEnd": 233,
+       "byteStart": 215
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "StockMarke"
+       }
+      ],
+      "index": {
+       "byteEnd": 245,
+       "byteStart": 234
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "The Kobeissi Letter argues that a “stealth” bear market is developing beneath the S&P 500’s near-record level, calling it “one of the most significant opportunities in today's market.” \n\n#SPX #NVDA #SP500 #TheKobeissiLetter #StockMarke"
+   },
+   "embed": {
+    "items": [
+     {
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreiezvghhpqler4c5jjorxq3l5rjd6aao6a32kdbmmkbgtha6edcptu",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreiezvghhpqler4c5jjorxq3l5rjd6aao6a32kdbmmkbgtha6edcptu",
+      "alt": "",
+      "aspectRatio": {
+       "height": 1080,
+       "width": 1080
+      },
+      "$type": "app.bsky.embed.gallery#viewImage"
+     },
+     {
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreihb6rdshowpusr5o35buzg7q5unclv73obc5p6eywzln3rby73gii",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreihb6rdshowpusr5o35buzg7q5unclv73obc5p6eywzln3rby73gii",
+      "alt": "",
+      "aspectRatio": {
+       "height": 1080,
+       "width": 1080
+      },
+      "$type": "app.bsky.embed.gallery#viewImage"
+     },
+     {
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreihiwaew2jfk6qv6ajnvd7hpct2amb54j7625k2c2jrofxrvbucknu",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreihiwaew2jfk6qv6ajnvd7hpct2amb54j7625k2c2jrofxrvbucknu",
+      "alt": "",
+      "aspectRatio": {
+       "height": 1080,
+       "width": 1080
+      },
+      "$type": "app.bsky.embed.gallery#viewImage"
+     },
+     {
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreihahlsgkdcb7ui33rzjxracro4lvoyxgejbotnakydiaid6vnunkm",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreihahlsgkdcb7ui33rzjxracro4lvoyxgejbotnakydiaid6vnunkm",
+      "alt": "",
+      "aspectRatio": {
+       "height": 1080,
+       "width": 1080
+      },
+      "$type": "app.bsky.embed.gallery#viewImage"
+     },
+     {
+      "thumbnail": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreig2q5n434547gtjx4y6kas55acygvslchuobk2u2ez7huwiestw2i",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:5annqzfjpalevn6dsdmp24v7/bafkreig2q5n434547gtjx4y6kas55acygvslchuobk2u2ez7huwiestw2i",
+      "alt": "",
+      "aspectRatio": {
+       "height": 1080,
+       "width": 1080
+      },
+      "$type": "app.bsky.embed.gallery#viewImage"
+     }
+    ],
+    "$type": "app.bsky.embed.gallery#view"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T14:30:46.058Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:tn33kwocw6gcupf4quejds5y/app.bsky.feed.post/3mxyrl6hlv22l",
+   "cid": "bafyreibvb4gr5xu77ikx34iuxg7mma2c66iqiqcomcutkmau7zwamcoqwe",
+   "author": {
+    "did": "did:plc:tn33kwocw6gcupf4quejds5y",
+    "handle": "ljkawa.bsky.social",
+    "displayName": "Luke Kawa",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:tn33kwocw6gcupf4quejds5y/bafkreigvegrgcwigmno4cwimu2ak3yotvbe6hwrk7rx4uj7xp5rnl353hy",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2023-04-27T21:19:04.035Z",
+    "verification": {
+     "verifications": [
+      {
+       "issuer": "did:plc:z72i7hdynmk6r22z27h6tvur",
+       "issuerDisplayName": "Bluesky",
+       "issuerHandle": "bsky.app",
+       "uri": "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.graph.verification/3mcx3fhdczk2h",
+       "isValid": true,
+       "createdAt": "2026-01-21T16:23:06.334Z"
+      }
+     ],
+     "verifiedStatus": "valid",
+     "trustedVerifierStatus": "none"
+    }
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T14:21:44.924Z",
+    "embed": {
+     "$type": "app.bsky.embed.images",
+     "images": [
+      {
+       "alt": "",
+       "aspectRatio": {
+        "height": 425,
+        "width": 900
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreififenrg5srtyafpdceeeqawdry3olxwvevwd4x5twfvdd4foqdy4"
+        },
+        "mimeType": "image/jpeg",
+        "size": 166693
+       }
+      }
+     ]
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 87,
+       "byteStart": 82
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "Nvidia trading smack dab in the middle of its late July low and last week’s ATH $NVDA"
+   },
+   "embed": {
+    "images": [
+     {
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:tn33kwocw6gcupf4quejds5y/bafkreififenrg5srtyafpdceeeqawdry3olxwvevwd4x5twfvdd4foqdy4",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:tn33kwocw6gcupf4quejds5y/bafkreififenrg5srtyafpdceeeqawdry3olxwvevwd4x5twfvdd4foqdy4",
+      "alt": "",
+      "aspectRatio": {
+       "height": 425,
+       "width": 900
+      }
+     }
+    ],
+    "$type": "app.bsky.embed.images#view"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 1,
+   "repostCount": 0,
+   "likeCount": 6,
+   "quoteCount": 1,
+   "indexedAt": "2026-10-16T14:21:46.656Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:3g3wlsbwy2ymm6w3mxqiczet/app.bsky.feed.post/3mxyrhot5jk24",
+   "cid": "bafyreie65v6jlnn6fsoxzgzp44q5na5kc7i4hwxblnvobqdvrrxsz3ngni",
+   "author": {
+    "did": "did:plc:3g3wlsbwy2ymm6w3mxqiczet",
+    "handle": "stockanalysis.bsky.social",
+    "displayName": "StockAnalysis.com",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:3g3wlsbwy2ymm6w3mxqiczet/bafkreiabpiovgot35dlnqcu6jzmw4ac66mezjs3ynxkdqgxsxbuh454lwm",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2026-08-23T18:17:06.463Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T14:19:47.859Z",
+    "embed": {
+     "$type": "app.bsky.embed.images",
+     "images": [
+      {
+       "alt": "",
+       "aspectRatio": {
+        "height": 1250,
+        "width": 1250
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreiftx4te5yqt32p6wfyo2cr7gmv376hk5zmh3h3345wm7wctdo6ubu"
+        },
+        "mimeType": "image/jpeg",
+        "size": 265839
+       }
+      },
+      {
+       "alt": "",
+       "aspectRatio": {
+        "height": 1250,
+        "width": 1250
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreigfjwen24ht2ftusikuiuh3t3dd3onic7fo7oapbfys26mdhus2aa"
+        },
+        "mimeType": "image/jpeg",
+        "size": 287193
+       }
+      }
+     ]
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 254,
+       "byteStart": 249
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "In 2016, NVIDIA made most of its money from gaming GPUs. Data centers were just a side business.\n\n$10K then is worth $1.34M today.\n\nYear after year, that side business quietly kept growing.\n\nToday it’s ~90% of revenue.\n\nYou’re one idea away...\n\n$NVDA"
+   },
+   "embed": {
+    "images": [
+     {
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:3g3wlsbwy2ymm6w3mxqiczet/bafkreiftx4te5yqt32p6wfyo2cr7gmv376hk5zmh3h3345wm7wctdo6ubu",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:3g3wlsbwy2ymm6w3mxqiczet/bafkreiftx4te5yqt32p6wfyo2cr7gmv376hk5zmh3h3345wm7wctdo6ubu",
+      "alt": "",
+      "aspectRatio": {
+       "height": 1250,
+       "width": 1250
+      }
+     },
+     {
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:3g3wlsbwy2ymm6w3mxqiczet/bafkreigfjwen24ht2ftusikuiuh3t3dd3onic7fo7oapbfys26mdhus2aa",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:3g3wlsbwy2ymm6w3mxqiczet/bafkreigfjwen24ht2ftusikuiuh3t3dd3onic7fo7oapbfys26mdhus2aa",
+      "alt": "",
+      "aspectRatio": {
+       "height": 1250,
+       "width": 1250
+      }
+     }
+    ],
+    "$type": "app.bsky.embed.images#view"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T14:19:50.656Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:e3nrhzbnc3di45wzn3n2a2vm/app.bsky.feed.post/3mxyqwq4ut22h",
+   "cid": "bafyreie725ghgwob2pv4xxyy4vfnffyxag4q5sdcsl2pjg57zgeyy4b4z4",
+   "author": {
+    "did": "did:plc:e3nrhzbnc3di45wzn3n2a2vm",
+    "handle": "roqueig.bsky.social",
+    "displayName": "John",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:e3nrhzbnc3di45wzn3n2a2vm/bafkreiclj6drczqjn6ksfd2le7d235dyju3ftcndgi64e4nnlqm6zcstrm",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2024-11-16T13:27:17.880Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T14:10:18.804Z",
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 58,
+       "byteStart": 53
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "feels like the buy program is doing its job today in $NVDA"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T14:10:18.857Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:x5ymi4c4jxqqg6nbkmpbthho/app.bsky.feed.post/3mxyqjcls2c2p",
+   "cid": "bafyreigp7iis766vg5z5hs37cmqzauiarfno7mm3rvafkwsaqkg2t5dlue",
+   "author": {
+    "did": "did:plc:x5ymi4c4jxqqg6nbkmpbthho",
+    "handle": "aistockwire.bsky.social",
+    "displayName": "AIStockWire.com",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:x5ymi4c4jxqqg6nbkmpbthho/bafkreiczoapanrhu25sufrjsecbsf2oe7nzjslm2rkwjz52vvt6aijkqbe",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2026-06-26T20:53:25.360Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T14:02:48.405Z",
+    "embed": {
+     "$type": "app.bsky.embed.external",
+     "external": {
+      "description": "Jensen Huang says Nvidia and SpaceX are designing a server for data centers in space. Musk says their Star Mind computer will reach volume production in 2027.",
+      "thumb": {
+       "$type": "blob",
+       "ref": {
+        "$link": "bafkreihputrwuen4w5z6v4yhnn67pzvb334dbmtu2dj3hwtcuom63mjsuy"
+       },
+       "mimeType": "image/jpeg",
+       "size": 367917
+      },
+      "title": "Nvidia and SpaceX build a server for data centers in space",
+      "uri": "https://aistockwire.com/blog/nvidia-nvda-spacex-spcx-star-mind-space-server-huang-musk-october-2026"
+     }
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "Nvidia"
+       }
+      ],
+      "index": {
+       "byteEnd": 7,
+       "byteStart": 0
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 14,
+       "byteStart": 9
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "SpaceX"
+       }
+      ],
+      "index": {
+       "byteEnd": 27,
+       "byteStart": 20
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$SPCX"
+       }
+      ],
+      "index": {
+       "byteEnd": 34,
+       "byteStart": 29
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "#Nvidia ($NVDA) and #SpaceX ($SPCX) are building a server for space. Musk targets volume production next year"
+   },
+   "embed": {
+    "external": {
+     "uri": "https://aistockwire.com/blog/nvidia-nvda-spacex-spcx-star-mind-space-server-huang-musk-october-2026",
+     "title": "Nvidia and SpaceX build a server for data centers in space",
+     "description": "Jensen Huang says Nvidia and SpaceX are designing a server for data centers in space. Musk says their Star Mind computer will reach volume production in 2027.",
+     "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:x5ymi4c4jxqqg6nbkmpbthho/bafkreihputrwuen4w5z6v4yhnn67pzvb334dbmtu2dj3hwtcuom63mjsuy"
+    },
+    "$type": "app.bsky.embed.external#view"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 1,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T14:02:50.357Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:r3actoubibsncjf55heasihj/app.bsky.feed.post/3mxypmlcc7q2q",
+   "cid": "bafyreigrelzof4tb2qx5xwzvs35phlftfxc2qxccl7kd2ob7s4yeufcjk4",
+   "author": {
+    "did": "did:plc:r3actoubibsncjf55heasihj",
+    "handle": "stocknear.bsky.social",
+    "displayName": "Stocknear",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:r3actoubibsncjf55heasihj/bafkreiche4vyi6da3pwl7rqxju6pyrujkecyhym2vf4ivpkif3zavz46eq",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2025-04-14T13:15:53.073Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T13:46:44.422731+00:00",
+    "langs": [
+     "en"
+    ],
+    "text": "🚨 Dark Pool Alert: $NVDA\n\n• Quantity: 1.51M shares\n\n• Price: $216.74\n\n• Total: $326.26M\n\nLarge institutional order detected away from public markets.\n\nTrack more: stocknear.com/dark-pool-flow"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T13:46:44.564Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:gtw57nuw4wt2tqs322knhgim/app.bsky.feed.post/3mxyonwip4p2y",
+   "cid": "bafyreiai6qvtbbkbcs5rajluw6t6kfvansghgnwxz4jgoiptdupsf7vuqq",
+   "author": {
+    "did": "did:plc:gtw57nuw4wt2tqs322knhgim",
+    "handle": "capitalwisdom.bsky.social",
+    "displayName": "Capital Wisdom",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:gtw57nuw4wt2tqs322knhgim/bafkreid7z2hwaazylrxldkdo3nfqakttyepsvmml7k46tmtabte4s3u6fa",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [
+     {
+      "src": "did:plc:gtw57nuw4wt2tqs322knhgim",
+      "uri": "at://did:plc:gtw57nuw4wt2tqs322knhgim/app.bsky.actor.profile/self",
+      "cid": "bafyreie2fafxuv7hv7pb6mpqkruvtzjadxtjsuwkjmecdxc5arbr4cbghm",
+      "val": "bot",
+      "cts": "2026-06-21T10:09:57.019Z"
+     }
+    ],
+    "createdAt": "2026-06-21T10:09:58.363Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T13:29:35.902186+00:00",
+    "langs": [
+     "en"
+    ],
+    "text": "+71.8% upside? That’s the kind of move that gets traders’ attention 🚀  \nAnalysts rate $NVDA a Strong Buy with an average target of $380.12 📈  \nAt $221.3 today, the gap looks wide open for the next leg up 💡\n\nFollow for daily picks 📌\n#investing #stocks #StockMarket #finance #ETF"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T13:29:36.156Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:giy5efgcxxghywvrif5tlco5/app.bsky.feed.post/3mxyog7uynk2f",
+   "cid": "bafyreickk3wes54ia5kx6a5diuvcehab2fvozerq3gcmjocknt4j2fd46e",
+   "author": {
+    "did": "did:plc:giy5efgcxxghywvrif5tlco5",
+    "handle": "julianthelemur.bsky.social",
+    "displayName": "Julianthelemur",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:giy5efgcxxghywvrif5tlco5/bafkreigctowt5sm4sski6oa5i2m3d2p5tmqcfv2xmzyltiaytzvlzku3wi",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2024-11-17T01:29:24.427Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T13:25:17.415Z",
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "Lemurslist"
+       }
+      ],
+      "index": {
+       "byteEnd": 11,
+       "byteStart": 0
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$SPY"
+       }
+      ],
+      "index": {
+       "byteEnd": 17,
+       "byteStart": 13
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$QQQ"
+       }
+      ],
+      "index": {
+       "byteEnd": 53,
+       "byteStart": 49
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$TSLA"
+       }
+      ],
+      "index": {
+       "byteEnd": 70,
+       "byteStart": 65
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$AMD"
+       }
+      ],
+      "index": {
+       "byteEnd": 122,
+       "byteStart": 118
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$INTC"
+       }
+      ],
+      "index": {
+       "byteEnd": 128,
+       "byteStart": 123
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "#Lemurslist\n\n$SPY at right under 8d treat as res\n$QQQ fading pm\n\n$TSLA fading pm, watch 371 8d\n\nSemis fading, \n$$NVDA $AMD $INTC give it 945-10 see if it holds\nMemories similar"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 1,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T13:25:17.860Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:x5ymi4c4jxqqg6nbkmpbthho/app.bsky.feed.post/3mxynoottbk2p",
+   "cid": "bafyreifh3jnha7wpusvmpdvuvxbw47xlksffr25mabovttybgmv6czlfse",
+   "author": {
+    "did": "did:plc:x5ymi4c4jxqqg6nbkmpbthho",
+    "handle": "aistockwire.bsky.social",
+    "displayName": "AIStockWire.com",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:x5ymi4c4jxqqg6nbkmpbthho/bafkreiczoapanrhu25sufrjsecbsf2oe7nzjslm2rkwjz52vvt6aijkqbe",
+    "associated": {
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2026-06-26T20:53:25.360Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T13:12:07.798Z",
+    "embed": {
+     "$type": "app.bsky.embed.external",
+     "external": {
+      "description": "Taiwan's economy minister says the first U.S. park for smaller suppliers to TSMC and Foxconn would be in Texas, cost up to $4 billion, and get loan guarantees.",
+      "thumb": {
+       "$type": "blob",
+       "ref": {
+        "$link": "bafkreiglx3p546ccz2xm3ww5r5iunucfmxm344zhd72jvbci2gumegqzjm"
+       },
+       "mimeType": "image/jpeg",
+       "size": 64968
+      },
+      "title": "Taiwan plans $4B Texas park for Nvidia and TSMC suppliers",
+      "uri": "https://aistockwire.com/blog/taiwan-texas-industrial-park-4-billion-nvidia-nvda-tsmc-suppliers-october-2026"
+     }
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "Nvidia"
+       }
+      ],
+      "index": {
+       "byteEnd": 65,
+       "byteStart": 58
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 72,
+       "byteStart": 67
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "TSMC"
+       }
+      ],
+      "index": {
+       "byteEnd": 83,
+       "byteStart": 78
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$TSM"
+       }
+      ],
+      "index": {
+       "byteEnd": 89,
+       "byteStart": 85
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "Taiwan plans up to $4 billion Texas park for suppliers to #Nvidia ($NVDA) and #TSMC ($TSM)"
+   },
+   "embed": {
+    "external": {
+     "uri": "https://aistockwire.com/blog/taiwan-texas-industrial-park-4-billion-nvidia-nvda-tsmc-suppliers-october-2026",
+     "title": "Taiwan plans $4B Texas park for Nvidia and TSMC suppliers",
+     "description": "Taiwan's economy minister says the first U.S. park for smaller suppliers to TSMC and Foxconn would be in Texas, cost up to $4 billion, and get loan guarantees.",
+     "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:x5ymi4c4jxqqg6nbkmpbthho/bafkreiglx3p546ccz2xm3ww5r5iunucfmxm344zhd72jvbci2gumegqzjm"
+    },
+    "$type": "app.bsky.embed.external#view"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T13:12:10.259Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:oljskneqvj4okbcnszkk2d2r/app.bsky.feed.post/3mxynlrwyg22x",
+   "cid": "bafyreiasusselawcxbbghe3hirk62tzdpebsejbptdb5x5u3nost72apee",
+   "author": {
+    "did": "did:plc:oljskneqvj4okbcnszkk2d2r",
+    "handle": "tickerade.bsky.social",
+    "displayName": "tickerade",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:oljskneqvj4okbcnszkk2d2r/bafkreiarmkfuzhzdwe43pqm66mt2vblscb2wh2yzjkfgtmmlw7tu4ba54q",
+    "associated": {
+     "chat": {
+      "allowIncoming": "none"
+     },
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2025-11-04T16:28:19.950Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-16T13:10:30.382Z",
+    "embed": {
+     "$type": "app.bsky.embed.images",
+     "images": [
+      {
+       "alt": "",
+       "aspectRatio": {
+        "height": 880,
+        "width": 579
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreibwux67zngbxd4p6h7jvbtf4fse4zg6u3a722ztequvxhj4ex7qri"
+        },
+        "mimeType": "image/jpeg",
+        "size": 134647
+       }
+      }
+     ]
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$GME"
+       }
+      ],
+      "index": {
+       "byteEnd": 114,
+       "byteStart": 110
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$SPY"
+       }
+      ],
+      "index": {
+       "byteEnd": 120,
+       "byteStart": 116
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$NVDA"
+       }
+      ],
+      "index": {
+       "byteEnd": 127,
+       "byteStart": 122
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "$IREN"
+       }
+      ],
+      "index": {
+       "byteEnd": 138,
+       "byteStart": 133
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://www.tickereade.com"
+       }
+      ],
+      "index": {
+       "byteEnd": 262,
+       "byteStart": 244
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "Markets are returning to their green colour, and Tickerade's list is already here!\n\nEveryone is talking about $GME, $SPY, $NVDA, and $IREN, which took the top positions, but these are followed by other interesting caps.\n\nCheck the full list at www.tickereade.com and don't miss your next gainer."
+   },
+   "embed": {
+    "images": [
+     {
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:oljskneqvj4okbcnszkk2d2r/bafkreibwux67zngbxd4p6h7jvbtf4fse4zg6u3a722ztequvxhj4ex7qri",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:oljskneqvj4okbcnszkk2d2r/bafkreibwux67zngbxd4p6h7jvbtf4fse4zg6u3a722ztequvxhj4ex7qri",
+      "alt": "",
+      "aspectRatio": {
+       "height": 880,
+       "width": 579
+      }
+     }
+    ],
+    "$type": "app.bsky.embed.images#view"
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 0,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-16T13:10:35.167Z",
+   "labels": []
+  }
+ ],
+ "cursor": "eyJzIjpbMTc5MjE1NjIzMDAwMCwiZGlkOnBsYzpvbGpza25lcXZqNG9rYmNuc3prazJkMnIiLCIzbXh5bmxyd3lnMjJ4Il19",
+ "hitsTotal": 10000
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Opacity of the tinted pill behind badge text; tuned per theme for 4.5:1 contrast. -->
+    <item name="badge_tint_alpha" format="float" type="dimen">0.10</item>
+</resources>
