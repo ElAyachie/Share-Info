@@ -117,6 +117,9 @@ public class ReportBuilder {
     }
 
     static String describe(Throwable error) {
+        if (error instanceof SourceException) {
+            return error.getMessage();
+        }
         if (error instanceof HttpException) {
             int code = ((HttpException) error).code;
             if (code == 429) {

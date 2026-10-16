@@ -5,12 +5,14 @@ import android.content.res.AssetManager;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.example.shareinfo.BuildConfig;
 import com.example.shareinfo.data.market.TrendingTopics;
 import com.example.shareinfo.data.market.YahooFinance;
 import com.example.shareinfo.data.sources.BlueskySource;
 import com.example.shareinfo.data.sources.GoogleNewsSource;
 import com.example.shareinfo.data.sources.RedditSource;
 import com.example.shareinfo.data.sources.StockTwitsSource;
+import com.example.shareinfo.data.sources.YouTubeSource;
 import com.example.shareinfo.sentiment.Lexicons;
 import com.example.shareinfo.sentiment.MarketSentiment;
 import com.example.shareinfo.sentiment.SentimentAggregator;
@@ -112,7 +114,9 @@ public final class TopicRepository {
                 sentiment = new MarketSentiment(Lexicons.read(vader), Lexicons.read(market));
             }
             reportBuilder = new ReportBuilder(
-                    Arrays.asList(new StockTwitsSource(), new BlueskySource(), new RedditSource(), new GoogleNewsSource()),
+                    Arrays.asList(new StockTwitsSource(), new BlueskySource(),
+                            new RedditSource(BuildConfig.REDDIT_CLIENT_ID, BuildConfig.REDDIT_CLIENT_SECRET), new YouTubeSource(BuildConfig.YOUTUBE_API_KEY),
+                            new GoogleNewsSource()),
                     yahoo, sentiment, new SentimentAggregator(ZoneId.systemDefault()), executor);
         }
         return reportBuilder;

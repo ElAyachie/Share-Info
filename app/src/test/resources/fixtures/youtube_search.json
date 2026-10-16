@@ -1,0 +1,45 @@
+{
+ "kind": "youtube#searchListResponse",
+ "items": [
+  {
+   "kind": "youtube#searchResult",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "vid00000001"
+   },
+   "snippet": {
+    "publishedAt": "2026-10-14T18:00:00Z",
+    "channelId": "UC1",
+    "title": "Is the Pokémon card market about to crash? Here&#39;s what I think",
+    "description": "Prices are way up this year &amp; collectors are nervous.",
+    "channelTitle": "Card Market Weekly"
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "vid00000002"
+   },
+   "snippet": {
+    "publishedAt": "2026-10-15T12:30:00Z",
+    "channelId": "UC2",
+    "title": "Opening 10 booster boxes - insane pulls!",
+    "description": "",
+    "channelTitle": "Rip Daily"
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "id": {
+    "kind": "youtube#channel",
+    "channelId": "UC3"
+   },
+   "snippet": {
+    "title": "A channel, not a video",
+    "description": "",
+    "channelTitle": "Some Channel"
+   }
+  }
+ ]
+}

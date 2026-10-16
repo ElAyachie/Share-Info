@@ -20,18 +20,33 @@ The popular stock trading application Robinhood displays articles to the user th
 Each report shows a 0–100 sentiment score, the bullish/neutral/bearish split, a confidence level, a 7-day sentiment trend, a per-source breakdown, the price over the last month (for tickers) and the latest posts. Tap a post to open it.
 
 ## Data sources
-None of these need an API key.
+Most sources need no key. Reddit and YouTube work better, or at all, with free credentials; see [API credentials](#api-credentials).
 
 | Data | Source | Notes |
 | --- | --- | --- |
 | Social posts | [StockTwits](https://stocktwits.com) | Tickers only. Authors can tag posts Bullish/Bearish, which is blended into the score. |
 | Social posts | [Bluesky](https://bsky.app) search | Replaces Twitter/X, whose API is no longer free. |
-| Social posts | Reddit search feed | Replaces SocialGrep (shut down). Rate limited per IP, so it is best effort. |
+| Social posts | Reddit | With a client ID: Reddit's OAuth API (about 100 requests a minute, with scores and comment counts). Without: the public search feed, limited to one request a minute per IP. Replaces SocialGrep (shut down). |
+| Videos and comments | YouTube Data API | Needs an API key. Recent videos about the topic plus the top comments on the five most relevant. |
 | Headlines | Google News RSS (past 7 days) | Replaces Mediastack. |
 | Prices, ticker search | Yahoo Finance chart/search endpoints | Replaces the RapidAPI wrapper. |
 | Trending coins | CoinGecko | |
 
-If a source fails, the report is built from the others and shows which source was unavailable.
+If a source fails, the report is built from the others and shows which source was unavailable and why.
+
+## API credentials
+Credentials go in `local.properties` in the project root. Git ignores that file, so they are never committed. Both are optional.
+
+```properties
+reddit.clientId=YOUR_REDDIT_CLIENT_ID
+reddit.clientSecret=ONLY_FOR_A_PERSONAL_USE_SCRIPT_APP
+youtube.apiKey=YOUR_YOUTUBE_API_KEY
+```
+
+- **Reddit:** at <https://www.reddit.com/prefs/apps>, create an app (any redirect URI, such as `http://localhost`). The client ID is the string under the app's name. An **installed app** has no secret. A **personal use script** also needs its secret in `reddit.clientSecret`. With an ID, searches go through Reddit's API and are sorted by relevance within the past week.
+- **YouTube:** in the [Google Cloud console](https://console.cloud.google.com/), enable **YouTube Data API v3** and create an API key. The free quota is 10,000 units a day. Each report costs about 106 units, roughly 90 fresh reports a day; reports are cached for 10 minutes. Restrict the key to the YouTube Data API, and to this app's package and signing certificate if you distribute it, because keys built into an APK can be extracted.
+
+Rebuild the app after changing `local.properties`.
 
 ## How sentiment is scored
 - Each post is scored from −1 to +1 with a Java port of [VADER](https://github.com/cjhutto/vaderSentiment) (MIT; its license ships in `app/src/main/assets/VADER_LICENSE.txt`), a model built for social media text. It handles negation, intensifiers, ALL CAPS, exclamation marks and "but" clauses. The port matches the reference Python implementation on the cases in `app/src/test/resources/vader_reference.json`.

@@ -2,9 +2,23 @@ plugins {
     id 'com.android.application'
 }
 
+// API credentials live in local.properties, which is not committed. Both are optional:
+//   reddit.clientId     - Reddit app client ID; without it Reddit uses its public feed.
+//   reddit.clientSecret - only for a "personal use script" Reddit app; installed apps have none.
+//   youtube.apiKey   - YouTube Data API v3 key; without it YouTube is left out of reports.
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { localProperties.load(it) }
+}
+
 android {
     namespace 'com.example.shareinfo'
     compileSdk 36
+
+    buildFeatures {
+        buildConfig true
+    }
 
     defaultConfig {
         applicationId "com.example.shareinfo"
@@ -14,6 +28,10 @@ android {
         versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "REDDIT_CLIENT_ID", "\"${localProperties.getProperty('reddit.clientId', '')}\""
+        buildConfigField "String", "REDDIT_CLIENT_SECRET", "\"${localProperties.getProperty('reddit.clientSecret', '')}\""
+        buildConfigField "String", "YOUTUBE_API_KEY", "\"${localProperties.getProperty('youtube.apiKey', '')}\""
     }
 
     buildTypes {

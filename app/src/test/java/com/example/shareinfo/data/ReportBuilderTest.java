@@ -72,6 +72,17 @@ public class ReportBuilderTest {
     }
 
     @Test
+    public void showsSourceMessagesAsWritten() throws Exception {
+        PostSource news = new FakeSource(Source.NEWS, Collections.singletonList(
+                post(Source.NEWS, "Company posts strong growth this year", NOW)));
+        PostSource youtube = new FailingSource(Source.YOUTUBE, new SourceException("daily quota reached, back tomorrow"));
+
+        TopicReport report = builder(news, youtube).build(Topic.custom("acme"), NOW);
+
+        assertEquals("daily quota reached, back tomorrow", report.failedSources.get(Source.YOUTUBE));
+    }
+
+    @Test
     public void failsWhenEverySourceFails() throws Exception {
         try {
             builder(new FailingSource(Source.NEWS, new java.net.UnknownHostException("news.google.com")),

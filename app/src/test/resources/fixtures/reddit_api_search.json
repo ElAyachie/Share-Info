@@ -1,0 +1,60 @@
+{
+ "kind": "Listing",
+ "data": {
+  "after": null,
+  "children": [
+   {
+    "kind": "t3",
+    "data": {
+     "id": "1x9abc",
+     "title": "Pulled a Charizard ex from a 30th Celebration box!",
+     "selftext": "Third box this week and finally hit. Prices on singles are climbing fast though.",
+     "author": "tcg_fan",
+     "subreddit_name_prefixed": "r/PokemonTCG",
+     "permalink": "/r/PokemonTCG/comments/1x9abc/pulled_a_charizard/",
+     "created_utc": 1792140000.0,
+     "score": 412,
+     "num_comments": 57,
+     "over_18": false
+    }
+   },
+   {
+    "kind": "t3",
+    "data": {
+     "id": "1x9abd",
+     "title": "Scalpers cleared out every Target near me again",
+     "selftext": "",
+     "author": "cardcollector",
+     "subreddit_name_prefixed": "r/pkmntcgcollections",
+     "permalink": "/r/pkmntcgcollections/comments/1x9abd/scalpers/",
+     "created_utc": 1792136400.0,
+     "score": -3,
+     "num_comments": 12,
+     "over_18": false
+    }
+   },
+   {
+    "kind": "t3",
+    "data": {
+     "id": "1x9abe",
+     "title": "NSFW post that should be skipped",
+     "selftext": "",
+     "author": "someone",
+     "subreddit_name_prefixed": "r/whatever",
+     "permalink": "/r/whatever/comments/1x9abe/",
+     "created_utc": 1792136000.0,
+     "score": 5,
+     "num_comments": 0,
+     "over_18": true
+    }
+   },
+   {
+    "kind": "t5",
+    "data": {
+     "id": "2qh1i",
+     "display_name": "PokemonTCG"
+    }
+   }
+  ]
+ }
+}

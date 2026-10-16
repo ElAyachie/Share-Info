@@ -88,6 +88,9 @@ final class Formatters {
             case REDDIT:
                 color = R.color.source_reddit;
                 break;
+            case YOUTUBE:
+                color = R.color.source_youtube;
+                break;
             default:
                 color = R.color.source_news;
                 break;
