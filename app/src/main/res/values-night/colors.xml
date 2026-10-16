@@ -44,5 +44,6 @@
     <color name="source_stocktwits">#AAB6FF</color>
     <color name="source_bluesky">#80BBFF</color>
     <color name="source_reddit">#FF9E75</color>
+    <color name="source_youtube">#FF8C8C</color>
     <color name="source_news">#B8C2BC</color>
 </resources>

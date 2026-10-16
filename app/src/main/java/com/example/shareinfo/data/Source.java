@@ -5,6 +5,7 @@ public enum Source {
     STOCKTWITS("StockTwits"),
     BLUESKY("Bluesky"),
     REDDIT("Reddit"),
+    YOUTUBE("YouTube"),
     NEWS("News");
 
     public final String displayName;
