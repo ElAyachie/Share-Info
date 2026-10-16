@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="64dp"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/screen_margin"
+    android:paddingEnd="4dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingVertical="8dp">
+
+        <TextView
+            android:id="@+id/topicTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            tools:text="AAPL" />
+
+        <TextView
+            android:id="@+id/topicSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.ShareInfo.Muted"
+            tools:text="Apple · Stock" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/followToggle"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:icon="@drawable/ic_star_border" />
+</LinearLayout>

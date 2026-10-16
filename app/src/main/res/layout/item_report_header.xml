@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/card_spacing">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_margin">
+
+            <!-- Title and follow button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/topicName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceTitleLarge"
+                        tools:text="Apple" />
+
+                    <TextView
+                        android:id="@+id/topicSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.ShareInfo.Muted"
+                        tools:text="AAPL · Stock" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/followButton"
+                    style="@style/Widget.Material3.Button.TonalButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/follow" />
+            </LinearLayout>
+
+            <!-- Score -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:baselineAligned="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sentimentIndex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceDisplayMedium"
+                    android:textStyle="bold"
+                    tools:text="64" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sentiment_out_of"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+                <TextView
+                    android:id="@+id/sentimentLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:textAppearance="?attr/textAppearanceTitleLarge"
+                    tools:text="Bullish" />
+            </LinearLayout>
+
+            <!-- Positive / neutral / negative split; weights are set in code. -->
+            <LinearLayout
+                android:id="@+id/distributionBar"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_bar"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/barPositive"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/sentiment_positive" />
+
+                <View
+                    android:id="@+id/barNeutral"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/sentiment_neutral_bar" />
+
+                <View
+                    android:id="@+id/barNegative"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/sentiment_negative" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sentimentCounts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                tools:text="18 bullish · 20 neutral · 7 bearish" />
+
+            <TextView
+                android:id="@+id/sentimentMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.ShareInfo.Muted"
+                tools:text="Medium confidence · 45 posts · updated 2 min. ago" />
+
+            <!-- Price -->
+            <LinearLayout
+                android:id="@+id/priceSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        tools:text="$345.82" />
+
+                    <TextView
+                        android:id="@+id/priceChange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        tools:text="+1.12% today" />
+                </LinearLayout>
+
+                <com.robinhood.spark.SparkView
+                    android:id="@+id/priceChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="4dp"
+                    app:spark_lineWidth="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price_caption"
+                    android:textAppearance="@style/TextAppearance.ShareInfo.Muted" />
+            </LinearLayout>
+
+            <!-- Sentiment trend -->
+            <LinearLayout
+                android:id="@+id/trendSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <com.robinhood.spark.SparkView
+                    android:id="@+id/trendChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:spark_lineWidth="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trend_caption"
+                    android:textAppearance="@style/TextAppearance.ShareInfo.Muted" />
+            </LinearLayout>
+
+            <!-- Per source -->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/by_source"
+                android:textAppearance="?attr/textAppearanceTitleSmall"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <LinearLayout
+                android:id="@+id/sourceRows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/failedSources"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.ShareInfo.Muted"
+                tools:text="Reddit: rate limited, try again later" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/postsHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/posts_header"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textStyle="bold" />
+</LinearLayout>

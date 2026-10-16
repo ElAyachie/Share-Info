@@ -1,0 +1,37 @@
+{
+ "kind": "youtube#commentThreadListResponse",
+ "items": [
+  {
+   "id": "thread1",
+   "snippet": {
+    "videoId": "vid00000001",
+    "totalReplyCount": 4,
+    "topLevelComment": {
+     "id": "Ugx1",
+     "snippet": {
+      "authorDisplayName": "@collector99",
+      "textOriginal": "Honestly this is the best time to buy, the market always recovers",
+      "likeCount": 88,
+      "publishedAt": "2026-10-14T20:00:00Z"
+     }
+    }
+   }
+  },
+  {
+   "id": "thread2",
+   "snippet": {
+    "videoId": "vid00000001",
+    "totalReplyCount": 0,
+    "topLevelComment": {
+     "id": "Ugx2",
+     "snippet": {
+      "authorDisplayName": "@sadtrainer",
+      "textOriginal": "Overpriced garbage, scalpers ruined the hobby",
+      "likeCount": 12,
+      "publishedAt": "2026-10-15T01:00:00Z"
+     }
+    }
+   }
+  }
+ ]
+}
