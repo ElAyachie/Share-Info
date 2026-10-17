@@ -44,7 +44,7 @@ youtube.apiKey=YOUR_YOUTUBE_API_KEY
 ```
 
 - **Reddit:** at <https://www.reddit.com/prefs/apps>, create an app (any redirect URI, such as `http://localhost`). The client ID is the string under the app's name. An **installed app** has no secret. A **personal use script** also needs its secret in `reddit.clientSecret`. With an ID, searches go through Reddit's API and are sorted by relevance within the past week.
-- **YouTube:** in the [Google Cloud console](https://console.cloud.google.com/), enable **YouTube Data API v3** and create an API key. The free quota is 10,000 units a day. Each report costs about 106 units, roughly 90 fresh reports a day; reports are cached for 10 minutes. Restrict the key to the YouTube Data API, and to this app's package and signing certificate if you distribute it, because keys built into an APK can be extracted.
+- **YouTube:** in the [Google Cloud console](https://console.cloud.google.com/), enable **YouTube Data API v3** and create an API key. The free quota is 10,000 units a day. Each report costs about 106 units, roughly 90 fresh reports a day; reports are cached for 10 minutes. A key built into an APK can be extracted, so under **API restrictions** limit it to YouTube Data API v3 only. The API has no billing, so the worst a leaked key can do is use up the day's quota.
 
 Rebuild the app after changing `local.properties`.
 
@@ -60,8 +60,27 @@ Rebuild the app after changing `local.properties`.
 
 Run the unit tests with `./gradlew testDebugUnitTest`. They use API responses captured in `app/src/test/resources/fixtures`.
 
-### Deployment
-[https://developer.android.com/studio/run](https://developer.android.com/studio/run)
+## Download
+**[Download the latest APK](https://github.com/ElAyachie/Share-Info/releases/latest/download/ShareInfo.apk)** (Android 8.0 or newer), or see all versions on the [Releases page](https://github.com/ElAyachie/Share-Info/releases).
+
+Share Info isn't on Google Play, so Android will ask you to allow installs from your browser the first time. Each release also has `ShareInfo.apk.sha256`, the file's SHA-256 checksum, if you want to check the download.
+
+## Releases
+Releases are built and signed by GitHub Actions (`.github/workflows/release.yml`); no signing key is kept in the repository. To publish a version, push a tag such as `git tag v2.1 && git push origin v2.1`, or run **Release APK** from the Actions tab. Bump `versionCode` and `versionName` in `app/build.gradle` first, because Android only installs an update over an older version code.
+
+The workflow needs these repository secrets (Settings > Secrets and variables > Actions):
+
+| Secret | |
+| --- | --- |
+| `ANDROID_KEYSTORE_BASE64` | The release keystore, base64-encoded |
+| `ANDROID_KEYSTORE_PASSWORD` | Its password |
+| `ANDROID_KEY_ALIAS` | Optional, defaults to `release` |
+| `REDDIT_CLIENT_ID` | Optional, an installed-app client ID |
+| `YOUTUBE_API_KEY` | Optional, restricted as described above |
+
+A Reddit client secret is never built into the released APK.
+
+To build a signed release on your own computer, set `ANDROID_KEYSTORE_PATH` and `ANDROID_KEYSTORE_PASSWORD` and run `./gradlew assembleRelease`. Without them the release build is unsigned. For development, run the app from Android Studio ([how](https://developer.android.com/studio/run)).
 
 ## Demo video
 https://www.youtube.com/watch?v=iK_hcvb4ENI&ab_channel=MohamedOulal
