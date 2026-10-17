@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- The "$" from the Share Info icon on the portfolio site, white on transparent. Drawn on a
      768-unit grid (the size of the original artwork) and scaled into the adaptive icon's 72dp
-     visible area. Also used as the monochrome layer for themed icons. -->
+     visible area. Each end of the S runs straight into its arrowhead, which overlaps the stroke
+     slightly so no seam shows. Also used as the monochrome layer for themed icons. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
@@ -15,12 +16,13 @@
         <!-- Dot and stem -->
         <path android:fillColor="#FFFFFF" android:pathData="M373,166a24,24 0 1,0 48,0a24,24 0 1,0 -48,0z" />
         <path android:fillColor="#FFFFFF" android:pathData="M378,213h38v407h-38z" />
-        <!-- The S, ending in an arrow at each end -->
+        <!-- The S -->
         <path
-            android:pathData="M500,293 C452,250 278,242 278,330 C278,416 512,390 512,478 C512,570 340,576 266,537"
+            android:pathData="M500.0,296.0 L467.6,285.6 C400.9,264.3 278,236 278,328 C278,416 512,390 512,478 C512,566 375.8,566.7 298.7,545.2 L266.0,536.0"
             android:strokeColor="#FFFFFF"
             android:strokeWidth="56" />
-        <path android:fillColor="#FFFFFF" android:pathData="M547.8,296.8 L496.3,338.9 L503.7,247.1 Z" />
-        <path android:fillColor="#FFFFFF" android:pathData="M218.0,537.0 L266.0,491.0 L266.0,583.0 Z" />
+        <!-- Arrowheads at the top and bottom ends of the S -->
+        <path android:fillColor="#FFFFFF" android:pathData="M547.6,311.2 L481.6,340.5 L496.2,294.8 L510.8,249.1 Z" />
+        <path android:fillColor="#FFFFFF" android:pathData="M217.9,522.5 L282.8,490.9 L269.9,537.1 L256.9,583.3 Z" />
     </group>
 </vector>
