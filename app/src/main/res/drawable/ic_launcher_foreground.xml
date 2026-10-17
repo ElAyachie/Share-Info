@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The "$" from the Share Info icon on the portfolio site, white on transparent. Drawn on a
+     768-unit grid (the size of the original artwork) and scaled into the adaptive icon's 72dp
+     visible area. Also used as the monochrome layer for themed icons. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.09375"
+        android:scaleY="0.09375"
+        android:translateX="18"
+        android:translateY="18">
+        <!-- Dot and stem -->
+        <path android:fillColor="#FFFFFF" android:pathData="M373,166a24,24 0 1,0 48,0a24,24 0 1,0 -48,0z" />
+        <path android:fillColor="#FFFFFF" android:pathData="M378,213h38v407h-38z" />
+        <!-- The S, ending in an arrow at each end -->
+        <path
+            android:pathData="M500,293 C452,250 278,242 278,330 C278,416 512,390 512,478 C512,570 340,576 266,537"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="56" />
+        <path android:fillColor="#FFFFFF" android:pathData="M547.8,296.8 L496.3,338.9 L503.7,247.1 Z" />
+        <path android:fillColor="#FFFFFF" android:pathData="M218.0,537.0 L266.0,491.0 L266.0,583.0 Z" />
+    </group>
+</vector>
